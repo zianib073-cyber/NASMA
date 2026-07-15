@@ -1203,3 +1203,177 @@ body {
     background: var(--gold);
     color: var(--black);
 }
+
+/* -------------------- 
+   Page Header (For Inner Pages)
+   -------------------- */
+.page-header-luxury {
+    background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 100%);
+    border-bottom: 1px solid rgba(212, 168, 83, 0.2);
+}
+
+/* -------------------- 
+   About Page Styles
+   -------------------- */
+.about-image-placeholder {
+    background: linear-gradient(135deg, rgba(212, 168, 83, 0.1) 0%, rgba(212, 168, 83, 0.05) 100%);
+    border: 2px dashed rgba(212, 168, 83, 0.3);
+    border-radius: 20px;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    min-height: 300px;
+}
+
+.about-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.about-card-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--black) 0%, #2a2a2a 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+}
+
+.about-card-icon.gold {
+    background: linear-gradient(135deg, var(--gold) 0%, #c4963d 100%);
+    color: var(--black);
+}
+
+.about-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 1rem;
+}
+
+.about-card-desc {
+    color: #666;
+    line-height: 1.8;
+}
+
+/* -------------------- 
+   Contact Page Styles
+   -------------------- */
+.contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--gold) 0%, #c4963d 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    flex-shrink: 0;
+}
+
+.contact-details h4 {
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.contact-details p {
+    color: var(--gray-light);
+}
+
+.social-btn-lg {
+    width: 50px;
+    height: 50px;
+    background: rgba(212, 168, 83, 0.1);
+    border: 1px solid rgba(212, 168, 83, 0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    transition: var(--transition);
+}
+
+.social-btn-lg:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.contact-form-luxury {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 168, 83, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+}
+
+/* -------------------- 
+   FAQ Styles
+   -------------------- */
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+}
+
+.faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.faq-question {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.75rem;
+}
+
+.faq-answer {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* -------------------- 
+   Active Nav Link
+   -------------------- */
+.nav-link.active {
+    color: var(--gold);
+}
+
+.mobile-nav-link.active {
+    color: var(--gold);
+    font-weight: 600;
+}
