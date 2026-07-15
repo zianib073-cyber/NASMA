@@ -31,15 +31,34 @@
     <header class="navbar">
         <div class="container mx-auto px-4 py-4">
             <div class="flex items-center justify-between">
+                <!-- Logo -->
                 <a href="#" class="logo">نسمة</a>
+                
+                <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center gap-8">
-                    <a href="#products" class="nav-link">المنتجات</a>
-                    <a href="#features" class="nav-link">المميزات</a>
-                    <a href="#testimonials" class="nav-link">آراء العملاء</a>
+                    <a href="#" class="nav-link">الرئيسية</a>
+                    <a href="#products" class="nav-link">المجموعة</a>
+                    <a href="#about" class="nav-link">عن نسمة</a>
+                    <a href="#contact" class="nav-link">تواصل معنا</a>
                     <a href="#order" class="btn-gold-sm">اطلب الآن</a>
                 </nav>
-                <a href="#order" class="md:hidden btn-gold-sm">اطلب الآن</a>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <nav class="mobile-nav" id="mobileNav">
+                <a href="#" class="mobile-nav-link">الرئيسية</a>
+                <a href="#products" class="mobile-nav-link">المجموعة</a>
+                <a href="#about" class="mobile-nav-link">عن نسمة</a>
+                <a href="#contact" class="mobile-nav-link">تواصل معنا</a>
+                <a href="#order" class="btn-gold-sm mobile-cta">اطلب الآن</a>
+            </nav>
         </div>
     </header>
 
@@ -598,6 +617,23 @@
 
     <!-- Scripts -->
     <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-nav-link, .mobile-cta').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuBtn.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+        
         // Scroll Reveal
         function revealOnScroll() {
             const reveals = document.querySelectorAll('.reveal, .reveal-scale');
