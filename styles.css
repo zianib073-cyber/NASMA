@@ -1,0 +1,231 @@
+/* ===== نَسمة — Custom Styles ===== */
+/* Complementary styles for Tailwind CSS */
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Selection Color */
+::selection {
+  background-color: #0ea5e9;
+  color: white;
+}
+
+/* Focus Visible for Accessibility */
+:focus-visible {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f9ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Product Placeholder Animation */
+.product-placeholder {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: shimmer 2.5s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Button Press Effect */
+button:active,
+a[href="#order"]:active {
+  transform: scale(0.98);
+}
+
+/* Form Input Autofill Styling */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #f0f9ff inset;
+  -webkit-text-fill-color: #1e293b;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Gradient Text Animation on Hover */
+.gradient-text-animated {
+  background: linear-gradient(135deg, #0ea5e9 0%, #f97316 50%, #0ea5e9 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+/* WhatsApp Button Pulse */
+a[aria-label="تواصل عبر واتساب"] {
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+/* Toast Visibility */
+#toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Mobile Menu Animation */
+#mobileMenu {
+  transition: all 0.3s ease;
+}
+
+#mobileMenu.hidden {
+  max-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#mobileMenu:not(.hidden) {
+  max-height: 200px;
+}
+
+/* Card Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Loading State for Submit Button */
+button[type="submit"].loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+button[type="submit"].loading::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top-color: white;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Section Fade-in Animation */
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  header,
+  footer,
+  #toast,
+  a[aria-label="تواصل عبر واتساب"] {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+}
+
+/* RTL Specific Adjustments */
+[dir="rtl"] input[type="tel"] {
+  direction: ltr;
+  text-align: right;
+}
+
+/* Dark Mode Support (Optional) */
+@media (prefers-color-scheme: dark) {
+  /* Uncomment to enable dark mode support
+  body {
+    background-color: #0f172a;
+    color: #f8fafc;
+  }
+  */
+}

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="نَسمة — جهاز التعطير الذكي للمنزل. عطر منزلك بلمسة واحدة، بدون دخان أو حرارة. توصيل للسعودية والإمارات والكويت.">
+  <meta name="theme-color" content="#0ea5e9">
+  <title>نَسمة | جهاز التعطير الذكي</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0ea5e9',
+            secondary: '#f97316',
+            light: '#f0f9ff',
+            muted: '#64748b',
+            dark: '#1e293b',
+          },
+          fontFamily: {
+            arabic: ['IBM Plex Sans Arabic', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="font-arabic bg-light text-dark antialiased">
+
+  <!-- Header -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <div class="w-9 h-9 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3c.53 0 1.04.21 1.41.59.38.37.59.88.59 1.41v2a2 2 0 01-2 2H9a2 2 0 01-2-2V5c0-.53.21-1.04.59-1.41C7.96 3.21 8.47 3 9 3h3zm0 0v2m0 4v10m0 0c-2 0-4-1-4-3m4 3c2 0 4-1 4-3"/>
+          </svg>
+        </div>
+        <span class="text-xl font-bold text-primary tracking-wide">نَسمة</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#features" class="text-sm text-muted hover:text-primary transition-colors">المميزات</a>
+        <a href="#how" class="text-sm text-muted hover:text-primary transition-colors">كيف يعمل</a>
+        <a href="#order" class="text-sm text-muted hover:text-primary transition-colors">اطلب الآن</a>
+      </nav>
+      <a href="#order" class="hidden md:inline-flex px-5 py-2.5 bg-primary text-white text-sm font-medium rounded-full hover:bg-primary/90 transition-colors">
+        اطلب الآن
+      </a>
+      <button id="menuBtn" class="md:hidden p-2 -ml-2" aria-label="القائمة">
+        <svg class="w-6 h-6 text-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden bg-white border-t border-gray-100 px-4 py-4">
+      <nav class="flex flex-col gap-4">
+        <a href="#features" class="text-muted hover:text-primary transition-colors">المميزات</a>
+        <a href="#how" class="text-muted hover:text-primary transition-colors">كيف يعمل</a>
+        <a href="#order" class="text-muted hover:text-primary transition-colors">اطلب الآن</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-16 bg-gradient-to-b from-white to-light">
+      <div class="max-w-6xl mx-auto px-4 py-12 md:py-20">
+        <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+          <div class="order-2 md:order-1">
+            <span class="inline-block px-4 py-1.5 bg-secondary/10 text-secondary text-xs font-semibold rounded-full mb-6">
+              تقنية متطورة · تصميم أنيق
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              عطّر منزلك
+              <span class="text-primary">بلمسة واحدة</span>
+            </h1>
+            <p class="text-lg text-muted leading-relaxed mb-8 max-w-lg">
+              جهاز نَسمة الذكي يمنحك تجربة تعطير فاخرة بدون دخان أو حرارة. 
+              تحكّم من هاتفك، واستمتع بعبير العود والمسك في كل أرجاء منزلك.
+            </p>
+            <div class="flex flex-wrap gap-4 mb-8">
+              <a href="#order" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/25">
+                اطلب الآن — 299 ر.س
+              </a>
+              <a href="#how" class="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-200 text-dark font-medium rounded-full hover:border-primary hover:text-primary transition-colors">
+                شاهد كيف يعمل
+              </a>
+            </div>
+            <div class="flex items-center gap-6 text-sm text-muted">
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>شحن مجاني</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>ضمان سنة</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>الدفع عند الاستلام</span>
+              </div>
+            </div>
+          </div>
+          <div class="order-1 md:order-2 flex justify-center">
+            <div class="relative">
+              <div class="w-72 h-72 md:w-96 md:h-96 bg-gradient-to-br from-primary/5 to-secondary/10 rounded-full flex items-center justify-center">
+                <div class="product-placeholder w-56 h-56 md:w-72 md:h-72 bg-white rounded-3xl shadow-2xl shadow-primary/10 flex flex-col items-center justify-center border border-gray-100">
+                  <svg class="w-16 h-16 text-primary/30 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                  </svg>
+                  <span class="text-sm text-muted">صورة المنتج</span>
+                  <span class="text-xs text-gray-300 mt-1">400 × 400 px</span>
+                </div>
+              </div>
+              <div class="absolute -bottom-4 -right-4 bg-white px-4 py-2 rounded-full shadow-lg border border-gray-100">
+                <span class="text-secondary font-bold">خصم 20%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem & Solution -->
+    <section class="py-20 md:py-28 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <span class="inline-block px-4 py-1.5 bg-primary/5 text-primary text-xs font-semibold rounded-full mb-4">
+            المشكلة والحل
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            هل سئمت من الطرق التقليدية للتعطير؟
+          </h2>
+          <p class="text-lg text-muted leading-relaxed">
+            البخور التقليدي يملأ المكان بالدخان، والشموع تحتاج مراقبة مستمرة، 
+            والمعطرات الكيميائية لا تدوم طويلاً. حان الوقت لحل أفضل.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+          <!-- Problem -->
+          <div class="bg-gray-50 rounded-3xl p-8 md:p-10">
+            <div class="w-12 h-12 bg-red-100 rounded-2xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-4">المشاكل الشائعة</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="w-1.5 h-1.5 bg-red-400 rounded-full mt-2.5 flex-shrink-0"></span>
+                <span class="text-muted">دخان البخور يسبب إزعاجاً للعيون والتنفس</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-1.5 h-1.5 bg-red-400 rounded-full mt-2.5 flex-shrink-0"></span>
+                <span class="text-muted">الشموع المعطرة خطرة وتحتاج مراقبة</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-1.5 h-1.5 bg-red-400 rounded-full mt-2.5 flex-shrink-0"></span>
+                <span class="text-muted">المعطرات الصناعية سريعة التبخر</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-1.5 h-1.5 bg-red-400 rounded-full mt-2.5 flex-shrink-0"></span>
+                <span class="text-muted">صعوبة التحكم في شدة العطر</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Solution -->
+          <div class="bg-primary/5 rounded-3xl p-8 md:p-10 border border-primary/10">
+            <div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-4">الحل مع نَسمة</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="w-1.5 h-1.5 bg-primary rounded-full mt-2.5 flex-shrink-0"></span>
+                <span class="text-muted">تقنية النانو للتعطير بدون دخان أو حرارة</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-1.5 h-1.5 bg-primary rounded-full mt-2.5 flex-shrink-0"></span>
+                <span class="text-muted">آمن تماماً على الأطفال وكبار السن</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-1.5 h-1.5 bg-primary rounded-full mt-2.5 flex-shrink-0"></span>
+                <span class="text-muted">يعمل لأكثر من 200 ساعة متواصلة</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-1.5 h-1.5 bg-primary rounded-full mt-2.5 flex-shrink-0"></span>
+                <span class="text-muted">تحكم كامل من التطبيق أو الجهاز</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-20 md:py-28 bg-light">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-16">
+          <span class="inline-block px-4 py-1.5 bg-secondary/10 text-secondary text-xs font-semibold rounded-full mb-4">
+            المميزات
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            لماذا تختار نَسمة؟
+          </h2>
+          <p class="text-muted max-w-2xl mx-auto">
+            صُمم جهاز نَسمة ليكون الرفيق المثالي لكل منزل خليجي عصري
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <!-- Feature 1 -->
+          <div class="bg-white rounded-2xl p-6 md:p-8 hover:shadow-xl hover:shadow-primary/5 transition-shadow">
+            <div class="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center mb-5">
+              <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold mb-3">تحكم من الهاتف</h3>
+            <p class="text-muted text-sm leading-relaxed">
+              شغّل الجهاز واضبط شدة العطر من أي مكان عبر تطبيق نَسمة المجاني
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="bg-white rounded-2xl p-6 md:p-8 hover:shadow-xl hover:shadow-primary/5 transition-shadow">
+            <div class="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center mb-5">
+              <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold mb-3">مؤقت ذكي</h3>
+            <p class="text-muted text-sm leading-relaxed">
+              جدول أوقات التعطير حسب روتينك اليومي — صباحاً ومساءً وعند الاستقبال
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="bg-white rounded-2xl p-6 md:p-8 hover:shadow-xl hover:shadow-primary/5 transition-shadow">
+            <div class="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center mb-5">
+              <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold mb-3">تصميم أنيق</h3>
+            <p class="text-muted text-sm leading-relaxed">
+              شكل عصري يليق بديكور منزلك — متوفر بثلاثة ألوان راقية
+            </p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="bg-white rounded-2xl p-6 md:p-8 hover:shadow-xl hover:shadow-primary/5 transition-shadow">
+            <div class="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center mb-5">
+              <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold mb-3">آمن 100%</h3>
+            <p class="text-muted text-sm leading-relaxed">
+              لا حرارة ولا لهب — آمن للاستخدام حول الأطفال والحيوانات الأليفة
+            </p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="bg-white rounded-2xl p-6 md:p-8 hover:shadow-xl hover:shadow-primary/5 transition-shadow">
+            <div class="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center mb-5">
+              <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold mb-3">بطارية طويلة</h3>
+            <p class="text-muted text-sm leading-relaxed">
+              شحنة واحدة تكفي لأسبوعين من الاستخدام المتواصل
+            </p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="bg-white rounded-2xl p-6 md:p-8 hover:shadow-xl hover:shadow-primary/5 transition-shadow">
+            <div class="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center mb-5">
+              <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold mb-3">روائح فاخرة</h3>
+            <p class="text-muted text-sm leading-relaxed">
+              مجموعة حصرية من زيوت العود والمسك والورد الطائفي
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it Works -->
+    <section id="how" class="py-20 md:py-28 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-16">
+          <span class="inline-block px-4 py-1.5 bg-primary/5 text-primary text-xs font-semibold rounded-full mb-4">
+            سهولة الاستخدام
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            ثلاث خطوات فقط
+          </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 md:gap-12">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+              ١
+            </div>
+            <h3 class="text-lg font-bold mb-3">أضف الزيت العطري</h3>
+            <p class="text-muted text-sm">
+              ضع بضع قطرات من زيتك المفضل في خزان الجهاز
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+              ٢
+            </div>
+            <h3 class="text-lg font-bold mb-3">اضغط زر التشغيل</h3>
+            <p class="text-muted text-sm">
+              شغّل الجهاز بلمسة واحدة أو من تطبيق الهاتف
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+              ٣
+            </div>
+            <h3 class="text-lg font-bold mb-3">استمتع بالعطر</h3>
+            <p class="text-muted text-sm">
+              خلال ثوانٍ ينتشر العطر في أرجاء المكان بنعومة
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="py-16 bg-primary/5">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-3xl md:text-4xl font-bold text-primary mb-2">+5,000</div>
+            <div class="text-sm text-muted">عميل سعيد</div>
+          </div>
+          <div>
+            <div class="text-3xl md:text-4xl font-bold text-primary mb-2">4.9</div>
+            <div class="text-sm text-muted">تقييم العملاء</div>
+          </div>
+          <div>
+            <div class="text-3xl md:text-4xl font-bold text-primary mb-2">3</div>
+            <div class="text-sm text-muted">دول التوصيل</div>
+          </div>
+          <div>
+            <div class="text-3xl md:text-4xl font-bold text-primary mb-2">24</div>
+            <div class="text-sm text-muted">ساعة للرد</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="py-20 md:py-28 bg-light">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="max-w-xl mx-auto">
+          <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl shadow-primary/5 border border-gray-100">
+            <div class="text-center mb-8">
+              <span class="inline-block px-4 py-1.5 bg-secondary/10 text-secondary text-xs font-semibold rounded-full mb-4">
+                عرض محدود
+              </span>
+              <h2 class="text-2xl md:text-3xl font-bold mb-2">اطلب الآن</h2>
+              <p class="text-muted">واحصل على شحن مجاني + زيت عطري هدية</p>
+              <div class="flex items-center justify-center gap-3 mt-4">
+                <span class="text-3xl font-bold text-primary">299 ر.س</span>
+                <span class="text-lg text-muted line-through">375 ر.س</span>
+              </div>
+            </div>
+
+            <form id="orderForm" class="space-y-5">
+              <div>
+                <label for="name" class="block text-sm font-medium text-dark mb-2">الاسم الكامل</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required
+                  placeholder="مثال: محمد العتيبي"
+                  class="w-full px-4 py-3.5 bg-light border border-gray-200 rounded-xl text-dark placeholder:text-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all"
+                >
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium text-dark mb-2">رقم الهاتف</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  required
+                  placeholder="05xxxxxxxx"
+                  class="w-full px-4 py-3.5 bg-light border border-gray-200 rounded-xl text-dark placeholder:text-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all"
+                >
+              </div>
+              <div>
+                <label for="country" class="block text-sm font-medium text-dark mb-2">الدولة</label>
+                <select 
+                  id="country" 
+                  name="country" 
+                  required
+                  class="w-full px-4 py-3.5 bg-light border border-gray-200 rounded-xl text-dark focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all"
+                >
+                  <option value="SA">السعودية</option>
+                  <option value="AE">الإمارات</option>
+                  <option value="KW">الكويت</option>
+                </select>
+              </div>
+              <div>
+                <label for="address" class="block text-sm font-medium text-dark mb-2">العنوان</label>
+                <input 
+                  type="text" 
+                  id="address" 
+                  name="address" 
+                  required
+                  placeholder="المدينة، الحي، الشارع"
+                  class="w-full px-4 py-3.5 bg-light border border-gray-200 rounded-xl text-dark placeholder:text-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all"
+                >
+              </div>
+              <button 
+                type="submit" 
+                class="w-full py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              >
+                تأكيد الطلب — الدفع عند الاستلام
+              </button>
+              <p class="text-center text-xs text-muted">
+                🔒 بياناتك آمنة ولن تُستخدم إلا لإتمام طلبك
+              </p>
+            </form>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="flex flex-wrap justify-center gap-6 mt-8 text-sm text-muted">
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/>
+              </svg>
+              <span>توصيل سريع</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span>ضمان سنة كاملة</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+              </svg>
+              <span>الدفع عند الاستلام</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-b from-light to-white border-t border-gray-100 py-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-9 h-9 bg-primary/10 rounded-xl flex items-center justify-center">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3c.53 0 1.04.21 1.41.59.38.37.59.88.59 1.41v2a2 2 0 01-2 2H9a2 2 0 01-2-2V5c0-.53.21-1.04.59-1.41C7.96 3.21 8.47 3 9 3h3zm0 0v2m0 4v10m0 0c-2 0-4-1-4-3m4 3c2 0 4-1 4-3"/>
+              </svg>
+            </div>
+            <span class="text-xl font-bold text-primary">نَسمة</span>
+          </div>
+          <p class="text-sm text-muted">جهاز التعطير الذكي للمنزل العصري</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-dark mb-4">روابط سريعة</h4>
+          <nav class="space-y-2 text-sm text-muted">
+            <a href="#features" class="block hover:text-primary transition-colors">المميزات</a>
+            <a href="#how" class="block hover:text-primary transition-colors">كيف يعمل</a>
+            <a href="#order" class="block hover:text-primary transition-colors">اطلب الآن</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="font-semibold text-dark mb-4">التواصل</h4>
+          <p class="text-sm text-muted mb-2">نخدم: السعودية · الإمارات · الكويت</p>
+          <p class="text-sm text-muted">الدفع عند الاستلام · ضمان سنة</p>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 pt-8 text-center text-sm text-muted">
+        <p>© 2026 نَسمة. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a 
+    href="https://wa.me/966500000000?text=مرحباً، أريد الاستفسار عن جهاز نَسمة"
+    target="_blank"
+    rel="noopener"
+    class="fixed bottom-6 left-6 z-50 w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 hover:scale-110 transition-all"
+    aria-label="تواصل عبر واتساب"
+  >
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 px-6 py-4 bg-green-600 text-white rounded-xl shadow-lg transform translate-y-20 opacity-0 transition-all duration-300" hidden>
+    <span id="toastMessage">تم إرسال طلبك بنجاح!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
