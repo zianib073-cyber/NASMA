@@ -1,26 +1,28 @@
 /* ============================================
    نسمة - متجر معطرات ذكية فاخرة
-   Luxury Black & Gold Theme
+   Luxury Light Cream & Gold Theme
    ============================================ */
 
 /* -------------------- 
    CSS Variables
    -------------------- */
 :root {
-    --black: #0a0a0a;
-    --black-light: #1a1a1a;
-    --black-medium: #2a2a2a;
-    --gold: #d4a853;
-    --gold-light: #e8c77b;
-    --gold-dark: #b8923f;
+    --black: #2c2c2c;
+    --black-light: #3d3d3d;
+    --black-medium: #4a4a4a;
+    --gold: #c9a227;
+    --gold-light: #d4b44a;
+    --gold-dark: #a68521;
     --white: #ffffff;
-    --white-off: #f5f5f5;
-    --gray: #888888;
-    --gray-light: #cccccc;
-    --shadow-gold: 0 10px 40px rgba(212, 168, 83, 0.3);
-    --shadow-dark: 0 10px 40px rgba(0, 0, 0, 0.5);
-    --gradient-gold: linear-gradient(135deg, #d4a853 0%, #e8c77b 50%, #d4a853 100%);
-    --gradient-dark: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+    --white-off: #faf9f6;
+    --cream: #f5f1e8;
+    --cream-dark: #ebe5d8;
+    --gray: #666666;
+    --gray-light: #999999;
+    --shadow-gold: 0 10px 40px rgba(201, 162, 39, 0.2);
+    --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.08);
+    --gradient-gold: linear-gradient(135deg, #c9a227 0%, #d4b44a 50%, #c9a227 100%);
+    --gradient-light: linear-gradient(180deg, #faf9f6 0%, #f5f1e8 100%);
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -40,8 +42,8 @@ html {
 body {
     font-family: 'Tajawal', sans-serif;
     line-height: 1.7;
-    color: var(--white);
-    background: var(--black);
+    color: var(--black);
+    background: var(--white-off);
     overflow-x: hidden;
 }
 
@@ -66,9 +68,10 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(10, 10, 10, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(212, 168, 83, 0.2);
+    border-bottom: 1px solid rgba(201, 162, 39, 0.2);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
@@ -79,7 +82,7 @@ body {
 }
 
 .nav-link {
-    color: var(--gray-light);
+    color: var(--black);
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
@@ -145,10 +148,10 @@ body {
 .mobile-nav-link {
     display: block;
     padding: 1rem 0;
-    color: var(--gray-light);
+    color: var(--black);
     text-decoration: none;
     font-weight: 500;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     transition: var(--transition);
 }
 
@@ -182,7 +185,7 @@ body {
    -------------------- */
 .hero-luxury {
     min-height: 100vh;
-    background: var(--gradient-dark);
+    background: var(--gradient-light);
     position: relative;
     overflow: hidden;
 }
@@ -244,12 +247,12 @@ body {
 }
 
 .title-white {
-    color: var(--white);
+    color: var(--black);
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
-    color: var(--gray-light);
+    color: var(--gray);
     max-width: 500px;
     margin: 0 auto 2rem;
     line-height: 1.8;
@@ -356,7 +359,7 @@ body {
 .stat-divider {
     width: 1px;
     height: 40px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.15);
 }
 
 /* Hero Product Showcase */
@@ -382,13 +385,14 @@ body {
     width: 350px;
     height: 350px;
     margin: 0 auto;
-    background: linear-gradient(135deg, var(--black-medium) 0%, var(--black-light) 100%);
-    border: 2px solid rgba(212, 168, 83, 0.3);
+    background: linear-gradient(135deg, var(--white) 0%, var(--cream) 100%);
+    border: 2px solid rgba(201, 162, 39, 0.3);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
 }
 
 @media (min-width: 768px) {
@@ -411,16 +415,17 @@ body {
 
 .floating-badge {
     position: absolute;
-    background: var(--black-light);
-    border: 1px solid rgba(212, 168, 83, 0.3);
+    background: var(--white);
+    border: 1px solid rgba(201, 162, 39, 0.3);
     padding: 0.75rem 1.25rem;
     border-radius: 50px;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     font-size: 0.875rem;
-    color: var(--white);
+    color: var(--black);
     animation: float 3s ease-in-out infinite;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .badge-1 {
@@ -453,7 +458,7 @@ body {
 .scroll-mouse {
     width: 24px;
     height: 40px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(0, 0, 0, 0.2);
     border-radius: 12px;
     margin: 0.5rem auto 0;
     display: flex;
@@ -478,7 +483,7 @@ body {
    Section Styles
    -------------------- */
 .section-luxury-dark {
-    background: var(--gradient-dark);
+    background: var(--cream);
     padding: 6rem 0;
     position: relative;
 }
@@ -515,7 +520,7 @@ body {
 .section-title-luxury {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 900;
-    color: var(--white);
+    color: var(--black);
     margin-bottom: 1rem;
 }
 
@@ -546,18 +551,19 @@ body {
 }
 
 .luxury-product-card {
-    background: var(--black-light);
-    border: 1px solid rgba(212, 168, 83, 0.2);
+    background: var(--white);
+    border: 1px solid rgba(201, 162, 39, 0.15);
     border-radius: 20px;
     overflow: hidden;
     transition: var(--transition);
     position: relative;
+    box-shadow: var(--shadow-soft);
 }
 
 .luxury-product-card:hover {
     transform: translateY(-10px);
     border-color: var(--gold);
-    box-shadow: 0 20px 60px rgba(212, 168, 83, 0.2);
+    box-shadow: 0 20px 60px rgba(201, 162, 39, 0.15);
 }
 
 .product-card-badge {
@@ -585,7 +591,7 @@ body {
 
 .product-card-image {
     height: 200px;
-    background: linear-gradient(135deg, var(--black-medium), var(--black-light));
+    background: linear-gradient(135deg, var(--cream), var(--cream-dark));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -620,7 +626,7 @@ body {
 .product-card-title {
     font-size: 1.5rem;
     font-weight: 800;
-    color: var(--white);
+    color: var(--black);
     margin-bottom: 0.5rem;
 }
 
@@ -755,12 +761,13 @@ body {
 }
 
 .testimonial-luxury-card {
-    background: var(--black-light);
-    border: 1px solid rgba(212, 168, 83, 0.2);
+    background: var(--white);
+    border: 1px solid rgba(201, 162, 39, 0.15);
     border-radius: 20px;
     padding: 2rem;
     position: relative;
     transition: var(--transition);
+    box-shadow: var(--shadow-soft);
 }
 
 .testimonial-luxury-card:hover {
@@ -787,7 +794,7 @@ body {
 
 .testimonial-text {
     font-size: 1rem;
-    color: var(--gray-light);
+    color: var(--gray);
     line-height: 1.8;
     margin-bottom: 1.5rem;
     font-style: italic;
@@ -819,7 +826,7 @@ body {
 
 .author-name-luxury {
     font-weight: 700;
-    color: var(--white);
+    color: var(--black);
 }
 
 .author-details {
@@ -840,11 +847,12 @@ body {
     gap: 4rem;
     flex-wrap: wrap;
     padding: 2rem;
-    background: var(--black-light);
-    border: 1px solid rgba(212, 168, 83, 0.2);
+    background: var(--white);
+    border: 1px solid rgba(201, 162, 39, 0.2);
     border-radius: 16px;
     max-width: 800px;
     margin: 0 auto;
+    box-shadow: var(--shadow-soft);
 }
 
 .trust-item {
@@ -1029,8 +1037,8 @@ body {
    Footer
    -------------------- */
 .footer-luxury {
-    background: var(--black);
-    border-top: 1px solid rgba(212, 168, 83, 0.2);
+    background: #3d3224;
+    border-top: 1px solid rgba(201, 162, 39, 0.3);
 }
 
 .footer-content {
@@ -1188,7 +1196,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--black);
+    background: var(--cream);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -1208,8 +1216,8 @@ body {
    Page Header (For Inner Pages)
    -------------------- */
 .page-header-luxury {
-    background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 100%);
-    border-bottom: 1px solid rgba(212, 168, 83, 0.2);
+    background: linear-gradient(135deg, var(--cream) 0%, var(--cream-dark) 100%);
+    border-bottom: 1px solid rgba(201, 162, 39, 0.2);
 }
 
 /* -------------------- 
@@ -1298,13 +1306,13 @@ body {
 }
 
 .contact-details h4 {
-    color: var(--gold);
+    color: var(--gold-dark);
     font-weight: 600;
     margin-bottom: 0.25rem;
 }
 
 .contact-details p {
-    color: var(--gray-light);
+    color: var(--gray);
 }
 
 .social-btn-lg {
@@ -1326,10 +1334,11 @@ body {
 }
 
 .contact-form-luxury {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(212, 168, 83, 0.2);
+    background: var(--white);
+    border: 1px solid rgba(201, 162, 39, 0.2);
     border-radius: 20px;
     padding: 2rem;
+    box-shadow: var(--shadow-soft);
 }
 
 /* -------------------- 
