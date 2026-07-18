@@ -1386,3 +1386,169 @@ body {
     color: var(--gold);
     font-weight: 600;
 }
+
+/* -------------------- 
+   Problem Cards
+   -------------------- */
+.problem-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+}
+
+.problem-card:hover {
+    transform: translateY(-5px);
+}
+
+.problem-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.problem-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+}
+
+.problem-card p {
+    color: var(--gray);
+    font-size: 0.95rem;
+}
+
+/* Solution Box */
+.solution-box {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+    color: var(--black);
+}
+
+.solution-box h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.solution-box p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* -------------------- 
+   Product Features List
+   -------------------- */
+.product-features {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.product-features li {
+    padding: 0.4rem 0;
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+/* Price Old (Strikethrough) */
+.price-old {
+    text-decoration: line-through;
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+}
+
+/* Featured Product Card */
+.luxury-product-card.featured {
+    border: 2px solid var(--gold);
+    transform: scale(1.02);
+}
+
+.luxury-product-card.featured:hover {
+    transform: scale(1.02) translateY(-10px);
+}
+
+/* Option Badge */
+.option-badge {
+    display: block;
+    background: var(--gold);
+    color: var(--black);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.25rem;
+}
+
+/* -------------------- 
+   Comparison Table
+   -------------------- */
+.comparison-section {
+    margin-top: 4rem;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+}
+
+.comparison-table {
+    overflow-x: auto;
+}
+
+.comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.comparison-table th {
+    background: var(--cream);
+    font-weight: 700;
+    color: var(--black);
+}
+
+.comparison-table th.highlight,
+.comparison-table td.highlight {
+    background: rgba(201, 162, 39, 0.1);
+}
+
+.comparison-table th.highlight {
+    color: var(--gold-dark);
+}
+
+/* -------------------- 
+   Text Colors for Light Theme
+   -------------------- */
+.text-gold {
+    color: var(--gold);
+}
+
+.section-luxury-dark h2,
+.section-luxury-dark h3 {
+    color: var(--black);
+}
+
+.section-luxury-dark p {
+    color: var(--gray);
+}
+
+/* Page Header Text */
+.page-header-luxury h1 {
+    color: var(--black);
+}
+
+.page-header-luxury p {
+    color: var(--gray);
+}
