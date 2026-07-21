@@ -53,8 +53,14 @@ body {
 .top-banner {
     background: var(--gradient-gold);
     color: var(--black);
-    padding: 0.75rem 0;
-    font-weight: 600;
+    padding: 0.6rem 1rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.top-banner p {
+    margin: 0;
 }
 
 .text-gold {
@@ -1386,6 +1392,467 @@ body {
     color: var(--gold);
     font-weight: 600;
 }
+
+/* ============================================
+   CHIZEL Landing - Fast & Conversion
+   ============================================ */
+.container {
+    width: min(1100px, 100% - 2rem);
+    margin-inline: auto;
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.nav-desktop {
+    display: none;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .nav-desktop { display: flex; }
+    .mobile-menu-btn { display: none; }
+}
+
+.navbar .mobile-nav {
+    padding-inline: 1rem;
+}
+
+.hero-order {
+    padding: 1.5rem 0 2.5rem;
+    background: var(--cream);
+}
+
+.hero-order-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+    .hero-order-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        gap: 2.5rem;
+    }
+}
+
+.hero-copy h1 {
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0.75rem 0;
+}
+
+.hero-copy .gold { color: var(--gold); }
+
+.badge-hot {
+    display: inline-block;
+    background: rgba(201, 162, 39, 0.15);
+    color: var(--gold-dark);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+}
+
+.lead {
+    color: var(--gray);
+    font-size: 1.05rem;
+    margin-bottom: 1.25rem;
+}
+
+.trust-row {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    padding: 0;
+    margin: 0;
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.trust-row strong {
+    color: var(--black);
+    display: block;
+    font-size: 1.1rem;
+}
+
+/* Fast Order Form */
+.order-form-fast {
+    background: var(--white);
+    border: 1px solid rgba(201, 162, 39, 0.25);
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: var(--shadow-soft);
+}
+
+.order-form-fast h2 {
+    font-size: 1.35rem;
+    margin-bottom: 0.25rem;
+}
+
+.form-hint {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.pack-select {
+    border: 0;
+    padding: 0;
+    margin: 0 0 1rem;
+}
+
+.pack-select legend {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.pack-option {
+    display: block;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.pack-option input { display: none; }
+
+.pack-box {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.15rem 0.75rem;
+    padding: 0.75rem 0.9rem;
+    border: 2px solid #e8e4dc;
+    border-radius: 12px;
+    transition: border-color 0.15s ease;
+}
+
+.pack-option input:checked + .pack-box {
+    border-color: var(--gold);
+    background: rgba(201, 162, 39, 0.08);
+}
+
+.pack-tag {
+    grid-column: 1 / -1;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--gold-dark);
+}
+
+.pack-name { font-weight: 800; }
+.pack-desc { grid-column: 1; color: var(--gray); font-size: 0.85rem; }
+.pack-price {
+    grid-row: 1 / span 2;
+    grid-column: 2;
+    align-self: center;
+    font-weight: 800;
+    color: var(--gold-dark);
+}
+
+.field {
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.field span {
+    display: block;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.35rem;
+}
+
+.field input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    background: #fff;
+}
+
+.field input:focus {
+    outline: 2px solid var(--gold);
+    border-color: transparent;
+}
+
+.phone-input {
+    text-align: right;
+    direction: ltr;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 0;
+    margin: 0.5rem 0 1rem;
+    border-top: 1px dashed #ddd;
+    border-bottom: 1px dashed #ddd;
+    font-weight: 700;
+}
+
+.order-total strong {
+    color: var(--gold-dark);
+    font-size: 1.25rem;
+}
+
+.btn-submit {
+    width: 100%;
+    border: 0;
+    border-radius: 12px;
+    padding: 1rem;
+    background: var(--black);
+    color: #fff;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.btn-submit:disabled { opacity: 0.7; cursor: wait; }
+
+.secure-note {
+    text-align: center;
+    color: var(--gray);
+    font-size: 0.8rem;
+    margin-top: 0.75rem;
+}
+
+/* Side-by-side products */
+.products-side {
+    padding: 2.5rem 0;
+    background: var(--white);
+}
+
+.section-head {
+    text-align: center;
+    margin-bottom: 1.75rem;
+}
+
+.section-head h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 0.35rem;
+}
+
+.section-head p { color: var(--gray); }
+
+.product-row {
+    display: grid;
+    gap: 1.25rem;
+    align-items: center;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    background: var(--cream);
+    border-radius: 16px;
+    border: 1px solid transparent;
+}
+
+.product-row.featured {
+    border-color: var(--gold);
+    background: #fffdf6;
+}
+
+@media (min-width: 700px) {
+    .product-row {
+        grid-template-columns: 240px 1fr;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+}
+
+.product-media .img-ph {
+    aspect-ratio: 1;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #ebe5d8, #faf9f6);
+    border: 1px dashed rgba(201, 162, 39, 0.35);
+    display: grid;
+    place-items: center;
+    color: var(--gray);
+    font-weight: 700;
+}
+
+.product-info .pill {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    background: #eee;
+    margin-bottom: 0.5rem;
+}
+
+.product-info .pill.hot {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.product-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.25rem;
+}
+
+.product-info .price {
+    margin: 0.35rem 0 0.75rem;
+    font-size: 1.15rem;
+}
+
+.product-info .price strong {
+    font-size: 1.6rem;
+    color: var(--gold-dark);
+}
+
+.product-info .old {
+    text-decoration: line-through;
+    color: var(--gray);
+    margin-left: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.specs {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0 1.25rem;
+}
+
+.specs li {
+    position: relative;
+    padding-right: 1.2rem;
+    margin-bottom: 0.35rem;
+    color: var(--gray);
+    font-size: 0.95rem;
+}
+
+.specs li::before {
+    content: "✓";
+    position: absolute;
+    right: 0;
+    color: var(--gold-dark);
+    font-weight: 800;
+}
+
+.btn-solid,
+.btn-outline {
+    display: inline-block;
+    padding: 0.75rem 1.35rem;
+    border-radius: 10px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.btn-solid {
+    background: var(--black);
+    color: #fff;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--black);
+    border: 2px solid var(--black);
+}
+
+.benefits {
+    padding: 2rem 0;
+    background: var(--cream);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .benefits-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.benefits-grid h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.benefits-grid p {
+    color: var(--gray);
+    font-size: 0.85rem;
+}
+
+.reviews {
+    padding: 2.5rem 0;
+    background: var(--white);
+}
+
+.reviews-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.reviews-grid blockquote {
+    margin: 0;
+    padding: 1.15rem;
+    background: var(--cream);
+    border-radius: 14px;
+}
+
+.reviews-grid p {
+    margin-bottom: 0.75rem;
+    color: var(--black);
+}
+
+.reviews-grid cite {
+    font-style: normal;
+    font-size: 0.85rem;
+    color: var(--gray);
+    font-weight: 700;
+}
+
+.cta-final {
+    padding: 2.5rem 0;
+    text-align: center;
+    background: var(--black);
+    color: #fff;
+}
+
+.cta-final h2 { margin-bottom: 0.5rem; }
+.cta-final p { opacity: 0.8; margin-bottom: 1.25rem; }
+.cta-final .btn-solid {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.footer-fast {
+    background: #3d3224;
+    color: #ddd;
+    padding: 2rem 0 1.5rem;
+}
+
+.footer-grid {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.footer-fast a {
+    color: #ddd;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 1rem;
+    margin-bottom: 0.35rem;
+}
+
+.footer-fast .logo { color: var(--gold); display: block; margin-bottom: 0.35rem; }
+.footer-fast .copy { font-size: 0.85rem; opacity: 0.7; margin: 0; }
 
 /* -------------------- 
    Problem Cards

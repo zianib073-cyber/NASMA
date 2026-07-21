@@ -4,791 +4,341 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHIZEL | انحت فكك - علكة الفك الأصلية</title>
-    <meta name="description" content="علكة شيزل الأصلية لنحت الفك وتحديد ملامح الوجه. نتائج مضمونة خلال 30 يوم. شحن مجاني لجميع مناطق السعودية.">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="علكة شيزل الأصلية لنحت الفك. نتائج خلال 30 يوم. شحن مجاني والدفع عند الاستلام في السعودية.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="config.js"></script>
 </head>
-<body class="font-tajawal">
+<body>
 
-    <!-- Top Banner -->
+    <!-- Banner -->
     <div class="top-banner">
-        <div class="container mx-auto px-4">
-            <p class="flex items-center justify-center gap-3 flex-wrap text-sm">
-                <span>🚚 شحن مجاني لكل السعودية</span>
-                <span class="hidden sm:inline">|</span>
-                <span>💳 الدفع عند الاستلام</span>
-                <span class="hidden sm:inline">|</span>
-                <span>✅ ضمان 30 يوم</span>
-            </p>
-        </div>
+        <p>شحن مجاني لكل السعودية · الدفع عند الاستلام · ضمان 30 يوم</p>
     </div>
 
-    <!-- Header/Navbar -->
+    <!-- Nav -->
     <header class="navbar">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="logo">CHIZEL</a>
-                
-                <nav class="hidden md:flex items-center gap-8">
-                    <a href="index.html" class="nav-link active">الرئيسية</a>
-                    <a href="collection.html" class="nav-link">المنتجات</a>
-                    <a href="about.html" class="nav-link">من نحن</a>
-                    <a href="contact.html" class="nav-link">تواصل معنا</a>
-                    <a href="#order" class="btn-gold-sm">اطلب الحين</a>
-                </nav>
-                
-                <button class="md:hidden mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
-            
-            <nav class="mobile-nav" id="mobileNav">
-                <a href="index.html" class="mobile-nav-link active">الرئيسية</a>
-                <a href="collection.html" class="mobile-nav-link">المنتجات</a>
-                <a href="about.html" class="mobile-nav-link">من نحن</a>
-                <a href="contact.html" class="mobile-nav-link">تواصل معنا</a>
-                <a href="#order" class="btn-gold-sm mobile-cta">اطلب الحين</a>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">CHIZEL</a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link active">الرئيسية</a>
+                <a href="collection.html" class="nav-link">المنتجات</a>
+                <a href="about.html" class="nav-link">من نحن</a>
+                <a href="contact.html" class="nav-link">تواصل معنا</a>
             </nav>
+            <a href="#order" class="btn-gold-sm">اطلب الحين</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة" type="button">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="mobile-nav-link active">الرئيسية</a>
+            <a href="collection.html" class="mobile-nav-link">المنتجات</a>
+            <a href="about.html" class="mobile-nav-link">من نحن</a>
+            <a href="contact.html" class="mobile-nav-link">تواصل معنا</a>
+            <a href="#order" class="btn-gold-sm mobile-cta">اطلب الحين</a>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-luxury">
-        <div class="hero-overlay"></div>
-        <div class="hero-particles"></div>
-        
-        <div class="container mx-auto px-4 py-20 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-                
-                <div class="text-center lg:text-right order-2 lg:order-1">
-                    <div class="luxury-badge">
-                        <span class="badge-dot"></span>
-                        <span>الأكثر مبيعاً في السعودية 🔥</span>
-                    </div>
-                    
-                    <h1 class="hero-title">
-                        <span class="title-gold">CHIZEL</span>
-                        <br>
-                        <span class="title-white">انحت فكك</span>
-                    </h1>
-                    
-                    <p class="hero-subtitle">
-                        علكة المستكة الأصلية لنحت الفك وتحديد ملامح الوجه. 
-                        <strong>نتائج واضحة خلال 30 يوم</strong> أو استرجع فلوسك!
-                    </p>
-                    
-                    <div class="hero-buttons">
-                        <a href="#order" class="btn-luxury-gold">
-                            <span>اطلب الحين</span>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-                            </svg>
-                        </a>
-                        <a href="#products" class="btn-luxury-outline">
-                            شوف المنتجات
-                        </a>
-                    </div>
-                    
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">+3,500</span>
-                            <span class="stat-label">عميل راضي</span>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat-item">
-                            <span class="stat-number">4.9</span>
-                            <span class="stat-label">تقييم العملاء</span>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat-item">
-                            <span class="stat-number">30 يوم</span>
-                            <span class="stat-label">ضمان ذهبي</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="order-1 lg:order-2 flex justify-center">
-                    <div class="hero-product-showcase">
-                        <div class="product-glow"></div>
-                        <div class="product-circle">
-                            <div class="product-placeholder">
-                                <svg class="w-24 h-24 text-gold/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-                                </svg>
-                                <span class="placeholder-text">صورة المنتج</span>
-                            </div>
-                        </div>
-                        <div class="floating-badge badge-1">
-                            <span>💪</span>
-                            <span>نتائج مضمونة</span>
-                        </div>
-                        <div class="floating-badge badge-2">
-                            <span>🏆</span>
-                            <span>الأصلي</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="scroll-indicator">
-            <span>اكتشف المزيد</span>
-            <div class="scroll-mouse">
-                <div class="scroll-wheel"></div>
-            </div>
-        </div>
-    </section>
+    <!-- Hero + Order Form (فوق كاع) -->
+    <section class="hero-order" id="order">
+        <div class="container">
+            <div class="hero-order-grid">
 
-    <!-- Problem Section -->
-    <section class="section-luxury-dark">
-        <div class="container mx-auto px-4">
-            <div class="section-header-luxury reveal">
-                <span class="section-badge">المشكلة</span>
-                <h2 class="section-title-luxury">هل تعاني من ضعف خط الفك؟</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8 mt-12">
-                <div class="problem-card reveal">
-                    <div class="problem-icon">😕</div>
-                    <h3>فك غير محدد</h3>
-                    <p>ملامح الوجه مو واضحة وتبين أكبر من عمرك</p>
+                <!-- معلومات المنتج -->
+                <div class="hero-copy">
+                    <span class="badge-hot">الأكثر مبيعاً في السعودية</span>
+                    <h1><span class="gold">CHIZEL</span><br>انحت فكك</h1>
+                    <p class="lead">علكة المستكة الأصلية لنحت الفك وتحديد الملامح. نتائج واضحة خلال 30 يوم أو استرجع فلوسك.</p>
+                    <ul class="trust-row">
+                        <li><strong>+3,500</strong> عميل راضي</li>
+                        <li><strong>4.9</strong> تقييم</li>
+                        <li><strong>30 يوم</strong> ضمان</li>
+                    </ul>
                 </div>
-                <div class="problem-card reveal">
-                    <div class="problem-icon">📱</div>
-                    <h3>وجه مستدير</h3>
-                    <p>الصور ما تطلع حلوة والـ Double Chin واضح</p>
-                </div>
-                <div class="problem-card reveal">
-                    <div class="problem-icon">💪</div>
-                    <h3>تبي مظهر أقوى</h3>
-                    <p>تبي فك حاد ومحدد مثل المشاهير</p>
-                </div>
-            </div>
-            
-            <div class="solution-box reveal">
-                <h3>✅ الحل: علكة CHIZEL</h3>
-                <p>تمرين يومي بسيط يقوي عضلات الفك ويحدد ملامحك. النتيجة؟ فك منحوت ومظهر أقوى!</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Products Section -->
-    <section id="products" class="section-luxury-light">
-        <div class="container mx-auto px-4">
-            <div class="section-header-luxury reveal">
-                <span class="section-badge dark">اختر باقتك</span>
-                <h2 class="section-title-luxury dark">3 باقات تناسب احتياجك</h2>
-                <p class="section-desc-luxury dark">كل ما طلبت أكثر، كل ما وفرت أكثر</p>
-            </div>
-            
-            <div class="products-grid">
-                
-                <!-- Product 1 -->
-                <div class="luxury-product-card reveal">
-                    <div class="product-card-badge">للتجربة</div>
-                    <div class="product-card-image">
-                        <div class="image-placeholder-luxury">
-                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-                            </svg>
-                            <span>صورة المنتج</span>
-                        </div>
-                    </div>
-                    <div class="product-card-content">
-                        <span class="product-card-category">شهر واحد</span>
-                        <h3 class="product-card-title">شيزل بيسك</h3>
-                        <p class="product-card-desc">علبة واحدة تكفي شهر كامل. مثالية للي يبي يجرب أول مرة.</p>
-                        <ul class="product-features">
-                            <li>✓ علبة واحدة (30 قطعة)</li>
-                            <li>✓ شحن مجاني</li>
-                            <li>✓ ضمان 30 يوم</li>
-                        </ul>
-                        <div class="product-card-footer">
-                            <div class="product-card-price">
-                                <span class="price-amount">199</span>
-                                <span class="price-currency">ر.س</span>
-                            </div>
-                            <a href="#order" class="btn-product-luxury">اطلب الحين</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 2 - Best Seller -->
-                <div class="luxury-product-card featured reveal">
-                    <div class="product-card-badge bestseller">الأكثر طلباً 🔥</div>
-                    <div class="product-card-image">
-                        <div class="image-placeholder-luxury">
-                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-                            </svg>
-                            <span>صورة المنتج</span>
-                        </div>
-                    </div>
-                    <div class="product-card-content">
-                        <span class="product-card-category">شهرين</span>
-                        <h3 class="product-card-title">شيزل برو</h3>
-                        <p class="product-card-desc">علبتين + دليل تمارين الفك الاحترافي. نتائج أسرع وأقوى!</p>
-                        <ul class="product-features">
-                            <li>✓ علبتين (60 قطعة)</li>
-                            <li>✓ دليل تمارين PDF</li>
-                            <li>✓ شحن مجاني سريع</li>
-                            <li>✓ ضمان 30 يوم</li>
-                        </ul>
-                        <div class="product-card-footer">
-                            <div class="product-card-price">
-                                <span class="price-old">398</span>
-                                <span class="price-amount">249</span>
-                                <span class="price-currency">ر.س</span>
-                            </div>
-                            <a href="#order" class="btn-product-luxury">اطلب الحين</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 3 -->
-                <div class="luxury-product-card reveal">
-                    <div class="product-card-badge premium">توفير أكبر 💰</div>
-                    <div class="product-card-image">
-                        <div class="image-placeholder-luxury">
-                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-                            </svg>
-                            <span>صورة المنتج</span>
-                        </div>
-                    </div>
-                    <div class="product-card-content">
-                        <span class="product-card-category">3 شهور</span>
-                        <h3 class="product-card-title">شيزل ماكس</h3>
-                        <p class="product-card-desc">الباقة الكاملة! 3 علب + دليل + متابعة شخصية واتساب.</p>
-                        <ul class="product-features">
-                            <li>✓ 3 علب (90 قطعة)</li>
-                            <li>✓ دليل تمارين PDF</li>
-                            <li>✓ متابعة واتساب</li>
-                            <li>✓ شحن مجاني أولوية</li>
-                            <li>✓ ضمان 30 يوم</li>
-                        </ul>
-                        <div class="product-card-footer">
-                            <div class="product-card-price">
-                                <span class="price-old">597</span>
-                                <span class="price-amount">379</span>
-                                <span class="price-currency">ر.س</span>
-                            </div>
-                            <a href="#order" class="btn-product-luxury">اطلب الحين</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <!-- نموذج الطلب -->
+                <form class="order-form-fast" id="orderForm">
+                    <h2>اطلب الحين</h2>
+                    <p class="form-hint">الدفع عند الاستلام · شحن مجاني</p>
 
-    <!-- Features Section -->
-    <section id="features" class="section-luxury-dark">
-        <div class="container mx-auto px-4">
-            <div class="section-header-luxury reveal">
-                <span class="section-badge">ليش CHIZEL؟</span>
-                <h2 class="section-title-luxury">مو مجرد علكة عادية</h2>
-            </div>
-            
-            <div class="features-luxury-grid">
-                <div class="feature-luxury-card reveal">
-                    <div class="feature-luxury-icon">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-luxury-title">مستكة طبيعية 100%</h3>
-                    <p class="feature-luxury-desc">مصنوعة من مستكة شجر الصنوبر الأصلية. بدون مواد كيميائية.</p>
-                </div>
-                
-                <div class="feature-luxury-card reveal">
-                    <div class="feature-luxury-icon gold">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-luxury-title">10x أقوى من العادية</h3>
-                    <p class="feature-luxury-desc">مقاومة عالية تقوي عضلات الفك بشكل فعال وسريع.</p>
-                </div>
-                
-                <div class="feature-luxury-card reveal">
-                    <div class="feature-luxury-icon">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-luxury-title">نتائج في 30 يوم</h3>
-                    <p class="feature-luxury-desc">استخدم 20-30 دقيقة يومياً وشوف الفرق بنفسك.</p>
-                </div>
-                
-                <div class="feature-luxury-card reveal">
-                    <div class="feature-luxury-icon gold">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-luxury-title">الدفع عند الاستلام</h3>
-                    <p class="feature-luxury-desc">ما تدفع إلا لما يوصلك الطلب. بدون مخاطرة!</p>
-                </div>
-                
-                <div class="feature-luxury-card reveal">
-                    <div class="feature-luxury-icon">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-luxury-title">شحن سريع مجاني</h3>
-                    <p class="feature-luxury-desc">يوصلك لين باب بيتك خلال 2-4 أيام فقط.</p>
-                </div>
-                
-                <div class="feature-luxury-card reveal">
-                    <div class="feature-luxury-icon gold">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-luxury-title">ضمان ذهبي 30 يوم</h3>
-                    <p class="feature-luxury-desc">مو راضي؟ نرجع لك فلوسك كاملة. بدون أسئلة!</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <fieldset class="pack-select">
+                        <legend>اختر الباقة</legend>
+                        <label class="pack-option">
+                            <input type="radio" name="product" value="basic" data-name="شيزل بيسك" data-price="199">
+                            <span class="pack-box">
+                                <span class="pack-name">شيزل بيسك</span>
+                                <span class="pack-desc">علبة واحدة · شهر</span>
+                                <span class="pack-price">199 ر.س</span>
+                            </span>
+                        </label>
+                        <label class="pack-option">
+                            <input type="radio" name="product" value="pro" data-name="شيزل برو" data-price="249" checked>
+                            <span class="pack-box">
+                                <span class="pack-tag">الأكثر طلباً</span>
+                                <span class="pack-name">شيزل برو</span>
+                                <span class="pack-desc">علبتين + دليل</span>
+                                <span class="pack-price">249 ر.س</span>
+                            </span>
+                        </label>
+                        <label class="pack-option">
+                            <input type="radio" name="product" value="max" data-name="شيزل ماكس" data-price="379">
+                            <span class="pack-box">
+                                <span class="pack-name">شيزل ماكس</span>
+                                <span class="pack-desc">3 علب + متابعة</span>
+                                <span class="pack-price">379 ر.س</span>
+                            </span>
+                        </label>
+                    </fieldset>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="section-luxury-light">
-        <div class="container mx-auto px-4">
-            <div class="section-header-luxury reveal">
-                <span class="section-badge dark">آراء العملاء</span>
-                <h2 class="section-title-luxury dark">+3,500 شخص غيروا مظهرهم</h2>
-            </div>
-            
-            <div class="testimonials-grid">
-                <div class="testimonial-luxury-card reveal">
-                    <div class="testimonial-quote">"</div>
-                    <div class="testimonial-rating">★★★★★</div>
-                    <p class="testimonial-text">
-                        صراحة كنت متردد بالبداية، بس بعد شهر الفرق واضح جداً! الفك صار محدد أكثر والصور صارت تطلع حلوة. أنصح فيها بقوة.
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar-luxury">م</div>
-                        <div class="author-info-luxury">
-                            <span class="author-name-luxury">محمد العتيبي</span>
-                            <span class="author-details">الرياض · شيزل برو</span>
-                            <span class="verified-badge">✓ مشتري مؤكد</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-luxury-card reveal">
-                    <div class="testimonial-quote">"</div>
-                    <div class="testimonial-rating">★★★★★</div>
-                    <p class="testimonial-text">
-                        أفضل استثمار سويته لنفسي! خط الفك صار واضح وثقتي بنفسي زادت. الشباب في الجيم لاحظوا الفرق وسألوني كيف!
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar-luxury">ع</div>
-                        <div class="author-info-luxury">
-                            <span class="author-name-luxury">عبدالله الشمري</span>
-                            <span class="author-details">جدة · شيزل ماكس</span>
-                            <span class="verified-badge">✓ مشتري مؤكد</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-luxury-card reveal">
-                    <div class="testimonial-quote">"</div>
-                    <div class="testimonial-rating">★★★★★</div>
-                    <p class="testimonial-text">
-                        المنتج فعلاً يفرق! أستخدمها وأنا أسوق أو أشتغل. سهلة ومريحة والنتيجة تستاهل. الحين طلبت الباقة الثانية.
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar-luxury">ف</div>
-                        <div class="author-info-luxury">
-                            <span class="author-name-luxury">فهد الدوسري</span>
-                            <span class="author-details">الدمام · شيزل برو</span>
-                            <span class="verified-badge">✓ مشتري مؤكد</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-luxury-card reveal">
-                    <div class="testimonial-quote">"</div>
-                    <div class="testimonial-rating">★★★★★</div>
-                    <p class="testimonial-text">
-                        جربت منتجات كثيرة قبل وما نفعت. CHIZEL فرق معي من أول أسبوعين! جودة عالية ونتائج حقيقية.
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar-luxury">س</div>
-                        <div class="author-info-luxury">
-                            <span class="author-name-luxury">سعود القحطاني</span>
-                            <span class="author-details">مكة · شيزل بيسك</span>
-                            <span class="verified-badge">✓ مشتري مؤكد</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-luxury-card reveal">
-                    <div class="testimonial-quote">"</div>
-                    <div class="testimonial-rating">★★★★★</div>
-                    <p class="testimonial-text">
-                        هدية لأخوي وانبسط فيها مرة! الحين هو يطلب لربعه. المنتج جودته عالية والتغليف فخم.
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar-luxury">خ</div>
-                        <div class="author-info-luxury">
-                            <span class="author-name-luxury">خالد المالكي</span>
-                            <span class="author-details">الطائف · شيزل ماكس</span>
-                            <span class="verified-badge">✓ مشتري مؤكد</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-luxury-card reveal">
-                    <div class="testimonial-quote">"</div>
-                    <div class="testimonial-rating">★★★★★</div>
-                    <p class="testimonial-text">
-                        التوصيل كان سريع جداً (يومين بس!) والمنتج أصلي. دليل التمارين ساعدني أستخدمها صح. شكراً CHIZEL!
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar-luxury">ن</div>
-                        <div class="author-info-luxury">
-                            <span class="author-name-luxury">ناصر الحربي</span>
-                            <span class="author-details">بريدة · شيزل برو</span>
-                            <span class="verified-badge">✓ مشتري مؤكد</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="trust-indicators reveal">
-                <div class="trust-item">
-                    <span class="trust-number">4.9/5</span>
-                    <span class="trust-label">تقييم العملاء</span>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-number">+3,500</span>
-                    <span class="trust-label">طلب مكتمل</span>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-number">98%</span>
-                    <span class="trust-label">راضين تماماً</span>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <label class="field">
+                        <span>الاسم</span>
+                        <input type="text" id="name" name="name" required placeholder="اسمك الكريم" autocomplete="name">
+                    </label>
 
-    <!-- Order Form Section -->
-    <section id="order" class="section-luxury-dark">
-        <div class="container mx-auto px-4">
-            <div class="section-header-luxury reveal">
-                <span class="section-badge">اطلب الحين</span>
-                <h2 class="section-title-luxury">وصّل طلبك لباب بيتك</h2>
-                <p class="section-desc-luxury">الدفع عند الاستلام · شحن مجاني · ضمان 30 يوم</p>
-            </div>
-            
-            <div class="max-w-2xl mx-auto reveal-scale">
-                <form class="order-form-luxury">
-                    
-                    <div class="form-group-luxury">
-                        <label class="form-label-luxury">اختر الباقة</label>
-                        <div class="product-select-luxury">
-                            <label class="product-option">
-                                <input type="radio" name="product" value="basic">
-                                <div class="option-content">
-                                    <span class="option-name">شيزل بيسك</span>
-                                    <span class="option-desc">علبة واحدة - شهر</span>
-                                    <span class="option-price">199 ر.س</span>
-                                </div>
-                            </label>
-                            <label class="product-option">
-                                <input type="radio" name="product" value="pro" checked>
-                                <div class="option-content">
-                                    <span class="option-badge">الأكثر طلباً</span>
-                                    <span class="option-name">شيزل برو</span>
-                                    <span class="option-desc">علبتين + دليل</span>
-                                    <span class="option-price">249 ر.س</span>
-                                </div>
-                            </label>
-                            <label class="product-option">
-                                <input type="radio" name="product" value="max">
-                                <div class="option-content">
-                                    <span class="option-name">شيزل ماكس</span>
-                                    <span class="option-desc">3 علب + دليل + متابعة</span>
-                                    <span class="option-price">379 ر.س</span>
-                                </div>
-                            </label>
-                        </div>
+                    <label class="field">
+                        <span>رقم الجوال</span>
+                        <input type="tel" id="phone" name="phone" required placeholder="05xxxxxxxx" inputmode="tel" autocomplete="tel" class="phone-input">
+                    </label>
+
+                    <label class="field">
+                        <span>المدينة</span>
+                        <input type="text" id="city" name="city" required placeholder="مثال: الرياض" autocomplete="address-level2">
+                    </label>
+
+                    <div class="order-total">
+                        <span>الإجمالي</span>
+                        <strong id="total-price">249 ر.س</strong>
                     </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group-luxury">
-                            <label for="name" class="form-label-luxury">الاسم</label>
-                            <input type="text" id="name" name="name" required placeholder="اسمك الكريم" class="form-input-luxury">
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group-luxury">
-                            <label for="phone" class="form-label-luxury">رقم الجوال</label>
-                            <input type="tel" id="phone" name="phone" required placeholder="05xxxxxxxx" class="form-input-luxury" style="text-align: right; direction: ltr;">
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group-luxury">
-                            <label for="city" class="form-label-luxury">المدينة</label>
-                            <input type="text" id="city" name="city" required placeholder="مثال: الرياض" class="form-input-luxury">
-                        </div>
-                    </div>
-                    
-                    <div class="order-summary-luxury">
-                        <div class="summary-row-luxury">
-                            <span>المنتج</span>
-                            <span id="selected-product">شيزل برو</span>
-                        </div>
-                        <div class="summary-row-luxury">
-                            <span>الشحن</span>
-                            <span class="text-green-500 font-bold">مجاني 🎉</span>
-                        </div>
-                        <div class="summary-row-luxury total">
-                            <span>الإجمالي</span>
-                            <span id="total-price">249 ر.س</span>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" class="btn-submit-luxury">
-                        <span>تأكيد الطلب - الدفع عند الاستلام</span>
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                    </button>
-                    
-                    <div class="form-trust-message">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                        </svg>
-                        <span>معلوماتك آمنة 100% · الدفع عند الاستلام فقط</span>
-                    </div>
+
+                    <button type="submit" class="btn-submit" id="submitBtn">تأكيد الطلب · الدفع عند الاستلام</button>
+                    <p class="secure-note">معلوماتك آمنة · الدفع عند الاستلام فقط</p>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="section-luxury-light">
-        <div class="container mx-auto px-4">
-            <div class="section-header-luxury reveal">
-                <span class="section-badge dark">أسئلة شائعة</span>
-                <h2 class="section-title-luxury dark">عندك سؤال؟</h2>
+    <!-- المنتجات: صورة جنب المعلومات -->
+    <section class="products-side" id="products">
+        <div class="container">
+            <header class="section-head">
+                <h2>اختر باقتك</h2>
+                <p>كل ما طلبت أكثر، كل ما وفرت أكثر</p>
+            </header>
+
+            <!-- منتج 1 -->
+            <article class="product-row">
+                <div class="product-media">
+                    <div class="img-ph" role="img" aria-label="صورة شيزل بيسك">صورة المنتج</div>
+                </div>
+                <div class="product-info">
+                    <span class="pill">للتجربة</span>
+                    <h3>شيزل بيسك</h3>
+                    <p class="price"><strong>199</strong> ر.س</p>
+                    <p>علبة واحدة تكفي شهر كامل. مثالية للي يبي يجرب أول مرة.</p>
+                    <ul class="specs">
+                        <li>علبة واحدة (30 قطعة)</li>
+                        <li>شحن مجاني</li>
+                        <li>ضمان 30 يوم</li>
+                    </ul>
+                    <a href="#order" class="btn-outline" data-pack="basic">اطلب الحين</a>
+                </div>
+            </article>
+
+            <!-- منتج 2 -->
+            <article class="product-row featured">
+                <div class="product-media">
+                    <div class="img-ph" role="img" aria-label="صورة شيزل برو">صورة المنتج</div>
+                </div>
+                <div class="product-info">
+                    <span class="pill hot">الأكثر طلباً</span>
+                    <h3>شيزل برو</h3>
+                    <p class="price"><span class="old">398</span> <strong>249</strong> ر.س</p>
+                    <p>علبتين + دليل تمارين الفك. نتائج أسرع وأقوى.</p>
+                    <ul class="specs">
+                        <li>علبتين (60 قطعة)</li>
+                        <li>دليل تمارين PDF</li>
+                        <li>شحن مجاني سريع</li>
+                        <li>ضمان 30 يوم</li>
+                    </ul>
+                    <a href="#order" class="btn-solid" data-pack="pro">اطلب الحين</a>
+                </div>
+            </article>
+
+            <!-- منتج 3 -->
+            <article class="product-row">
+                <div class="product-media">
+                    <div class="img-ph" role="img" aria-label="صورة شيزل ماكس">صورة المنتج</div>
+                </div>
+                <div class="product-info">
+                    <span class="pill">توفير أكبر</span>
+                    <h3>شيزل ماكس</h3>
+                    <p class="price"><span class="old">597</span> <strong>379</strong> ر.س</p>
+                    <p>الباقة الكاملة: 3 علب + دليل + متابعة واتساب.</p>
+                    <ul class="specs">
+                        <li>3 علب (90 قطعة)</li>
+                        <li>دليل تمارين PDF</li>
+                        <li>متابعة واتساب</li>
+                        <li>شحن أولوية + ضمان 30 يوم</li>
+                    </ul>
+                    <a href="#order" class="btn-outline" data-pack="max">اطلب الحين</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- مميزات مختصرة -->
+    <section class="benefits">
+        <div class="container benefits-grid">
+            <div>
+                <h3>مستكة طبيعية</h3>
+                <p>بدون مواد كيميائية</p>
             </div>
-            
-            <div class="faq-grid mt-12">
-                <div class="faq-item reveal">
-                    <h4 class="faq-question">كم المدة عشان أشوف نتائج؟</h4>
-                    <p class="faq-answer">معظم العملاء يلاحظون فرق واضح خلال 2-4 أسابيع من الاستخدام اليومي (20-30 دقيقة).</p>
-                </div>
-                
-                <div class="faq-item reveal">
-                    <h4 class="faq-question">هل العلكة آمنة للاستخدام؟</h4>
-                    <p class="faq-answer">نعم 100%! مصنوعة من مستكة طبيعية بدون أي مواد كيميائية. آمنة للاستخدام اليومي.</p>
-                </div>
-                
-                <div class="faq-item reveal">
-                    <h4 class="faq-question">كيف طريقة الدفع؟</h4>
-                    <p class="faq-answer">الدفع عند الاستلام فقط. ما تدفع إلا لما يوصلك الطلب لباب بيتك.</p>
-                </div>
-                
-                <div class="faq-item reveal">
-                    <h4 class="faq-question">كم يوم يوصل الطلب؟</h4>
-                    <p class="faq-answer">الشحن يستغرق 2-4 أيام عمل لجميع مناطق السعودية. مجاني بدون أي رسوم إضافية.</p>
-                </div>
-                
-                <div class="faq-item reveal">
-                    <h4 class="faq-question">لو ما عجبني المنتج؟</h4>
-                    <p class="faq-answer">عندك ضمان 30 يوم. لو مو راضي نرجع لك فلوسك كاملة بدون أي أسئلة.</p>
-                </div>
-                
-                <div class="faq-item reveal">
-                    <h4 class="faq-question">هل فيه متابعة بعد الشراء؟</h4>
-                    <p class="faq-answer">باقة شيزل ماكس تشمل متابعة شخصية عبر الواتساب. الباقات الأخرى تشمل دعم عبر الواتساب.</p>
-                </div>
+            <div>
+                <h3>نتائج في 30 يوم</h3>
+                <p>20–30 دقيقة يومياً</p>
+            </div>
+            <div>
+                <h3>دفع عند الاستلام</h3>
+                <p>بدون مخاطرة</p>
+            </div>
+            <div>
+                <h3>شحن مجاني</h3>
+                <p>2–4 أيام لكل السعودية</p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer-luxury">
-        <div class="container mx-auto px-4 py-16">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3 class="footer-logo">CHIZEL</h3>
-                    <p class="footer-desc">علكة الفك الأصلية لنحت الملامح وتحديد خط الفك. نتائج مضمونة أو استرجاع كامل!</p>
-                    <div class="footer-social">
-                        <a href="#" class="social-btn"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
-                        <a href="#" class="social-btn"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 448 512"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg></a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>روابط سريعة</h4>
-                    <ul>
-                        <li><a href="index.html">الرئيسية</a></li>
-                        <li><a href="collection.html">المنتجات</a></li>
-                        <li><a href="about.html">من نحن</a></li>
-                        <li><a href="contact.html">تواصل معنا</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>المساعدة</h4>
-                    <ul>
-                        <li><a href="contact.html">الدعم الفني</a></li>
-                        <li><a href="#">سياسة الشحن</a></li>
-                        <li><a href="#">الاسترجاع والضمان</a></li>
-                    </ul>
-                </div>
+    <!-- آراء مختصرة -->
+    <section class="reviews">
+        <div class="container">
+            <header class="section-head">
+                <h2>آراء عملائنا</h2>
+            </header>
+            <div class="reviews-grid">
+                <blockquote>
+                    <p>«بعد شهر الفرق واضح جداً! الفك صار محدد أكثر.»</p>
+                    <cite>محمد العتيبي · الرياض</cite>
+                </blockquote>
+                <blockquote>
+                    <p>«أفضل استثمار سويته لنفسي. الشباب في الجيم لاحظوا الفرق.»</p>
+                    <cite>عبدالله الشمري · جدة</cite>
+                </blockquote>
+                <blockquote>
+                    <p>«التوصيل سريع والمنتج أصلي. أنصح فيها بقوة.»</p>
+                    <cite>فهد الدوسري · الدمام</cite>
+                </blockquote>
             </div>
-            
-            <div class="footer-bottom">
-                <p>© 2024 CHIZEL. جميع الحقوق محفوظة.</p>
-                <div class="footer-badges">
-                    <span>🚚 شحن مجاني</span>
-                    <span>💳 الدفع عند الاستلام</span>
-                    <span>✅ ضمان 30 يوم</span>
-                </div>
+        </div>
+    </section>
+
+    <!-- CTA نهائي -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>جاهز تبدأ؟</h2>
+            <p>اطلب الحين · شحن مجاني · ضمان 30 يوم</p>
+            <a href="#order" class="btn-solid">ارجع للفورم واطلب</a>
+        </div>
+    </section>
+
+    <footer class="footer-fast">
+        <div class="container footer-grid">
+            <div>
+                <strong class="logo">CHIZEL</strong>
+                <p>علكة الفك الأصلية لنحت الملامح.</p>
             </div>
+            <div>
+                <a href="index.html">الرئيسية</a>
+                <a href="collection.html">المنتجات</a>
+                <a href="about.html">من نحن</a>
+                <a href="contact.html">تواصل معنا</a>
+            </div>
+            <p class="copy">© 2024 CHIZEL. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileNav = document.getElementById('mobileNav');
-        
-        mobileMenuBtn.addEventListener('click', function() {
-            this.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-        });
-        
-        document.querySelectorAll('.mobile-nav-link, .mobile-cta').forEach(link => {
-            link.addEventListener('click', function() {
-                mobileMenuBtn.classList.remove('active');
-                mobileNav.classList.remove('active');
-            });
-        });
-        
-        // Scroll Reveal
-        function revealOnScroll() {
-            const reveals = document.querySelectorAll('.reveal, .reveal-scale');
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('active');
-                }
-            });
-        }
-        window.addEventListener('load', revealOnScroll);
-        window.addEventListener('scroll', revealOnScroll);
-        
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-        
-        // Product selection
-        const productRadios = document.querySelectorAll('input[name="product"]');
-        const selectedProductEl = document.getElementById('selected-product');
-        const totalPriceEl = document.getElementById('total-price');
-        
-        const products = {
-            basic: { name: 'شيزل بيسك', price: 199 },
-            pro: { name: 'شيزل برو', price: 249 },
-            max: { name: 'شيزل ماكس', price: 379 }
-        };
-        
-        productRadios.forEach(radio => {
-            radio.addEventListener('change', function() {
-                const product = products[this.value];
-                selectedProductEl.textContent = product.name;
-                totalPriceEl.textContent = product.price + ' ر.س';
-            });
-        });
+        (function () {
+            var menuBtn = document.getElementById('mobileMenuBtn');
+            var mobileNav = document.getElementById('mobileNav');
+            if (menuBtn && mobileNav) {
+                menuBtn.addEventListener('click', function () {
+                    menuBtn.classList.toggle('active');
+                    mobileNav.classList.toggle('active');
+                });
+            }
 
-        // Form Submission to SheetDB
-        const orderForm = document.querySelector('.order-form-luxury');
-        const SHEETDB_URL = 'https://sheetdb.io/api/v1/glsn5w5ktwugw';
-        
-        orderForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerHTML;
-            
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span>جاري الإرسال...</span>';
-            
-            // أسماء الأعمدة لازم تكون نفس اللي في Google Sheets (الصف الأول)
-            const payload = {
-                data: [
-                    {
+            var totalEl = document.getElementById('total-price');
+            var radios = document.querySelectorAll('input[name="product"]');
+
+            function updateTotal() {
+                var selected = document.querySelector('input[name="product"]:checked');
+                if (selected && totalEl) {
+                    totalEl.textContent = selected.getAttribute('data-price') + ' ر.س';
+                }
+            }
+
+            radios.forEach(function (r) {
+                r.addEventListener('change', updateTotal);
+            });
+
+            document.querySelectorAll('[data-pack]').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var pack = btn.getAttribute('data-pack');
+                    var radio = document.querySelector('input[name="product"][value="' + pack + '"]');
+                    if (radio) {
+                        radio.checked = true;
+                        updateTotal();
+                    }
+                });
+            });
+
+            var form = document.getElementById('orderForm');
+            var SHEETDB_URL = 'https://sheetdb.io/api/v1/glsn5w5ktwugw';
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var submitBtn = document.getElementById('submitBtn');
+                var original = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'جاري الإرسال...';
+
+                var payload = {
+                    data: [{
                         name: document.getElementById('name').value.trim(),
                         phone: document.getElementById('phone').value.trim(),
                         city: document.getElementById('city').value.trim()
-                    }
-                ]
-            };
-            
-            try {
-                const response = await fetch(SHEETDB_URL, {
+                    }]
+                };
+
+                fetch(SHEETDB_URL, {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(payload)
-                });
-                
-                const result = await response.json().catch(function() { return null; });
-                
-                // SheetDB كيرجع 201 Created عند النجاح
-                if (response.ok || response.status === 201) {
-                    submitBtn.innerHTML = '<span>✅ تم بنجاح! جاري التحويل...</span>';
-                    submitBtn.style.background = '#22c55e';
-                    setTimeout(function() {
+                })
+                .then(function (res) {
+                    if (res.ok || res.status === 201) {
+                        submitBtn.textContent = 'تم بنجاح...';
                         window.location.href = 'thank-you.html';
-                    }, 800);
-                    return;
-                }
-                
-                console.error('SheetDB Error:', response.status, result);
-                throw new Error('SheetDB failed: ' + response.status);
-            } catch (error) {
-                console.error(error);
-                submitBtn.innerHTML = '<span>❌ حدث خطأ، حاول مرة ثانية</span>';
-                submitBtn.style.background = '#ef4444';
-                
-                setTimeout(function() {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalBtnText;
-                    submitBtn.style.background = '';
-                }, 2500);
-            }
-        });
+                        return;
+                    }
+                    throw new Error('fail');
+                })
+                .catch(function () {
+                    submitBtn.textContent = 'حدث خطأ، حاول مرة ثانية';
+                    setTimeout(function () {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = original;
+                    }, 2000);
+                });
+            });
+        })();
     </script>
-
 </body>
 </html>
