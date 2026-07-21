@@ -8,87 +8,495 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            line-height: 1.7;
+            color: #2c2c2c;
+            background: #faf9f6;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        button, input { font-family: inherit; }
+
+        :root {
+            --gold: #c9a227;
+            --gold-dark: #a68521;
+            --black: #2c2c2c;
+            --cream: #f5f1e8;
+            --white: #ffffff;
+            --gray: #666666;
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        /* Banner */
+        .top-banner {
+            width: 100%;
+            background: linear-gradient(135deg, #c9a227, #d4b44a);
+            color: #2c2c2c;
+            text-align: center;
+            padding: 10px 16px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* Nav */
+        .navbar {
+            width: 100%;
+            background: #fff;
+            border-bottom: 1px solid rgba(201,162,39,0.25);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .nav-inner {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--gold);
+        }
+        .nav-desktop { display: none; gap: 20px; align-items: center; }
+        .nav-desktop a { font-weight: 700; color: var(--black); }
+        .nav-desktop a:hover { color: var(--gold); }
+        .btn-nav {
+            background: var(--gold);
+            color: #2c2c2c;
+            font-weight: 800;
+            padding: 8px 14px;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+        .menu-btn {
+            width: 42px;
+            height: 42px;
+            border: 1px solid rgba(201,162,39,0.4);
+            border-radius: 8px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+        .menu-btn span {
+            width: 18px;
+            height: 2px;
+            background: var(--gold);
+            display: block;
+        }
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            padding: 8px 16px 16px;
+            border-top: 1px solid #eee;
+        }
+        .mobile-nav.open { display: flex; }
+        .mobile-nav a {
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-weight: 700;
+        }
+        @media (min-width: 768px) {
+            .nav-desktop { display: flex; }
+            .menu-btn { display: none; }
+            .mobile-nav { display: none !important; }
+        }
+
+        /* Hero + Form */
+        .hero-order {
+            width: 100%;
+            background: var(--cream);
+            padding: 24px 0 40px;
+        }
+        .hero-grid {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        @media (min-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr 1fr;
+                align-items: start;
+                gap: 40px;
+            }
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(201,162,39,0.18);
+            color: var(--gold-dark);
+            font-size: 13px;
+            font-weight: 800;
+            padding: 6px 12px;
+            border-radius: 999px;
+            margin-bottom: 12px;
+        }
+        .hero-copy h1 {
+            font-size: clamp(32px, 7vw, 52px);
+            line-height: 1.2;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+        .hero-copy h1 .gold { color: var(--gold); }
+        .lead {
+            color: var(--gray);
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+        .trust {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 24px;
+        }
+        .trust li { color: var(--gray); font-size: 14px; }
+        .trust strong {
+            display: block;
+            color: var(--black);
+            font-size: 18px;
+        }
+
+        /* Form */
+        .order-form {
+            width: 100%;
+            background: #fff;
+            border: 1px solid rgba(201,162,39,0.3);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+        .order-form h2 { font-size: 22px; margin-bottom: 4px; }
+        .form-hint { color: var(--gray); font-size: 14px; margin-bottom: 16px; }
+
+        .packs { border: 0; margin: 0 0 16px; padding: 0; width: 100%; }
+        .packs legend { font-weight: 800; margin-bottom: 8px; }
+        .pack {
+            display: block;
+            width: 100%;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+        .pack input { position: absolute; opacity: 0; pointer-events: none; }
+        .pack-box {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 12px 14px;
+            border: 2px solid #e8e4dc;
+            border-radius: 12px;
+            background: #fff;
+        }
+        .pack input:checked + .pack-box {
+            border-color: var(--gold);
+            background: rgba(201,162,39,0.08);
+        }
+        .pack-left { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+        .pack-tag { font-size: 11px; font-weight: 800; color: var(--gold-dark); }
+        .pack-name { font-weight: 800; }
+        .pack-desc { font-size: 13px; color: var(--gray); }
+        .pack-price { font-weight: 800; color: var(--gold-dark); white-space: nowrap; }
+
+        .field {
+            display: block;
+            width: 100%;
+            margin-bottom: 12px;
+        }
+        .field span {
+            display: block;
+            font-weight: 800;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+        .field input {
+            display: block;
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            background: #fff;
+            color: #2c2c2c;
+        }
+        .field input:focus {
+            outline: 2px solid var(--gold);
+            border-color: transparent;
+        }
+        .phone-input {
+            direction: ltr;
+            text-align: right;
+        }
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            margin: 8px 0 14px;
+            border-top: 1px dashed #ddd;
+            border-bottom: 1px dashed #ddd;
+            font-weight: 800;
+        }
+        .total strong { color: var(--gold-dark); font-size: 20px; }
+
+        .btn-submit {
+            width: 100%;
+            border: 0;
+            border-radius: 12px;
+            padding: 16px;
+            background: #2c2c2c;
+            color: #fff;
+            font-size: 17px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+        .btn-submit:disabled { opacity: 0.7; }
+        .secure {
+            text-align: center;
+            color: var(--gray);
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        /* Products side by side */
+        .products { width: 100%; padding: 40px 0; background: #fff; }
+        .section-head { text-align: center; margin-bottom: 24px; }
+        .section-head h2 { font-size: 28px; margin-bottom: 6px; }
+        .section-head p { color: var(--gray); }
+
+        .product-row {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            align-items: center;
+            background: var(--cream);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 16px;
+            border: 1px solid transparent;
+        }
+        .product-row.hot { border-color: var(--gold); background: #fffdf6; }
+        @media (min-width: 700px) {
+            .product-row {
+                grid-template-columns: 220px 1fr;
+                gap: 28px;
+                padding: 20px;
+            }
+        }
+        .img-ph {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 14px;
+            background: linear-gradient(145deg, #ebe5d8, #faf9f6);
+            border: 1px dashed rgba(201,162,39,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-weight: 800;
+        }
+        .pill {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: #eee;
+            margin-bottom: 8px;
+        }
+        .pill.hot { background: var(--gold); color: #2c2c2c; }
+        .product-info h3 { font-size: 22px; margin-bottom: 4px; }
+        .price { margin: 6px 0 10px; font-size: 18px; }
+        .price strong { font-size: 26px; color: var(--gold-dark); }
+        .price .old { text-decoration: line-through; color: var(--gray); margin-left: 6px; font-size: 15px; }
+        .specs { list-style: none; margin: 10px 0 16px; }
+        .specs li {
+            padding-right: 18px;
+            position: relative;
+            margin-bottom: 6px;
+            color: var(--gray);
+        }
+        .specs li::before {
+            content: "✓";
+            position: absolute;
+            right: 0;
+            color: var(--gold-dark);
+            font-weight: 800;
+        }
+        .btn-dark, .btn-line {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 800;
+        }
+        .btn-dark { background: #2c2c2c; color: #fff; }
+        .btn-line { border: 2px solid #2c2c2c; color: #2c2c2c; }
+
+        .benefits {
+            width: 100%;
+            padding: 28px 0;
+            background: var(--cream);
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            .benefits-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        .benefits h3 { font-size: 16px; margin-bottom: 4px; }
+        .benefits p { color: var(--gray); font-size: 13px; }
+
+        .reviews { width: 100%; padding: 40px 0; background: #fff; }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+        @media (min-width: 768px) {
+            .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        .reviews blockquote {
+            background: var(--cream);
+            border-radius: 14px;
+            padding: 16px;
+        }
+        .reviews cite {
+            display: block;
+            margin-top: 10px;
+            font-style: normal;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--gray);
+        }
+
+        .cta {
+            width: 100%;
+            text-align: center;
+            padding: 40px 16px;
+            background: #2c2c2c;
+            color: #fff;
+        }
+        .cta h2 { margin-bottom: 8px; }
+        .cta p { opacity: 0.85; margin-bottom: 16px; }
+        .cta .btn-dark { background: var(--gold); color: #2c2c2c; }
+
+        .footer {
+            width: 100%;
+            background: #3d3224;
+            color: #ddd;
+            padding: 28px 0;
+        }
+        .footer-grid { display: grid; gap: 16px; }
+        .footer a { color: #ddd; margin-left: 12px; display: inline-block; margin-bottom: 6px; }
+        .footer .logo { color: var(--gold); display: block; margin-bottom: 6px; }
+        .copy { font-size: 13px; opacity: 0.7; }
+    </style>
 </head>
 <body>
 
-    <!-- Banner -->
     <div class="top-banner">
         <p>شحن مجاني لكل السعودية · الدفع عند الاستلام · ضمان 30 يوم</p>
     </div>
 
-    <!-- Nav -->
     <header class="navbar">
         <div class="nav-inner">
             <a href="index.html" class="logo">CHIZEL</a>
             <nav class="nav-desktop">
-                <a href="index.html" class="nav-link active">الرئيسية</a>
-                <a href="collection.html" class="nav-link">المنتجات</a>
-                <a href="about.html" class="nav-link">من نحن</a>
-                <a href="contact.html" class="nav-link">تواصل معنا</a>
+                <a href="index.html">الرئيسية</a>
+                <a href="collection.html">المنتجات</a>
+                <a href="about.html">من نحن</a>
+                <a href="contact.html">تواصل معنا</a>
             </nav>
-            <a href="#order" class="btn-gold-sm">اطلب الحين</a>
-            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة" type="button">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
+            <a href="#order" class="btn-nav">اطلب الحين</a>
+            <button class="menu-btn" id="mobileMenuBtn" type="button" aria-label="القائمة">
+                <span></span><span></span><span></span>
             </button>
         </div>
         <nav class="mobile-nav" id="mobileNav">
-            <a href="index.html" class="mobile-nav-link active">الرئيسية</a>
-            <a href="collection.html" class="mobile-nav-link">المنتجات</a>
-            <a href="about.html" class="mobile-nav-link">من نحن</a>
-            <a href="contact.html" class="mobile-nav-link">تواصل معنا</a>
-            <a href="#order" class="btn-gold-sm mobile-cta">اطلب الحين</a>
+            <a href="index.html">الرئيسية</a>
+            <a href="collection.html">المنتجات</a>
+            <a href="about.html">من نحن</a>
+            <a href="contact.html">تواصل معنا</a>
+            <a href="#order" class="btn-nav" style="text-align:center;margin-top:8px;">اطلب الحين</a>
         </nav>
     </header>
 
-    <!-- Hero + Order Form (فوق كاع) -->
+    <!-- الفورم فوق -->
     <section class="hero-order" id="order">
-        <div class="container">
-            <div class="hero-order-grid">
-
-                <!-- معلومات المنتج -->
+        <div class="wrap">
+            <div class="hero-grid">
                 <div class="hero-copy">
-                    <span class="badge-hot">الأكثر مبيعاً في السعودية</span>
+                    <span class="badge">الأكثر مبيعاً في السعودية</span>
                     <h1><span class="gold">CHIZEL</span><br>انحت فكك</h1>
                     <p class="lead">علكة المستكة الأصلية لنحت الفك وتحديد الملامح. نتائج واضحة خلال 30 يوم أو استرجع فلوسك.</p>
-                    <ul class="trust-row">
+                    <ul class="trust">
                         <li><strong>+3,500</strong> عميل راضي</li>
                         <li><strong>4.9</strong> تقييم</li>
                         <li><strong>30 يوم</strong> ضمان</li>
                     </ul>
                 </div>
 
-                <!-- نموذج الطلب -->
-                <form class="order-form-fast" id="orderForm">
+                <form class="order-form" id="orderForm">
                     <h2>اطلب الحين</h2>
                     <p class="form-hint">الدفع عند الاستلام · شحن مجاني</p>
 
-                    <fieldset class="pack-select">
+                    <fieldset class="packs">
                         <legend>اختر الباقة</legend>
-                        <label class="pack-option">
-                            <input type="radio" name="product" value="basic" data-name="شيزل بيسك" data-price="199">
+                        <label class="pack">
+                            <input type="radio" name="product" value="basic" data-price="199">
                             <span class="pack-box">
-                                <span class="pack-name">شيزل بيسك</span>
-                                <span class="pack-desc">علبة واحدة · شهر</span>
+                                <span class="pack-left">
+                                    <span class="pack-name">شيزل بيسك</span>
+                                    <span class="pack-desc">علبة واحدة · شهر</span>
+                                </span>
                                 <span class="pack-price">199 ر.س</span>
                             </span>
                         </label>
-                        <label class="pack-option">
-                            <input type="radio" name="product" value="pro" data-name="شيزل برو" data-price="249" checked>
+                        <label class="pack">
+                            <input type="radio" name="product" value="pro" data-price="249" checked>
                             <span class="pack-box">
-                                <span class="pack-tag">الأكثر طلباً</span>
-                                <span class="pack-name">شيزل برو</span>
-                                <span class="pack-desc">علبتين + دليل</span>
+                                <span class="pack-left">
+                                    <span class="pack-tag">الأكثر طلباً</span>
+                                    <span class="pack-name">شيزل برو</span>
+                                    <span class="pack-desc">علبتين + دليل</span>
+                                </span>
                                 <span class="pack-price">249 ر.س</span>
                             </span>
                         </label>
-                        <label class="pack-option">
-                            <input type="radio" name="product" value="max" data-name="شيزل ماكس" data-price="379">
+                        <label class="pack">
+                            <input type="radio" name="product" value="max" data-price="379">
                             <span class="pack-box">
-                                <span class="pack-name">شيزل ماكس</span>
-                                <span class="pack-desc">3 علب + متابعة</span>
+                                <span class="pack-left">
+                                    <span class="pack-name">شيزل ماكس</span>
+                                    <span class="pack-desc">3 علب + متابعة</span>
+                                </span>
                                 <span class="pack-price">379 ر.س</span>
                             </span>
                         </label>
@@ -98,42 +506,37 @@
                         <span>الاسم</span>
                         <input type="text" id="name" name="name" required placeholder="اسمك الكريم" autocomplete="name">
                     </label>
-
                     <label class="field">
                         <span>رقم الجوال</span>
                         <input type="tel" id="phone" name="phone" required placeholder="05xxxxxxxx" inputmode="tel" autocomplete="tel" class="phone-input">
                     </label>
-
                     <label class="field">
                         <span>المدينة</span>
                         <input type="text" id="city" name="city" required placeholder="مثال: الرياض" autocomplete="address-level2">
                     </label>
 
-                    <div class="order-total">
+                    <div class="total">
                         <span>الإجمالي</span>
                         <strong id="total-price">249 ر.س</strong>
                     </div>
 
                     <button type="submit" class="btn-submit" id="submitBtn">تأكيد الطلب · الدفع عند الاستلام</button>
-                    <p class="secure-note">معلوماتك آمنة · الدفع عند الاستلام فقط</p>
+                    <p class="secure">معلوماتك آمنة · الدفع عند الاستلام فقط</p>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- المنتجات: صورة جنب المعلومات -->
-    <section class="products-side" id="products">
-        <div class="container">
-            <header class="section-head">
+    <!-- منتجات صورة جنب المعلومات -->
+    <section class="products" id="products">
+        <div class="wrap">
+            <div class="section-head">
                 <h2>اختر باقتك</h2>
                 <p>كل ما طلبت أكثر، كل ما وفرت أكثر</p>
-            </header>
+            </div>
 
-            <!-- منتج 1 -->
             <article class="product-row">
-                <div class="product-media">
-                    <div class="img-ph" role="img" aria-label="صورة شيزل بيسك">صورة المنتج</div>
-                </div>
+                <div class="img-ph">صورة المنتج</div>
                 <div class="product-info">
                     <span class="pill">للتجربة</span>
                     <h3>شيزل بيسك</h3>
@@ -144,15 +547,12 @@
                         <li>شحن مجاني</li>
                         <li>ضمان 30 يوم</li>
                     </ul>
-                    <a href="#order" class="btn-outline" data-pack="basic">اطلب الحين</a>
+                    <a href="#order" class="btn-line" data-pack="basic">اطلب الحين</a>
                 </div>
             </article>
 
-            <!-- منتج 2 -->
-            <article class="product-row featured">
-                <div class="product-media">
-                    <div class="img-ph" role="img" aria-label="صورة شيزل برو">صورة المنتج</div>
-                </div>
+            <article class="product-row hot">
+                <div class="img-ph">صورة المنتج</div>
                 <div class="product-info">
                     <span class="pill hot">الأكثر طلباً</span>
                     <h3>شيزل برو</h3>
@@ -164,15 +564,12 @@
                         <li>شحن مجاني سريع</li>
                         <li>ضمان 30 يوم</li>
                     </ul>
-                    <a href="#order" class="btn-solid" data-pack="pro">اطلب الحين</a>
+                    <a href="#order" class="btn-dark" data-pack="pro">اطلب الحين</a>
                 </div>
             </article>
 
-            <!-- منتج 3 -->
             <article class="product-row">
-                <div class="product-media">
-                    <div class="img-ph" role="img" aria-label="صورة شيزل ماكس">صورة المنتج</div>
-                </div>
+                <div class="img-ph">صورة المنتج</div>
                 <div class="product-info">
                     <span class="pill">توفير أكبر</span>
                     <h3>شيزل ماكس</h3>
@@ -184,40 +581,24 @@
                         <li>متابعة واتساب</li>
                         <li>شحن أولوية + ضمان 30 يوم</li>
                     </ul>
-                    <a href="#order" class="btn-outline" data-pack="max">اطلب الحين</a>
+                    <a href="#order" class="btn-line" data-pack="max">اطلب الحين</a>
                 </div>
             </article>
         </div>
     </section>
 
-    <!-- مميزات مختصرة -->
     <section class="benefits">
-        <div class="container benefits-grid">
-            <div>
-                <h3>مستكة طبيعية</h3>
-                <p>بدون مواد كيميائية</p>
-            </div>
-            <div>
-                <h3>نتائج في 30 يوم</h3>
-                <p>20–30 دقيقة يومياً</p>
-            </div>
-            <div>
-                <h3>دفع عند الاستلام</h3>
-                <p>بدون مخاطرة</p>
-            </div>
-            <div>
-                <h3>شحن مجاني</h3>
-                <p>2–4 أيام لكل السعودية</p>
-            </div>
+        <div class="wrap benefits-grid">
+            <div><h3>مستكة طبيعية</h3><p>بدون مواد كيميائية</p></div>
+            <div><h3>نتائج في 30 يوم</h3><p>20–30 دقيقة يومياً</p></div>
+            <div><h3>دفع عند الاستلام</h3><p>بدون مخاطرة</p></div>
+            <div><h3>شحن مجاني</h3><p>2–4 أيام لكل السعودية</p></div>
         </div>
     </section>
 
-    <!-- آراء مختصرة -->
     <section class="reviews">
-        <div class="container">
-            <header class="section-head">
-                <h2>آراء عملائنا</h2>
-            </header>
+        <div class="wrap">
+            <div class="section-head"><h2>آراء عملائنا</h2></div>
             <div class="reviews-grid">
                 <blockquote>
                     <p>«بعد شهر الفرق واضح جداً! الفك صار محدد أكثر.»</p>
@@ -235,17 +616,14 @@
         </div>
     </section>
 
-    <!-- CTA نهائي -->
-    <section class="cta-final">
-        <div class="container">
-            <h2>جاهز تبدأ؟</h2>
-            <p>اطلب الحين · شحن مجاني · ضمان 30 يوم</p>
-            <a href="#order" class="btn-solid">ارجع للفورم واطلب</a>
-        </div>
+    <section class="cta">
+        <h2>جاهز تبدأ؟</h2>
+        <p>اطلب الحين · شحن مجاني · ضمان 30 يوم</p>
+        <a href="#order" class="btn-dark">ارجع للفورم واطلب</a>
     </section>
 
-    <footer class="footer-fast">
-        <div class="container footer-grid">
+    <footer class="footer">
+        <div class="wrap footer-grid">
             <div>
                 <strong class="logo">CHIZEL</strong>
                 <p>علكة الفك الأصلية لنحت الملامح.</p>
@@ -262,43 +640,31 @@
 
     <script>
         (function () {
-            var menuBtn = document.getElementById('mobileMenuBtn');
-            var mobileNav = document.getElementById('mobileNav');
-            if (menuBtn && mobileNav) {
-                menuBtn.addEventListener('click', function () {
-                    menuBtn.classList.toggle('active');
-                    mobileNav.classList.toggle('active');
+            var btn = document.getElementById('mobileMenuBtn');
+            var nav = document.getElementById('mobileNav');
+            if (btn && nav) {
+                btn.addEventListener('click', function () {
+                    nav.classList.toggle('open');
                 });
             }
 
             var totalEl = document.getElementById('total-price');
-            var radios = document.querySelectorAll('input[name="product"]');
-
             function updateTotal() {
                 var selected = document.querySelector('input[name="product"]:checked');
-                if (selected && totalEl) {
-                    totalEl.textContent = selected.getAttribute('data-price') + ' ر.س';
-                }
+                if (selected && totalEl) totalEl.textContent = selected.getAttribute('data-price') + ' ر.س';
             }
-
-            radios.forEach(function (r) {
+            document.querySelectorAll('input[name="product"]').forEach(function (r) {
                 r.addEventListener('change', updateTotal);
             });
-
-            document.querySelectorAll('[data-pack]').forEach(function (btn) {
-                btn.addEventListener('click', function () {
-                    var pack = btn.getAttribute('data-pack');
-                    var radio = document.querySelector('input[name="product"][value="' + pack + '"]');
-                    if (radio) {
-                        radio.checked = true;
-                        updateTotal();
-                    }
+            document.querySelectorAll('[data-pack]').forEach(function (el) {
+                el.addEventListener('click', function () {
+                    var radio = document.querySelector('input[name="product"][value="' + el.getAttribute('data-pack') + '"]');
+                    if (radio) { radio.checked = true; updateTotal(); }
                 });
             });
 
             var form = document.getElementById('orderForm');
             var SHEETDB_URL = 'https://sheetdb.io/api/v1/glsn5w5ktwugw';
-
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 var submitBtn = document.getElementById('submitBtn');
@@ -306,25 +672,19 @@
                 submitBtn.disabled = true;
                 submitBtn.textContent = 'جاري الإرسال...';
 
-                var payload = {
-                    data: [{
-                        name: document.getElementById('name').value.trim(),
-                        phone: document.getElementById('phone').value.trim(),
-                        city: document.getElementById('city').value.trim()
-                    }]
-                };
-
                 fetch(SHEETDB_URL, {
                     method: 'POST',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(payload)
+                    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        data: [{
+                            name: document.getElementById('name').value.trim(),
+                            phone: document.getElementById('phone').value.trim(),
+                            city: document.getElementById('city').value.trim()
+                        }]
+                    })
                 })
                 .then(function (res) {
                     if (res.ok || res.status === 201) {
-                        submitBtn.textContent = 'تم بنجاح...';
                         window.location.href = 'thank-you.html';
                         return;
                     }
