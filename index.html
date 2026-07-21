@@ -535,7 +535,7 @@
                     <div class="form-row">
                         <div class="form-group-luxury">
                             <label for="phone" class="form-label-luxury">رقم الجوال</label>
-                            <input type="tel" id="phone" name="phone" required placeholder="05xxxxxxxx" class="form-input-luxury">
+                            <input type="tel" id="phone" name="phone" required placeholder="05xxxxxxxx" class="form-input-luxury" style="text-align: right; direction: ltr;">
                         </div>
                     </div>
                     
@@ -766,37 +766,27 @@
                 });
                 
                 if (response.ok) {
-                    // Success
-                    submitBtn.innerHTML = '<span>✅ تم استلام طلبك بنجاح!</span>';
+                    // Success - Redirect to Thank You page
+                    submitBtn.innerHTML = '<span>✅ تم بنجاح! جاري التحويل...</span>';
                     submitBtn.style.background = '#22c55e';
                     
-                    // Reset form after 3 seconds
+                    // Redirect to thank you page
                     setTimeout(() => {
-                        orderForm.reset();
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = originalBtnText;
-                        submitBtn.style.background = '';
-                        selectedProductEl.textContent = 'شيزل برو';
-                        totalPriceEl.textContent = '249 ر.س';
-                    }, 3000);
-                    
-                    // Show success alert
-                    alert('🎉 تم استلام طلبك بنجاح!\n\nسنتواصل معك قريباً لتأكيد الطلب.\n\nشكراً لثقتك بـ CHIZEL!');
+                        window.location.href = 'thank-you.html';
+                    }, 1000);
                 } else {
                     throw new Error('حدث خطأ');
                 }
             } catch (error) {
                 // Error
-                submitBtn.innerHTML = '<span>❌ حدث خطأ، حاول مرة أخرى</span>';
+                submitBtn.innerHTML = '<span>❌ حدث خطأ، حاول مرة ثانية</span>';
                 submitBtn.style.background = '#ef4444';
                 
                 setTimeout(() => {
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = originalBtnText;
                     submitBtn.style.background = '';
-                }, 3000);
-                
-                alert('حدث خطأ أثناء إرسال الطلب.\nيرجى المحاولة مرة أخرى أو التواصل معنا عبر الواتساب.');
+                }, 2500);
             }
         });
     </script>
