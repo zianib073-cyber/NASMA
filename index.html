@@ -3,96 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHIZEL | انحت فكك - علكة الفك الأصلية</title>
-    <meta name="description" content="علكة شيزل الأصلية لنحت الفك. نتائج خلال 30 يوم. شحن مجاني والدفع عند الاستلام في السعودية.">
+    <title>CHIZEL | انحت فكك</title>
+    <meta name="description" content="علكة شيزل الأصلية لنحت الفك. شحن مجاني والدفع عند الاستلام في السعودية.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body {
             font-family: 'Tajawal', sans-serif;
+            background: #f7f4ef;
+            color: #1a3a2f;
             line-height: 1.7;
-            color: #2c2c2c;
-            background: #faf9f6;
             width: 100%;
             overflow-x: hidden;
         }
-        img { max-width: 100%; display: block; }
         a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
         button, input { font-family: inherit; }
 
         :root {
-            --gold: #c9a227;
-            --gold-dark: #a68521;
-            --black: #2c2c2c;
-            --cream: #f5f1e8;
+            --green: #1a3a2f;
+            --green-mid: #245544;
+            --cream: #f7f4ef;
+            --cream-dark: #efeae2;
             --white: #ffffff;
-            --gray: #666666;
+            --muted: #6b7c74;
+            --line: #e4ddd3;
+            --gold: #c4a35a;
         }
 
         .wrap {
             width: 100%;
-            max-width: 1100px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 16px;
-            padding-right: 16px;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        /* Banner */
-        .top-banner {
-            width: 100%;
-            background: linear-gradient(135deg, #c9a227, #d4b44a);
-            color: #2c2c2c;
-            text-align: center;
-            padding: 10px 16px;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        /* Nav */
-        .navbar {
-            width: 100%;
-            background: #fff;
-            border-bottom: 1px solid rgba(201,162,39,0.25);
+        /* ===== Header ===== */
+        .header {
+            background: var(--green);
+            color: #fff;
             position: sticky;
             top: 0;
-            z-index: 50;
+            z-index: 100;
         }
-        .nav-inner {
-            width: 100%;
-            max-width: 1100px;
+        .header-inner {
+            max-width: 1120px;
             margin: 0 auto;
-            padding: 12px 16px;
+            padding: 14px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 12px;
+            gap: 16px;
         }
         .logo {
-            font-size: 28px;
+            font-size: 22px;
             font-weight: 800;
-            color: var(--gold);
+            letter-spacing: 2px;
+            color: #fff;
         }
-        .nav-desktop { display: none; gap: 20px; align-items: center; }
-        .nav-desktop a { font-weight: 700; color: var(--black); }
-        .nav-desktop a:hover { color: var(--gold); }
-        .btn-nav {
-            background: var(--gold);
-            color: #2c2c2c;
-            font-weight: 800;
-            padding: 8px 14px;
-            border-radius: 8px;
-            white-space: nowrap;
+        .nav {
+            display: none;
+            gap: 28px;
+            align-items: center;
         }
+        .nav a {
+            color: rgba(255,255,255,0.85);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav a:hover, .nav a.active { color: #fff; }
         .menu-btn {
-            width: 42px;
-            height: 42px;
-            border: 1px solid rgba(201,162,39,0.4);
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255,255,255,0.3);
             border-radius: 8px;
-            background: #fff;
+            background: transparent;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -103,534 +91,663 @@
         .menu-btn span {
             width: 18px;
             height: 2px;
-            background: var(--gold);
+            background: #fff;
             display: block;
         }
         .mobile-nav {
             display: none;
             flex-direction: column;
-            padding: 8px 16px 16px;
-            border-top: 1px solid #eee;
+            padding: 0 20px 16px;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
         .mobile-nav.open { display: flex; }
         .mobile-nav a {
+            color: #fff;
             padding: 12px 0;
-            border-bottom: 1px solid #f0f0f0;
-            font-weight: 700;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            font-size: 15px;
         }
         @media (min-width: 768px) {
-            .nav-desktop { display: flex; }
+            .nav { display: flex; }
             .menu-btn { display: none; }
             .mobile-nav { display: none !important; }
+            .logo { position: absolute; left: 50%; transform: translateX(-50%); }
+            .header-inner { position: relative; justify-content: flex-start; }
+            .nav { margin-right: auto; }
+            .nav-cta { margin-right: 0; margin-left: auto; }
+        }
+        .nav-cta {
+            background: #fff;
+            color: var(--green);
+            font-weight: 800;
+            font-size: 13px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            white-space: nowrap;
         }
 
-        /* Hero + Form */
-        .hero-order {
-            width: 100%;
-            background: var(--cream);
-            padding: 24px 0 40px;
+        /* ===== Hero ===== */
+        .hero {
+            padding: 40px 0 20px;
         }
         .hero-grid {
-            width: 100%;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 24px;
+            gap: 28px;
+            align-items: center;
         }
         @media (min-width: 900px) {
+            .hero {
+                padding: 60px 0 40px;
+            }
             .hero-grid {
-                grid-template-columns: 1fr 1fr;
-                align-items: start;
-                gap: 40px;
+                grid-template-columns: 1.05fr 0.95fr;
+                gap: 48px;
             }
         }
-        .badge {
-            display: inline-block;
-            background: rgba(201,162,39,0.18);
-            color: var(--gold-dark);
-            font-size: 13px;
-            font-weight: 800;
-            padding: 6px 12px;
-            border-radius: 999px;
-            margin-bottom: 12px;
-        }
-        .hero-copy h1 {
-            font-size: clamp(32px, 7vw, 52px);
-            line-height: 1.2;
-            margin-bottom: 12px;
-            font-weight: 800;
-        }
-        .hero-copy h1 .gold { color: var(--gold); }
-        .lead {
-            color: var(--gray);
-            font-size: 17px;
-            margin-bottom: 20px;
-        }
-        .trust {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px 24px;
-        }
-        .trust li { color: var(--gray); font-size: 14px; }
-        .trust strong {
-            display: block;
-            color: var(--black);
-            font-size: 18px;
-        }
-
-        /* Form */
-        .order-form {
-            width: 100%;
-            background: #fff;
-            border: 1px solid rgba(201,162,39,0.3);
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
-        }
-        .order-form h2 { font-size: 22px; margin-bottom: 4px; }
-        .form-hint { color: var(--gray); font-size: 14px; margin-bottom: 16px; }
-
-        .packs { border: 0; margin: 0 0 16px; padding: 0; width: 100%; }
-        .packs legend { font-weight: 800; margin-bottom: 8px; }
-        .pack {
-            display: block;
-            width: 100%;
-            margin-bottom: 8px;
-            cursor: pointer;
-        }
-        .pack input { position: absolute; opacity: 0; pointer-events: none; }
-        .pack-box {
-            width: 100%;
+        .hero-media {
+            background: var(--cream-dark);
+            border-radius: 24px;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            padding: 12px 14px;
-            border: 2px solid #e8e4dc;
-            border-radius: 12px;
-            background: #fff;
+            justify-content: center;
+            position: relative;
+        }
+        .hero-media .ph {
+            text-align: center;
+            color: var(--muted);
+            font-weight: 700;
+            font-size: 15px;
+            padding: 24px;
+        }
+        .hero-media .ph small {
+            display: block;
+            margin-top: 8px;
+            font-weight: 500;
+            opacity: 0.8;
+        }
+        .hero-copy .eyebrow {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--green-mid);
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+        .hero-copy h1 {
+            font-size: clamp(28px, 5vw, 44px);
+            font-weight: 800;
+            line-height: 1.3;
+            color: var(--green);
+            margin-bottom: 14px;
+        }
+        .hero-copy .lead {
+            color: var(--muted);
+            font-size: 16px;
+            margin-bottom: 20px;
+            max-width: 480px;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        .tag {
+            background: #ebe6de;
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 8px 14px;
+            border-radius: 999px;
+        }
+        .btn-main {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--green);
+            color: #fff;
+            font-weight: 800;
+            font-size: 15px;
+            padding: 14px 28px;
+            border-radius: 999px;
+            border: 0;
+            cursor: pointer;
+            transition: transform 0.15s ease, background 0.15s ease;
+        }
+        .btn-main:hover { background: var(--green-mid); transform: translateY(-1px); }
+
+        /* ===== Order Form (فوق بعد الهيرو مباشرة) ===== */
+        .order-section {
+            padding: 10px 0 50px;
+        }
+        .order-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 28px 22px;
+            box-shadow: 0 10px 40px rgba(26, 58, 47, 0.06);
+            border: 1px solid var(--line);
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .order-card h2 {
+            text-align: center;
+            font-size: 24px;
+            color: var(--green);
+            margin-bottom: 6px;
+        }
+        .order-card .sub {
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 22px;
+        }
+        .packs {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-bottom: 18px;
+            border: 0;
+            padding: 0;
+        }
+        @media (min-width: 640px) {
+            .packs { grid-template-columns: repeat(3, 1fr); }
+        }
+        .packs legend {
+            font-weight: 800;
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: var(--green);
+            grid-column: 1 / -1;
+        }
+        .pack { cursor: pointer; display: block; }
+        .pack input { position: absolute; opacity: 0; pointer-events: none; }
+        .pack-box {
+            height: 100%;
+            border: 1.5px solid var(--line);
+            border-radius: 16px;
+            padding: 14px 12px;
+            text-align: center;
+            background: #fafaf8;
+            transition: border-color 0.15s ease, background 0.15s ease;
         }
         .pack input:checked + .pack-box {
-            border-color: var(--gold);
-            background: rgba(201,162,39,0.08);
+            border-color: var(--green);
+            background: #eef5f1;
         }
-        .pack-left { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-        .pack-tag { font-size: 11px; font-weight: 800; color: var(--gold-dark); }
-        .pack-name { font-weight: 800; }
-        .pack-desc { font-size: 13px; color: var(--gray); }
-        .pack-price { font-weight: 800; color: var(--gold-dark); white-space: nowrap; }
+        .pack-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 800;
+            background: var(--green);
+            color: #fff;
+            padding: 3px 8px;
+            border-radius: 999px;
+            margin-bottom: 6px;
+        }
+        .pack-name { display: block; font-weight: 800; color: var(--green); font-size: 15px; }
+        .pack-desc { display: block; font-size: 12px; color: var(--muted); margin: 4px 0; }
+        .pack-price { display: block; font-weight: 800; color: var(--green); font-size: 18px; }
 
-        .field {
-            display: block;
-            width: 100%;
-            margin-bottom: 12px;
+        .fields {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        @media (min-width: 640px) {
+            .fields { grid-template-columns: 1fr 1fr 1fr; }
         }
         .field span {
             display: block;
-            font-weight: 800;
-            font-size: 14px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--green);
             margin-bottom: 6px;
         }
         .field input {
-            display: block;
             width: 100%;
-            padding: 14px 16px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            font-size: 16px;
+            padding: 13px 14px;
+            border: 1.5px solid var(--line);
+            border-radius: 12px;
+            font-size: 15px;
             background: #fff;
-            color: #2c2c2c;
+            color: var(--green);
         }
         .field input:focus {
-            outline: 2px solid var(--gold);
-            border-color: transparent;
+            outline: none;
+            border-color: var(--green);
         }
-        .phone-input {
-            direction: ltr;
-            text-align: right;
-        }
+        .phone-input { direction: ltr; text-align: right; }
 
-        .total {
+        .order-foot {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            margin: 8px 0 14px;
-            border-top: 1px dashed #ddd;
-            border-bottom: 1px dashed #ddd;
-            font-weight: 800;
+            flex-direction: column;
+            gap: 12px;
+            align-items: stretch;
         }
-        .total strong { color: var(--gold-dark); font-size: 20px; }
-
+        @media (min-width: 640px) {
+            .order-foot {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+        .total {
+            font-weight: 700;
+            color: var(--muted);
+            font-size: 14px;
+        }
+        .total strong {
+            color: var(--green);
+            font-size: 22px;
+            margin-right: 6px;
+        }
         .btn-submit {
-            width: 100%;
-            border: 0;
-            border-radius: 12px;
-            padding: 16px;
-            background: #2c2c2c;
+            background: var(--green);
             color: #fff;
-            font-size: 17px;
+            border: 0;
+            border-radius: 999px;
+            padding: 14px 28px;
             font-weight: 800;
+            font-size: 15px;
             cursor: pointer;
         }
         .btn-submit:disabled { opacity: 0.7; }
         .secure {
             text-align: center;
-            color: var(--gray);
             font-size: 12px;
-            margin-top: 10px;
+            color: var(--muted);
+            margin-top: 14px;
         }
 
-        /* Products side by side */
-        .products { width: 100%; padding: 40px 0; background: #fff; }
-        .section-head { text-align: center; margin-bottom: 24px; }
-        .section-head h2 { font-size: 28px; margin-bottom: 6px; }
-        .section-head p { color: var(--gray); }
+        /* ===== Products grid (مثل Nama) ===== */
+        .products {
+            padding: 30px 0 60px;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .section-title .small {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+        .section-title h2 {
+            font-size: clamp(24px, 4vw, 34px);
+            color: var(--green);
+            font-weight: 800;
+        }
 
-        .product-row {
-            width: 100%;
+        .products-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 16px;
-            align-items: center;
-            background: var(--cream);
-            border-radius: 16px;
-            padding: 16px;
-            margin-bottom: 16px;
-            border: 1px solid transparent;
+            gap: 20px;
         }
-        .product-row.hot { border-color: var(--gold); background: #fffdf6; }
-        @media (min-width: 700px) {
-            .product-row {
-                grid-template-columns: 220px 1fr;
-                gap: 28px;
-                padding: 20px;
-            }
+        @media (min-width: 768px) {
+            .products-grid { grid-template-columns: repeat(3, 1fr); gap: 22px; }
         }
-        .img-ph {
-            width: 100%;
+
+        .card {
+            background: var(--white);
+            border-radius: 22px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(26, 58, 47, 0.08);
+        }
+        .card-img {
+            background: var(--cream-dark);
             aspect-ratio: 1 / 1;
-            border-radius: 14px;
-            background: linear-gradient(145deg, #ebe5d8, #faf9f6);
-            border: 1px dashed rgba(201,162,39,0.4);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--gray);
-            font-weight: 800;
+            color: var(--muted);
+            font-weight: 700;
+            font-size: 14px;
         }
-        .pill {
-            display: inline-block;
-            font-size: 12px;
-            font-weight: 800;
-            padding: 4px 10px;
-            border-radius: 999px;
-            background: #eee;
+        .card-body {
+            padding: 18px 18px 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .card-body h3 {
+            font-size: 18px;
+            color: var(--green);
             margin-bottom: 8px;
-        }
-        .pill.hot { background: var(--gold); color: #2c2c2c; }
-        .product-info h3 { font-size: 22px; margin-bottom: 4px; }
-        .price { margin: 6px 0 10px; font-size: 18px; }
-        .price strong { font-size: 26px; color: var(--gold-dark); }
-        .price .old { text-decoration: line-through; color: var(--gray); margin-left: 6px; font-size: 15px; }
-        .specs { list-style: none; margin: 10px 0 16px; }
-        .specs li {
-            padding-right: 18px;
-            position: relative;
-            margin-bottom: 6px;
-            color: var(--gray);
-        }
-        .specs li::before {
-            content: "✓";
-            position: absolute;
-            right: 0;
-            color: var(--gold-dark);
             font-weight: 800;
         }
-        .btn-dark, .btn-line {
-            display: inline-block;
-            padding: 12px 20px;
-            border-radius: 10px;
-            font-weight: 800;
+        .card-body p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 12px;
+            flex: 1;
         }
-        .btn-dark { background: #2c2c2c; color: #fff; }
-        .btn-line { border: 2px solid #2c2c2c; color: #2c2c2c; }
-
-        .benefits {
-            width: 100%;
-            padding: 28px 0;
-            background: var(--cream);
+        .stars {
+            color: var(--gold);
+            letter-spacing: 2px;
+            font-size: 14px;
+            margin-bottom: 14px;
         }
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            text-align: center;
-        }
-        @media (min-width: 768px) {
-            .benefits-grid { grid-template-columns: repeat(4, 1fr); }
-        }
-        .benefits h3 { font-size: 16px; margin-bottom: 4px; }
-        .benefits p { color: var(--gray); font-size: 13px; }
-
-        .reviews { width: 100%; padding: 40px 0; background: #fff; }
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: 1fr;
+        .card-foot {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             gap: 12px;
         }
-        @media (min-width: 768px) {
-            .reviews-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-        .reviews blockquote {
-            background: var(--cream);
-            border-radius: 14px;
-            padding: 16px;
-        }
-        .reviews cite {
-            display: block;
-            margin-top: 10px;
-            font-style: normal;
-            font-size: 13px;
+        .card-price {
             font-weight: 800;
-            color: var(--gray);
+            color: var(--green);
+            font-size: 18px;
         }
-
-        .cta {
-            width: 100%;
-            text-align: center;
-            padding: 40px 16px;
-            background: #2c2c2c;
+        .card-price .old {
+            font-size: 13px;
+            color: #999;
+            text-decoration: line-through;
+            font-weight: 500;
+            margin-left: 6px;
+        }
+        .card-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--green);
             color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 0;
+            cursor: pointer;
+            flex-shrink: 0;
         }
-        .cta h2 { margin-bottom: 8px; }
-        .cta p { opacity: 0.85; margin-bottom: 16px; }
-        .cta .btn-dark { background: var(--gold); color: #2c2c2c; }
+        .card-btn svg { width: 18px; height: 18px; }
 
-        .footer {
-            width: 100%;
-            background: #3d3224;
-            color: #ddd;
-            padding: 28px 0;
+        /* ===== Features ===== */
+        .features {
+            padding: 50px 0 60px;
+            background: var(--white);
         }
-        .footer-grid { display: grid; gap: 16px; }
-        .footer a { color: #ddd; margin-left: 12px; display: inline-block; margin-bottom: 6px; }
-        .footer .logo { color: var(--gold); display: block; margin-bottom: 6px; }
-        .copy { font-size: 13px; opacity: 0.7; }
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px 16px;
+            text-align: center;
+            margin-top: 36px;
+        }
+        @media (min-width: 768px) {
+            .features-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        .feat-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 12px;
+            border-radius: 50%;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--green);
+        }
+        .feat-icon svg { width: 24px; height: 24px; }
+        .feat h3 {
+            font-size: 15px;
+            color: var(--green);
+            margin-bottom: 4px;
+        }
+        .feat p {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--green);
+            color: rgba(255,255,255,0.8);
+            padding: 36px 0 24px;
+            text-align: center;
+        }
+        .footer .logo { color: #fff; margin-bottom: 10px; display: inline-block; }
+        .footer-links { margin: 16px 0; }
+        .footer-links a {
+            color: rgba(255,255,255,0.75);
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        .copy { font-size: 12px; opacity: 0.6; margin-top: 12px; }
     </style>
 </head>
 <body>
 
-    <div class="top-banner">
-        <p>شحن مجاني لكل السعودية · الدفع عند الاستلام · ضمان 30 يوم</p>
-    </div>
-
-    <header class="navbar">
-        <div class="nav-inner">
-            <a href="index.html" class="logo">CHIZEL</a>
-            <nav class="nav-desktop">
-                <a href="index.html">الرئيسية</a>
-                <a href="collection.html">المنتجات</a>
+    <!-- Header مثل Nama -->
+    <header class="header">
+        <div class="header-inner">
+            <nav class="nav">
+                <a href="index.html" class="active">الرئيسية</a>
+                <a href="#products">المنتجات</a>
                 <a href="about.html">من نحن</a>
                 <a href="contact.html">تواصل معنا</a>
             </nav>
-            <a href="#order" class="btn-nav">اطلب الحين</a>
+            <a href="index.html" class="logo">CHIZEL</a>
+            <a href="#order" class="nav-cta">اطلب الحين</a>
             <button class="menu-btn" id="mobileMenuBtn" type="button" aria-label="القائمة">
                 <span></span><span></span><span></span>
             </button>
         </div>
         <nav class="mobile-nav" id="mobileNav">
             <a href="index.html">الرئيسية</a>
-            <a href="collection.html">المنتجات</a>
+            <a href="#products">المنتجات</a>
             <a href="about.html">من نحن</a>
             <a href="contact.html">تواصل معنا</a>
-            <a href="#order" class="btn-nav" style="text-align:center;margin-top:8px;">اطلب الحين</a>
+            <a href="#order">اطلب الحين</a>
         </nav>
     </header>
 
-    <!-- الفورم فوق -->
-    <section class="hero-order" id="order">
-        <div class="wrap">
-            <div class="hero-grid">
-                <div class="hero-copy">
-                    <span class="badge">الأكثر مبيعاً في السعودية</span>
-                    <h1><span class="gold">CHIZEL</span><br>انحت فكك</h1>
-                    <p class="lead">علكة المستكة الأصلية لنحت الفك وتحديد الملامح. نتائج واضحة خلال 30 يوم أو استرجع فلوسك.</p>
-                    <ul class="trust">
-                        <li><strong>+3,500</strong> عميل راضي</li>
-                        <li><strong>4.9</strong> تقييم</li>
-                        <li><strong>30 يوم</strong> ضمان</li>
-                    </ul>
+    <!-- Hero: صورة + نص -->
+    <section class="hero">
+        <div class="wrap hero-grid">
+            <div class="hero-media">
+                <div class="ph">
+                    صورة المنتج الرئيسية
+                    <small>ضع صورة الباقات هنا</small>
                 </div>
+            </div>
+            <div class="hero-copy">
+                <span class="eyebrow">الأكثر مبيعاً في السعودية</span>
+                <h1>انحت فكك بعلكة المستكة الأصلية</h1>
+                <p class="lead">
+                    CHIZEL علكة طبيعية لتقوية عضلات الفك وتحديد الملامح.
+                    نتائج واضحة خلال 30 يوم — أو استرجع فلوسك.
+                </p>
+                <div class="tags">
+                    <span class="tag">مستكة طبيعية</span>
+                    <span class="tag">نتائج مضمونة</span>
+                    <span class="tag">شحن مجاني</span>
+                    <span class="tag">دفع عند الاستلام</span>
+                </div>
+                <a href="#order" class="btn-main">
+                    اطلب الحين
+                    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
 
-                <form class="order-form" id="orderForm">
-                    <h2>اطلب الحين</h2>
-                    <p class="form-hint">الدفع عند الاستلام · شحن مجاني</p>
+    <!-- نموذج الطلب مباشرة تحت الهيرو -->
+    <section class="order-section" id="order">
+        <div class="wrap">
+            <form class="order-card" id="orderForm">
+                <h2>أكمل طلبك</h2>
+                <p class="sub">الدفع عند الاستلام · شحن مجاني لكل السعودية</p>
 
-                    <fieldset class="packs">
-                        <legend>اختر الباقة</legend>
-                        <label class="pack">
-                            <input type="radio" name="product" value="basic" data-price="199">
-                            <span class="pack-box">
-                                <span class="pack-left">
-                                    <span class="pack-name">شيزل بيسك</span>
-                                    <span class="pack-desc">علبة واحدة · شهر</span>
-                                </span>
-                                <span class="pack-price">199 ر.س</span>
-                            </span>
-                        </label>
-                        <label class="pack">
-                            <input type="radio" name="product" value="pro" data-price="249" checked>
-                            <span class="pack-box">
-                                <span class="pack-left">
-                                    <span class="pack-tag">الأكثر طلباً</span>
-                                    <span class="pack-name">شيزل برو</span>
-                                    <span class="pack-desc">علبتين + دليل</span>
-                                </span>
-                                <span class="pack-price">249 ر.س</span>
-                            </span>
-                        </label>
-                        <label class="pack">
-                            <input type="radio" name="product" value="max" data-price="379">
-                            <span class="pack-box">
-                                <span class="pack-left">
-                                    <span class="pack-name">شيزل ماكس</span>
-                                    <span class="pack-desc">3 علب + متابعة</span>
-                                </span>
-                                <span class="pack-price">379 ر.س</span>
-                            </span>
-                        </label>
-                    </fieldset>
+                <fieldset class="packs">
+                    <legend>اختر الباقة</legend>
+                    <label class="pack">
+                        <input type="radio" name="product" value="basic" data-price="199">
+                        <span class="pack-box">
+                            <span class="pack-name">بيسك</span>
+                            <span class="pack-desc">علبة · شهر</span>
+                            <span class="pack-price">199 ر.س</span>
+                        </span>
+                    </label>
+                    <label class="pack">
+                        <input type="radio" name="product" value="pro" data-price="249" checked>
+                        <span class="pack-box">
+                            <span class="pack-tag">الأكثر طلباً</span>
+                            <span class="pack-name">برو</span>
+                            <span class="pack-desc">علبتين + دليل</span>
+                            <span class="pack-price">249 ر.س</span>
+                        </span>
+                    </label>
+                    <label class="pack">
+                        <input type="radio" name="product" value="max" data-price="379">
+                        <span class="pack-box">
+                            <span class="pack-name">ماكس</span>
+                            <span class="pack-desc">3 علب + متابعة</span>
+                            <span class="pack-price">379 ر.س</span>
+                        </span>
+                    </label>
+                </fieldset>
 
+                <div class="fields">
                     <label class="field">
                         <span>الاسم</span>
-                        <input type="text" id="name" name="name" required placeholder="اسمك الكريم" autocomplete="name">
+                        <input type="text" id="name" name="name" required placeholder="اسمك" autocomplete="name">
                     </label>
                     <label class="field">
                         <span>رقم الجوال</span>
-                        <input type="tel" id="phone" name="phone" required placeholder="05xxxxxxxx" inputmode="tel" autocomplete="tel" class="phone-input">
+                        <input type="tel" id="phone" name="phone" required placeholder="05xxxxxxxx" class="phone-input" inputmode="tel" autocomplete="tel">
                     </label>
                     <label class="field">
                         <span>المدينة</span>
-                        <input type="text" id="city" name="city" required placeholder="مثال: الرياض" autocomplete="address-level2">
+                        <input type="text" id="city" name="city" required placeholder="الرياض" autocomplete="address-level2">
                     </label>
+                </div>
 
-                    <div class="total">
-                        <span>الإجمالي</span>
-                        <strong id="total-price">249 ر.س</strong>
-                    </div>
-
-                    <button type="submit" class="btn-submit" id="submitBtn">تأكيد الطلب · الدفع عند الاستلام</button>
-                    <p class="secure">معلوماتك آمنة · الدفع عند الاستلام فقط</p>
-                </form>
-            </div>
+                <div class="order-foot">
+                    <div class="total">الإجمالي <strong id="total-price">249 ر.س</strong></div>
+                    <button type="submit" class="btn-submit" id="submitBtn">تأكيد الطلب</button>
+                </div>
+                <p class="secure">معلوماتك آمنة · الدفع عند الاستلام فقط</p>
+            </form>
         </div>
     </section>
 
-    <!-- منتجات صورة جنب المعلومات -->
+    <!-- شبكة المنتجات 3 كروت -->
     <section class="products" id="products">
         <div class="wrap">
-            <div class="section-head">
-                <h2>اختر باقتك</h2>
-                <p>كل ما طلبت أكثر، كل ما وفرت أكثر</p>
+            <div class="section-title">
+                <span class="small">مجموعتنا</span>
+                <h2>اختر الباقة المناسبة لك</h2>
             </div>
 
-            <article class="product-row">
-                <div class="img-ph">صورة المنتج</div>
-                <div class="product-info">
-                    <span class="pill">للتجربة</span>
-                    <h3>شيزل بيسك</h3>
-                    <p class="price"><strong>199</strong> ر.س</p>
-                    <p>علبة واحدة تكفي شهر كامل. مثالية للي يبي يجرب أول مرة.</p>
-                    <ul class="specs">
-                        <li>علبة واحدة (30 قطعة)</li>
-                        <li>شحن مجاني</li>
-                        <li>ضمان 30 يوم</li>
-                    </ul>
-                    <a href="#order" class="btn-line" data-pack="basic">اطلب الحين</a>
-                </div>
-            </article>
+            <div class="products-grid">
+                <article class="card">
+                    <div class="card-img">صورة المنتج</div>
+                    <div class="card-body">
+                        <h3>شيزل بيسك</h3>
+                        <p>علبة واحدة لشهر كامل. مثالية للتجربة الأولى.</p>
+                        <div class="stars">★★★★★</div>
+                        <div class="card-foot">
+                            <div class="card-price">199 ر.س</div>
+                            <a href="#order" class="card-btn" data-pack="basic" aria-label="اطلب بيسك">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
 
-            <article class="product-row hot">
-                <div class="img-ph">صورة المنتج</div>
-                <div class="product-info">
-                    <span class="pill hot">الأكثر طلباً</span>
-                    <h3>شيزل برو</h3>
-                    <p class="price"><span class="old">398</span> <strong>249</strong> ر.س</p>
-                    <p>علبتين + دليل تمارين الفك. نتائج أسرع وأقوى.</p>
-                    <ul class="specs">
-                        <li>علبتين (60 قطعة)</li>
-                        <li>دليل تمارين PDF</li>
-                        <li>شحن مجاني سريع</li>
-                        <li>ضمان 30 يوم</li>
-                    </ul>
-                    <a href="#order" class="btn-dark" data-pack="pro">اطلب الحين</a>
-                </div>
-            </article>
+                <article class="card">
+                    <div class="card-img">صورة المنتج</div>
+                    <div class="card-body">
+                        <h3>شيزل برو</h3>
+                        <p>علبتين + دليل تمارين. الباقة الأكثر طلباً.</p>
+                        <div class="stars">★★★★★</div>
+                        <div class="card-foot">
+                            <div class="card-price"><span class="old">398</span>249 ر.س</div>
+                            <a href="#order" class="card-btn" data-pack="pro" aria-label="اطلب برو">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
 
-            <article class="product-row">
-                <div class="img-ph">صورة المنتج</div>
-                <div class="product-info">
-                    <span class="pill">توفير أكبر</span>
-                    <h3>شيزل ماكس</h3>
-                    <p class="price"><span class="old">597</span> <strong>379</strong> ر.س</p>
-                    <p>الباقة الكاملة: 3 علب + دليل + متابعة واتساب.</p>
-                    <ul class="specs">
-                        <li>3 علب (90 قطعة)</li>
-                        <li>دليل تمارين PDF</li>
-                        <li>متابعة واتساب</li>
-                        <li>شحن أولوية + ضمان 30 يوم</li>
-                    </ul>
-                    <a href="#order" class="btn-line" data-pack="max">اطلب الحين</a>
-                </div>
-            </article>
+                <article class="card">
+                    <div class="card-img">صورة المنتج</div>
+                    <div class="card-body">
+                        <h3>شيزل ماكس</h3>
+                        <p>3 علب + دليل + متابعة واتساب. توفير أكبر.</p>
+                        <div class="stars">★★★★★</div>
+                        <div class="card-foot">
+                            <div class="card-price"><span class="old">597</span>379 ر.س</div>
+                            <a href="#order" class="card-btn" data-pack="max" aria-label="اطلب ماكس">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
 
-    <section class="benefits">
-        <div class="wrap benefits-grid">
-            <div><h3>مستكة طبيعية</h3><p>بدون مواد كيميائية</p></div>
-            <div><h3>نتائج في 30 يوم</h3><p>20–30 دقيقة يومياً</p></div>
-            <div><h3>دفع عند الاستلام</h3><p>بدون مخاطرة</p></div>
-            <div><h3>شحن مجاني</h3><p>2–4 أيام لكل السعودية</p></div>
-        </div>
-    </section>
-
-    <section class="reviews">
+    <!-- مميزات -->
+    <section class="features">
         <div class="wrap">
-            <div class="section-head"><h2>آراء عملائنا</h2></div>
-            <div class="reviews-grid">
-                <blockquote>
-                    <p>«بعد شهر الفرق واضح جداً! الفك صار محدد أكثر.»</p>
-                    <cite>محمد العتيبي · الرياض</cite>
-                </blockquote>
-                <blockquote>
-                    <p>«أفضل استثمار سويته لنفسي. الشباب في الجيم لاحظوا الفرق.»</p>
-                    <cite>عبدالله الشمري · جدة</cite>
-                </blockquote>
-                <blockquote>
-                    <p>«التوصيل سريع والمنتج أصلي. أنصح فيها بقوة.»</p>
-                    <cite>فهد الدوسري · الدمام</cite>
-                </blockquote>
+            <div class="section-title">
+                <span class="small">ليش CHIZEL؟</span>
+                <h2>جودة، ثقة، ونتائج حقيقية</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feat">
+                    <div class="feat-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <h3>مستكة طبيعية</h3>
+                    <p>بدون مواد كيميائية</p>
+                </div>
+                <div class="feat">
+                    <div class="feat-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3>نتائج في 30 يوم</h3>
+                    <p>استخدام يومي بسيط</p>
+                </div>
+                <div class="feat">
+                    <div class="feat-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+                    </div>
+                    <h3>دفع عند الاستلام</h3>
+                    <p>بدون أي مخاطرة</p>
+                </div>
+                <div class="feat">
+                    <div class="feat-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg>
+                    </div>
+                    <h3>شحن مجاني</h3>
+                    <p>لكل مناطق السعودية</p>
+                </div>
             </div>
         </div>
-    </section>
-
-    <section class="cta">
-        <h2>جاهز تبدأ؟</h2>
-        <p>اطلب الحين · شحن مجاني · ضمان 30 يوم</p>
-        <a href="#order" class="btn-dark">ارجع للفورم واطلب</a>
     </section>
 
     <footer class="footer">
-        <div class="wrap footer-grid">
-            <div>
-                <strong class="logo">CHIZEL</strong>
-                <p>علكة الفك الأصلية لنحت الملامح.</p>
-            </div>
-            <div>
+        <div class="wrap">
+            <a href="index.html" class="logo">CHIZEL</a>
+            <p>علكة الفك الأصلية لنحت الملامح</p>
+            <div class="footer-links">
                 <a href="index.html">الرئيسية</a>
-                <a href="collection.html">المنتجات</a>
+                <a href="#products">المنتجات</a>
                 <a href="about.html">من نحن</a>
                 <a href="contact.html">تواصل معنا</a>
             </div>
@@ -664,7 +781,6 @@
             });
 
             var form = document.getElementById('orderForm');
-            var SHEETDB_URL = 'https://sheetdb.io/api/v1/glsn5w5ktwugw';
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 var submitBtn = document.getElementById('submitBtn');
@@ -672,7 +788,7 @@
                 submitBtn.disabled = true;
                 submitBtn.textContent = 'جاري الإرسال...';
 
-                fetch(SHEETDB_URL, {
+                fetch('https://sheetdb.io/api/v1/glsn5w5ktwugw', {
                     method: 'POST',
                     headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
                     body: JSON.stringify({
