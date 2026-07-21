@@ -3,281 +3,501 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تواصل معنا | CHIZEL - علكة الفك الأصلية</title>
-    <meta name="description" content="تواصل مع فريق CHIZEL. نحن هنا للإجابة على جميع استفساراتك.">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>تواصل معنا | CHIZEL</title>
+    <meta name="description" content="تواصل مع فريق CHIZEL. نحن هنا لمساعدتك.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: #f7f4ef;
+            color: #1a3a2f;
+            line-height: 1.7;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        a { text-decoration: none; color: inherit; }
+        button, input, select, textarea { font-family: inherit; }
+
+        :root {
+            --green: #1a3a2f;
+            --green-mid: #245544;
+            --cream: #f7f4ef;
+            --cream-dark: #efeae2;
+            --white: #ffffff;
+            --muted: #6b7c74;
+            --line: #e4ddd3;
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            background: var(--green);
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .nav {
+            display: none;
+            gap: 22px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav a {
+            color: rgba(255,255,255,0.85);
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        .nav a:hover, .nav a.active { color: #fff; }
+        .nav-cta {
+            background: #fff;
+            color: var(--green);
+            font-weight: 800;
+            font-size: 13px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+        .menu-btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+        .menu-btn span {
+            width: 18px;
+            height: 2px;
+            background: #fff;
+            display: block;
+        }
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            padding: 0 20px 16px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .mobile-nav.open { display: flex; }
+        .mobile-nav a {
+            color: #fff;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        @media (min-width: 768px) {
+            .nav { display: flex; }
+            .menu-btn { display: none; }
+            .mobile-nav { display: none !important; }
+        }
+
+        .page-hero {
+            padding: 48px 0 28px;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-size: clamp(28px, 5vw, 40px);
+            color: var(--green);
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .page-hero p { color: var(--muted); }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            padding-bottom: 50px;
+        }
+        @media (min-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1.1fr;
+                gap: 32px;
+                align-items: start;
+            }
+        }
+
+        .info-card, .form-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            padding: 24px;
+        }
+        .info-card h2, .form-card h2 {
+            font-size: 22px;
+            color: var(--green);
+            margin-bottom: 10px;
+        }
+        .info-card > p {
+            color: var(--muted);
+            margin-bottom: 22px;
+            font-size: 15px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            margin-bottom: 18px;
+        }
+        .info-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--cream);
+            color: var(--green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .info-icon svg { width: 20px; height: 20px; }
+        .info-item h3 {
+            font-size: 15px;
+            color: var(--green);
+            margin-bottom: 2px;
+        }
+        .info-item p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .field {
+            display: block;
+            margin-bottom: 14px;
+        }
+        .field span {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: 6px;
+        }
+        .field input,
+        .field select,
+        .field textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1.5px solid var(--line);
+            border-radius: 12px;
+            font-size: 15px;
+            background: #fff;
+            color: var(--green);
+        }
+        .field input:focus,
+        .field select:focus,
+        .field textarea:focus {
+            outline: none;
+            border-color: var(--green);
+        }
+        .phone-input { direction: ltr; text-align: right; }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--green);
+            color: #fff;
+            border: 0;
+            border-radius: 999px;
+            padding: 14px 28px;
+            font-weight: 800;
+            font-size: 15px;
+            cursor: pointer;
+            margin-top: 6px;
+        }
+        .btn-submit:disabled { opacity: 0.7; }
+        .form-msg {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            display: none;
+        }
+        .form-msg.ok { display: block; color: #1a7a4c; }
+        .form-msg.err { display: block; color: #b42318; }
+
+        .faq {
+            padding: 20px 0 60px;
+        }
+        .faq h2 {
+            text-align: center;
+            color: var(--green);
+            font-size: 26px;
+            margin-bottom: 24px;
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+        @media (min-width: 768px) {
+            .faq-grid { grid-template-columns: 1fr 1fr; }
+        }
+        .faq-item {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 18px;
+        }
+        .faq-item h3 {
+            font-size: 16px;
+            color: var(--green);
+            margin-bottom: 6px;
+        }
+        .faq-item p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .footer {
+            background: var(--green);
+            color: rgba(255,255,255,0.8);
+            padding: 36px 0 24px;
+            text-align: center;
+        }
+        .footer .logo { color: #fff; margin-bottom: 10px; display: inline-block; }
+        .footer-links { margin: 16px 0; }
+        .footer-links a {
+            color: rgba(255,255,255,0.75);
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        .copy { font-size: 12px; opacity: 0.6; margin-top: 12px; }
+    </style>
 </head>
-<body class="font-tajawal">
+<body>
 
-    <!-- Top Banner -->
-    <div class="top-banner">
-        <div class="container mx-auto px-4">
-            <p class="flex items-center justify-center gap-3 flex-wrap text-sm">
-                <span>🚚 شحن مجاني لكل السعودية</span>
-                <span class="hidden sm:inline">|</span>
-                <span>💳 الدفع عند الاستلام</span>
-                <span class="hidden sm:inline">|</span>
-                <span>✅ ضمان 30 يوم</span>
-            </p>
-        </div>
-    </div>
-
-    <!-- Header/Navbar -->
-    <header class="navbar">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="logo">CHIZEL</a>
-                
-                <nav class="hidden md:flex items-center gap-8">
-                    <a href="index.html" class="nav-link">الرئيسية</a>
-                    <a href="collection.html" class="nav-link">المنتجات</a>
-                    <a href="about.html" class="nav-link">من نحن</a>
-                    <a href="contact.html" class="nav-link active">تواصل معنا</a>
-                    <a href="index.html#order" class="btn-gold-sm">اطلب الحين</a>
-                </nav>
-                
-                <button class="md:hidden mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
-            
-            <nav class="mobile-nav" id="mobileNav">
-                <a href="index.html" class="mobile-nav-link">الرئيسية</a>
-                <a href="collection.html" class="mobile-nav-link">المنتجات</a>
-                <a href="about.html" class="mobile-nav-link">من نحن</a>
-                <a href="contact.html" class="mobile-nav-link active">تواصل معنا</a>
-                <a href="index.html#order" class="btn-gold-sm mobile-cta">اطلب الحين</a>
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">CHIZEL</a>
+            <nav class="nav">
+                <a href="index.html">الرئيسية</a>
+                <a href="index.html#products">المنتجات</a>
+                <a href="about.html">من نحن</a>
+                <a href="contact.html" class="active">تواصل معنا</a>
+                <a href="index.html#order" class="nav-cta">اطلب الحين</a>
             </nav>
+            <button class="menu-btn" id="mobileMenuBtn" type="button" aria-label="القائمة">
+                <span></span><span></span><span></span>
+            </button>
         </div>
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html">الرئيسية</a>
+            <a href="index.html#products">المنتجات</a>
+            <a href="about.html">من نحن</a>
+            <a href="contact.html">تواصل معنا</a>
+            <a href="index.html#order">اطلب الحين</a>
+        </nav>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header-luxury">
-        <div class="container mx-auto px-4 py-16 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">تواصل معنا</h1>
-            <p class="text-lg opacity-80">نحن هنا لمساعدتك</p>
+    <section class="page-hero">
+        <div class="wrap">
+            <h1>تواصل معنا</h1>
+            <p>فريقنا جاهز يساعدك في أي استفسار</p>
         </div>
     </section>
 
-    <!-- Contact Content -->
-    <section class="section-luxury-light">
-        <div class="container mx-auto px-4">
-            <div class="grid lg:grid-cols-2 gap-12">
-                
-                <!-- Contact Info -->
-                <div class="reveal">
-                    <h2 class="text-3xl font-bold mb-6">عندك سؤال؟</h2>
-                    <p class="text-lg mb-8 opacity-80">
-                        فريقنا جاهز يساعدك. تواصل معنا عبر أي من القنوات التالية.
-                    </p>
-                    
-                    <div class="contact-info-list">
-                        <div class="contact-info-item">
-                            <div class="contact-icon">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-details">
-                                <h4>واتساب</h4>
-                                <p dir="ltr">+966 5X XXX XXXX</p>
-                                <span class="text-sm opacity-70">أسرع طريقة للتواصل</span>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-info-item">
-                            <div class="contact-icon">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-details">
-                                <h4>الإيميل</h4>
-                                <p>support@chizel.sa</p>
-                                <span class="text-sm opacity-70">نرد خلال 24 ساعة</span>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-info-item">
-                            <div class="contact-icon">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-details">
-                                <h4>ساعات العمل</h4>
-                                <p>السبت - الخميس</p>
-                                <span class="text-sm opacity-70">9 صباحاً - 11 مساءً</span>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-info-item">
-                            <div class="contact-icon">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-details">
-                                <h4>الموقع</h4>
-                                <p>المملكة العربية السعودية</p>
-                                <span class="text-sm opacity-70">نشحن لجميع المناطق</span>
-                            </div>
-                        </div>
+    <section>
+        <div class="wrap contact-grid">
+            <div class="info-card">
+                <h2>طرق التواصل</h2>
+                <p>تواصل معنا بأي طريقة تناسبك، ونرد عليك في أقرب وقت.</p>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                     </div>
-                    
-                    <!-- Social Links -->
-                    <div class="mt-8">
-                        <h4 class="font-bold mb-4">تابعنا</h4>
-                        <div class="flex gap-4">
-                            <a href="#" class="social-btn-lg">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                            </a>
-                            <a href="#" class="social-btn-lg">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 448 512"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>
-                            </a>
-                        </div>
+                    <div>
+                        <h3>البريد الإلكتروني</h3>
+                        <p>support@chizel.sa</p>
                     </div>
                 </div>
-                
-                <!-- Contact Form -->
-                <div class="reveal">
-                    <form class="contact-form-luxury">
-                        <div class="form-group-luxury">
-                            <label for="contact-name" class="form-label-luxury">الاسم</label>
-                            <input type="text" id="contact-name" name="name" required placeholder="اسمك الكريم" class="form-input-luxury">
-                        </div>
-                        
-                        <div class="form-group-luxury">
-                            <label for="contact-phone" class="form-label-luxury">رقم الجوال</label>
-                            <input type="tel" id="contact-phone" name="phone" required placeholder="05xxxxxxxx" class="form-input-luxury">
-                        </div>
-                        
-                        <div class="form-group-luxury">
-                            <label for="contact-subject" class="form-label-luxury">الموضوع</label>
-                            <select id="contact-subject" name="subject" required class="form-input-luxury">
-                                <option value="">اختر الموضوع</option>
-                                <option value="order">استفسار عن طلب</option>
-                                <option value="product">سؤال عن المنتج</option>
-                                <option value="shipping">متابعة شحنة</option>
-                                <option value="return">استرجاع أو استبدال</option>
-                                <option value="other">موضوع آخر</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group-luxury">
-                            <label for="contact-message" class="form-label-luxury">رسالتك</label>
-                            <textarea id="contact-message" name="message" rows="5" required placeholder="اكتب رسالتك هنا..." class="form-input-luxury"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn-submit-luxury">
-                            <span>إرسال الرسالة</span>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
-                            </svg>
-                        </button>
-                    </form>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    </div>
+                    <div>
+                        <h3>رقم الجوال</h3>
+                        <p dir="ltr">+966 5X XXX XXXX</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <div>
+                        <h3>ساعات العمل</h3>
+                        <p>السبت – الخميس · 9 صباحاً – 11 مساءً</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <div>
+                        <h3>التوصيل</h3>
+                        <p>شحن مجاني لجميع مناطق السعودية</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="form-card" id="contactForm">
+                <h2>أرسل رسالة</h2>
+
+                <label class="field">
+                    <span>الاسم</span>
+                    <input type="text" id="contact-name" name="name" required placeholder="اسمك" autocomplete="name">
+                </label>
+
+                <label class="field">
+                    <span>رقم الجوال</span>
+                    <input type="tel" id="contact-phone" name="phone" required placeholder="05xxxxxxxx" class="phone-input" inputmode="tel" autocomplete="tel">
+                </label>
+
+                <label class="field">
+                    <span>الموضوع</span>
+                    <select id="contact-subject" name="subject" required>
+                        <option value="">اختر الموضوع</option>
+                        <option value="order">استفسار عن طلب</option>
+                        <option value="product">سؤال عن المنتج</option>
+                        <option value="shipping">متابعة شحنة</option>
+                        <option value="return">استرجاع أو استبدال</option>
+                        <option value="other">موضوع آخر</option>
+                    </select>
+                </label>
+
+                <label class="field">
+                    <span>رسالتك</span>
+                    <textarea id="contact-message" name="message" rows="5" required placeholder="اكتب رسالتك هنا..."></textarea>
+                </label>
+
+                <button type="submit" class="btn-submit" id="contactSubmit">إرسال الرسالة</button>
+                <p class="form-msg" id="contactMsg"></p>
+            </form>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="wrap">
+            <h2>أسئلة شائعة</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>كم يوم يوصل الطلب؟</h3>
+                    <p>الشحن يستغرق من 2 إلى 4 أيام عمل لجميع مناطق السعودية.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>كيف أتابع طلبي؟</h3>
+                    <p>بعد الشحن نرسل لك رقم التتبع على الجوال.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>هل الشحن مجاني؟</h3>
+                    <p>نعم، الشحن مجاني 100% بدون أي رسوم إضافية.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>كيف أسترجع المنتج؟</h3>
+                    <p>تواصل معنا خلال 30 يوم ونرجع لك المبلغ كاملاً.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="section-luxury-dark">
-        <div class="container mx-auto px-4">
-            <div class="section-header-luxury reveal">
-                <span class="section-badge">أسئلة شائعة</span>
-                <h2 class="section-title-luxury">الأسئلة المتكررة</h2>
+    <footer class="footer">
+        <div class="wrap">
+            <a href="index.html" class="logo">CHIZEL</a>
+            <p>علكة الفك الأصلية لنحت الملامح</p>
+            <div class="footer-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="index.html#products">المنتجات</a>
+                <a href="about.html">من نحن</a>
+                <a href="contact.html">تواصل معنا</a>
             </div>
-            
-            <div class="faq-grid mt-12">
-                <div class="faq-item reveal">
-                    <h4 class="faq-question">كم يوم يوصل الطلب؟</h4>
-                    <p class="faq-answer">الشحن يستغرق 2-4 أيام عمل لجميع مناطق السعودية.</p>
-                </div>
-                
-                <div class="faq-item reveal">
-                    <h4 class="faq-question">كيف أتابع طلبي؟</h4>
-                    <p class="faq-answer">بعد الشحن، نرسل لك رابط التتبع على الواتساب.</p>
-                </div>
-                
-                <div class="faq-item reveal">
-                    <h4 class="faq-question">هل فيه رسوم شحن؟</h4>
-                    <p class="faq-answer">لا، الشحن مجاني 100% لجميع مناطق السعودية.</p>
-                </div>
-                
-                <div class="faq-item reveal">
-                    <h4 class="faq-question">كيف الاسترجاع؟</h4>
-                    <p class="faq-answer">تواصل معنا خلال 30 يوم ونرجع لك فلوسك كاملة.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer-luxury">
-        <div class="container mx-auto px-4 py-16">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3 class="footer-logo">CHIZEL</h3>
-                    <p class="footer-desc">علكة الفك الأصلية لنحت الملامح وتحديد خط الفك.</p>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>روابط سريعة</h4>
-                    <ul>
-                        <li><a href="index.html">الرئيسية</a></li>
-                        <li><a href="collection.html">المنتجات</a></li>
-                        <li><a href="about.html">من نحن</a></li>
-                        <li><a href="contact.html">تواصل معنا</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>المساعدة</h4>
-                    <ul>
-                        <li><a href="contact.html">الدعم الفني</a></li>
-                        <li><a href="#">سياسة الشحن</a></li>
-                        <li><a href="#">الاسترجاع والضمان</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>© 2024 CHIZEL. جميع الحقوق محفوظة.</p>
-            </div>
+            <p class="copy">© 2024 CHIZEL. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileNav = document.getElementById('mobileNav');
-        
-        mobileMenuBtn.addEventListener('click', function() {
-            this.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-        });
-        
-        function revealOnScroll() {
-            const reveals = document.querySelectorAll('.reveal, .reveal-scale');
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 150) {
-                    element.classList.add('active');
-                }
-            });
-        }
-        window.addEventListener('load', revealOnScroll);
-        window.addEventListener('scroll', revealOnScroll);
-    </script>
+        (function () {
+            var btn = document.getElementById('mobileMenuBtn');
+            var nav = document.getElementById('mobileNav');
+            if (btn && nav) {
+                btn.addEventListener('click', function () {
+                    nav.classList.toggle('open');
+                });
+            }
 
+            var form = document.getElementById('contactForm');
+            var msg = document.getElementById('contactMsg');
+            var submitBtn = document.getElementById('contactSubmit');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'جاري الإرسال...';
+                msg.className = 'form-msg';
+
+                // نفس SheetDB — أعمدة: name, phone, city (المدينة = الموضوع مؤقتاً أو نرسل city كـ "تواصل")
+                fetch('https://sheetdb.io/api/v1/glsn5w5ktwugw', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        data: [{
+                            name: document.getElementById('contact-name').value.trim(),
+                            phone: document.getElementById('contact-phone').value.trim(),
+                            city: 'تواصل: ' + document.getElementById('contact-subject').value
+                        }]
+                    })
+                })
+                .then(function (res) {
+                    if (res.ok || res.status === 201) {
+                        msg.textContent = 'تم إرسال رسالتك بنجاح. راح نرد عليك قريباً.';
+                        msg.className = 'form-msg ok';
+                        form.reset();
+                    } else {
+                        throw new Error('fail');
+                    }
+                })
+                .catch(function () {
+                    msg.textContent = 'حدث خطأ، حاول مرة ثانية.';
+                    msg.className = 'form-msg err';
+                })
+                .finally(function () {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'إرسال الرسالة';
+                });
+            });
+        })();
+    </script>
 </body>
 </html>

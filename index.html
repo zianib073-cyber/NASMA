@@ -61,18 +61,21 @@
         .logo {
             font-size: 22px;
             font-weight: 800;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             color: #fff;
+            flex-shrink: 0;
         }
         .nav {
             display: none;
-            gap: 28px;
+            gap: 22px;
             align-items: center;
+            flex-wrap: wrap;
         }
         .nav a {
             color: rgba(255,255,255,0.85);
             font-size: 14px;
             font-weight: 500;
+            white-space: nowrap;
         }
         .nav a:hover, .nav a.active { color: #fff; }
         .menu-btn {
@@ -111,10 +114,6 @@
             .nav { display: flex; }
             .menu-btn { display: none; }
             .mobile-nav { display: none !important; }
-            .logo { position: absolute; left: 50%; transform: translateX(-50%); }
-            .header-inner { position: relative; justify-content: flex-start; }
-            .nav { margin-right: auto; }
-            .nav-cta { margin-right: 0; margin-left: auto; }
         }
         .nav-cta {
             background: #fff;
@@ -530,17 +529,16 @@
 </head>
 <body>
 
-    <!-- Header مثل Nama -->
     <header class="header">
         <div class="header-inner">
+            <a href="index.html" class="logo">CHIZEL</a>
             <nav class="nav">
                 <a href="index.html" class="active">الرئيسية</a>
                 <a href="#products">المنتجات</a>
                 <a href="about.html">من نحن</a>
                 <a href="contact.html">تواصل معنا</a>
+                <a href="#order" class="nav-cta">اطلب الحين</a>
             </nav>
-            <a href="index.html" class="logo">CHIZEL</a>
-            <a href="#order" class="nav-cta">اطلب الحين</a>
             <button class="menu-btn" id="mobileMenuBtn" type="button" aria-label="القائمة">
                 <span></span><span></span><span></span>
             </button>
