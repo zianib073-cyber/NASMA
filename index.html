@@ -527,8 +527,8 @@
                     
                     <div class="form-row">
                         <div class="form-group-luxury">
-                            <label for="name" class="form-label-luxury">الاسم الكامل</label>
-                            <input type="text" id="name" name="name" required placeholder="مثال: محمد أحمد" class="form-input-luxury">
+                            <label for="name" class="form-label-luxury">الاسم</label>
+                            <input type="text" id="name" name="name" required placeholder="اسمك الكريم" class="form-input-luxury">
                         </div>
                     </div>
                     
@@ -542,29 +542,7 @@
                     <div class="form-row">
                         <div class="form-group-luxury">
                             <label for="city" class="form-label-luxury">المدينة</label>
-                            <select id="city" name="city" required class="form-input-luxury">
-                                <option value="">اختر مدينتك</option>
-                                <option value="riyadh">الرياض</option>
-                                <option value="jeddah">جدة</option>
-                                <option value="makkah">مكة المكرمة</option>
-                                <option value="madinah">المدينة المنورة</option>
-                                <option value="dammam">الدمام</option>
-                                <option value="khobar">الخبر</option>
-                                <option value="dhahran">الظهران</option>
-                                <option value="taif">الطائف</option>
-                                <option value="tabuk">تبوك</option>
-                                <option value="buraidah">بريدة</option>
-                                <option value="khamis">خميس مشيط</option>
-                                <option value="abha">أبها</option>
-                                <option value="other">مدينة أخرى</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group-luxury">
-                            <label for="address" class="form-label-luxury">العنوان بالتفصيل</label>
-                            <textarea id="address" name="address" rows="3" required placeholder="الحي، الشارع، رقم المبنى، أي علامة مميزة..." class="form-input-luxury"></textarea>
+                            <input type="text" id="city" name="city" required placeholder="مثال: الرياض" class="form-input-luxury">
                         </div>
                     </div>
                     
@@ -748,6 +726,78 @@
                 selectedProductEl.textContent = product.name;
                 totalPriceEl.textContent = product.price + ' ر.س';
             });
+        });
+
+        // Form Submission to SheetDB
+        const orderForm = document.querySelector('.order-form-luxury');
+        
+        orderForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>جاري الإرسال...</span>';
+            
+            // Get selected product
+            const selectedProduct = document.querySelector('input[name="product"]:checked');
+            const productInfo = products[selectedProduct.value];
+            
+            // Get form data
+            const formData = {
+                date: new Date().toLocaleString('ar-SA'),
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                city: document.getElementById('city').value,
+                product: productInfo.name,
+                price: productInfo.price + ' ر.س',
+                status: 'جديد'
+            };
+            
+            try {
+                const response = await fetch('https://sheetdb.io/api/v1/azzsixvaidmf', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ data: formData })
+                });
+                
+                if (response.ok) {
+                    // Success
+                    submitBtn.innerHTML = '<span>✅ تم استلام طلبك بنجاح!</span>';
+                    submitBtn.style.background = '#22c55e';
+                    
+                    // Reset form after 3 seconds
+                    setTimeout(() => {
+                        orderForm.reset();
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnText;
+                        submitBtn.style.background = '';
+                        selectedProductEl.textContent = 'شيزل برو';
+                        totalPriceEl.textContent = '249 ر.س';
+                    }, 3000);
+                    
+                    // Show success alert
+                    alert('🎉 تم استلام طلبك بنجاح!\n\nسنتواصل معك قريباً لتأكيد الطلب.\n\nشكراً لثقتك بـ CHIZEL!');
+                } else {
+                    throw new Error('حدث خطأ');
+                }
+            } catch (error) {
+                // Error
+                submitBtn.innerHTML = '<span>❌ حدث خطأ، حاول مرة أخرى</span>';
+                submitBtn.style.background = '#ef4444';
+                
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.style.background = '';
+                }, 3000);
+                
+                alert('حدث خطأ أثناء إرسال الطلب.\nيرجى المحاولة مرة أخرى أو التواصل معنا عبر الواتساب.');
+            }
         });
     </script>
 
