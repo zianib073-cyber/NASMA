@@ -3,276 +3,419 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>من نحن | CHIZEL - علكة الفك الأصلية</title>
-    <meta name="description" content="تعرف على قصة CHIZEL ورؤيتنا في مساعدة الشباب السعودي للحصول على فك محدد ومظهر أقوى.">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>من نحن | CHIZEL</title>
+    <meta name="description" content="تعرف على قصة CHIZEL ورؤيتنا.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: #f7f4ef;
+            color: #1a3a2f;
+            line-height: 1.7;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        a { text-decoration: none; color: inherit; }
+        button { font-family: inherit; }
+
+        :root {
+            --green: #1a3a2f;
+            --cream: #f7f4ef;
+            --cream-dark: #efeae2;
+            --white: #ffffff;
+            --muted: #6b7c74;
+            --line: #e4ddd3;
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            background: var(--green);
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .nav {
+            display: none;
+            gap: 22px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav a {
+            color: rgba(255,255,255,0.85);
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        .nav a:hover, .nav a.active { color: #fff; }
+        .nav-cta {
+            background: #fff;
+            color: var(--green);
+            font-weight: 800;
+            font-size: 13px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+        .menu-btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+        .menu-btn span {
+            width: 18px;
+            height: 2px;
+            background: #fff;
+            display: block;
+        }
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            padding: 0 20px 16px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .mobile-nav.open { display: flex; }
+        .mobile-nav a {
+            color: #fff;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        @media (min-width: 768px) {
+            .nav { display: flex; }
+            .menu-btn { display: none; }
+            .mobile-nav { display: none !important; }
+        }
+
+        .page-hero {
+            padding: 48px 0 32px;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-size: clamp(28px, 5vw, 40px);
+            color: var(--green);
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .page-hero p { color: var(--muted); }
+
+        .story {
+            padding: 0 0 50px;
+        }
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            align-items: center;
+        }
+        @media (min-width: 900px) {
+            .story-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+        .story-media {
+            background: var(--cream-dark);
+            border: 1px dashed var(--line);
+            border-radius: 22px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: var(--muted);
+            font-weight: 700;
+        }
+        .story-media svg {
+            width: 64px;
+            height: 64px;
+            opacity: 0.5;
+        }
+        .eyebrow {
+            display: inline-block;
+            background: #ebe6de;
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 800;
+            padding: 6px 12px;
+            border-radius: 999px;
+            margin-bottom: 12px;
+        }
+        .story-copy h2 {
+            font-size: clamp(22px, 4vw, 32px);
+            color: var(--green);
+            font-weight: 800;
+            line-height: 1.4;
+            margin-bottom: 14px;
+            word-wrap: break-word;
+        }
+        .story-copy p {
+            color: var(--muted);
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .values {
+            background: var(--white);
+            padding: 50px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+        .section-title .small {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+        .section-title h2 {
+            font-size: clamp(22px, 4vw, 30px);
+            color: var(--green);
+            font-weight: 800;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        @media (min-width: 700px) {
+            .values-grid { grid-template-columns: 1fr 1fr; }
+        }
+        .value-card {
+            background: var(--cream);
+            border-radius: 18px;
+            padding: 22px;
+            border: 1px solid var(--line);
+        }
+        .value-card h3 {
+            font-size: 18px;
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+        .value-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .stats {
+            padding: 50px 0;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            .stats-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        .stat {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 20px 12px;
+        }
+        .stat strong {
+            display: block;
+            font-size: 24px;
+            color: var(--green);
+            margin-bottom: 4px;
+        }
+        .stat span {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .cta-box {
+            text-align: center;
+            padding: 0 0 60px;
+        }
+        .btn-main {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--green);
+            color: #fff;
+            font-weight: 800;
+            font-size: 15px;
+            padding: 14px 28px;
+            border-radius: 999px;
+        }
+
+        .footer {
+            background: var(--green);
+            color: rgba(255,255,255,0.8);
+            padding: 36px 0 24px;
+            text-align: center;
+        }
+        .footer .logo { color: #fff; margin-bottom: 10px; display: inline-block; }
+        .footer-links { margin: 16px 0; }
+        .footer-links a {
+            color: rgba(255,255,255,0.75);
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        .copy { font-size: 12px; opacity: 0.6; margin-top: 12px; }
+    </style>
 </head>
-<body class="font-tajawal">
+<body>
 
-    <!-- Top Banner -->
-    <div class="top-banner">
-        <div class="container mx-auto px-4">
-            <p class="flex items-center justify-center gap-3 flex-wrap text-sm">
-                <span>🚚 شحن مجاني لكل السعودية</span>
-                <span class="hidden sm:inline">|</span>
-                <span>💳 الدفع عند الاستلام</span>
-                <span class="hidden sm:inline">|</span>
-                <span>✅ ضمان 30 يوم</span>
-            </p>
-        </div>
-    </div>
-
-    <!-- Header/Navbar -->
-    <header class="navbar">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="logo">CHIZEL</a>
-                
-                <nav class="hidden md:flex items-center gap-8">
-                    <a href="index.html" class="nav-link">الرئيسية</a>
-                    <a href="collection.html" class="nav-link">المنتجات</a>
-                    <a href="about.html" class="nav-link active">من نحن</a>
-                    <a href="contact.html" class="nav-link">تواصل معنا</a>
-                    <a href="index.html#order" class="btn-gold-sm">اطلب الحين</a>
-                </nav>
-                
-                <button class="md:hidden mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
-            
-            <nav class="mobile-nav" id="mobileNav">
-                <a href="index.html" class="mobile-nav-link">الرئيسية</a>
-                <a href="collection.html" class="mobile-nav-link">المنتجات</a>
-                <a href="about.html" class="mobile-nav-link active">من نحن</a>
-                <a href="contact.html" class="mobile-nav-link">تواصل معنا</a>
-                <a href="index.html#order" class="btn-gold-sm mobile-cta">اطلب الحين</a>
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">CHIZEL</a>
+            <nav class="nav">
+                <a href="index.html">الرئيسية</a>
+                <a href="index.html#products">المنتجات</a>
+                <a href="about.html" class="active">من نحن</a>
+                <a href="contact.html">تواصل معنا</a>
+                <a href="index.html#order" class="nav-cta">اطلب الحين</a>
             </nav>
+            <button class="menu-btn" id="mobileMenuBtn" type="button" aria-label="القائمة">
+                <span></span><span></span><span></span>
+            </button>
         </div>
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html">الرئيسية</a>
+            <a href="index.html#products">المنتجات</a>
+            <a href="about.html">من نحن</a>
+            <a href="contact.html">تواصل معنا</a>
+            <a href="index.html#order">اطلب الحين</a>
+        </nav>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header-luxury">
-        <div class="container mx-auto px-4 py-16 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">من نحن</h1>
-            <p class="text-lg opacity-80">قصتنا ورؤيتنا</p>
+    <section class="page-hero">
+        <div class="wrap">
+            <h1>من نحن</h1>
+            <p>قصتنا ورؤيتنا</p>
         </div>
     </section>
 
-    <!-- Story Section -->
-    <section class="section-luxury-light">
-        <div class="container mx-auto px-4">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="reveal">
-                    <span class="section-badge dark">قصتنا</span>
-                    <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6">
-                        بدأنا من <span class="text-gold">مشكلة حقيقية</span>
-                    </h2>
-                    <p class="text-lg leading-relaxed mb-6 opacity-80">
-                        مثل كثير من الشباب، كنا نعاني من مشكلة الفك غير المحدد والوجه المستدير. 
-                        جربنا منتجات كثيرة بدون نتيجة حقيقية.
-                    </p>
-                    <p class="text-lg leading-relaxed mb-6 opacity-80">
-                        بعد بحث طويل، اكتشفنا علكة المستكة الأصلية وتأثيرها المذهل على عضلات الفك.
-                        قررنا نوفرها للشباب السعودي بجودة عالية وسعر مناسب.
-                    </p>
-                    <p class="text-lg leading-relaxed opacity-80">
-                        اليوم، CHIZEL ساعد أكثر من <strong>3,500 شخص</strong> يحصلون على فك محدد ومظهر أقوى.
-                    </p>
-                </div>
-                
-                <div class="reveal">
-                    <div class="about-image-placeholder">
-                        <svg class="w-24 h-24 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                        </svg>
-                        <span class="opacity-70">صورة الفريق</span>
-                    </div>
-                </div>
+    <section class="story">
+        <div class="wrap story-grid">
+            <div class="story-copy">
+                <span class="eyebrow">قصتنا</span>
+                <h2>بدأنا من مشكلة حقيقية</h2>
+                <p>
+                    مثل كثير من الشباب، كنا نعاني من ضعف خط الفك والوجه غير المحدد.
+                    جربنا منتجات كثيرة بدون نتيجة واضحة.
+                </p>
+                <p>
+                    بعد بحث طويل اكتشفنا علكة المستكة الأصلية وتأثيرها على عضلات الفك،
+                    وقررنا نوفرها للشباب السعودي بجودة عالية وسعر مناسب.
+                </p>
+                <p>
+                    اليوم، CHIZEL ساعد آلاف العملاء يحصلون على مظهر أقوى وثقة أعلى.
+                </p>
+            </div>
+            <div class="story-media">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                <span>صورة الفريق</span>
             </div>
         </div>
     </section>
 
-    <!-- Vision & Mission -->
-    <section class="section-luxury-dark">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="about-card reveal">
-                    <div class="about-card-icon">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-                        </svg>
-                    </div>
-                    <h3 class="about-card-title">رؤيتنا</h3>
-                    <p class="about-card-desc">
-                        نسعى نكون الوجهة الأولى للشباب السعودي اللي يبي يحسن مظهره بطريقة طبيعية وآمنة.
-                        هدفنا نساعد كل شخص يحصل على الثقة اللي يستحقها.
-                    </p>
+    <section class="values">
+        <div class="wrap">
+            <div class="section-title">
+                <span class="small">قيمنا</span>
+                <h2>اللي نؤمن فيه</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>الجودة أولاً</h3>
+                    <p>ما نقبل إلا أفضل المواد الطبيعية. منتجنا أصلي وواضح المكونات.</p>
                 </div>
-                
-                <div class="about-card reveal">
-                    <div class="about-card-icon gold">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-                        </svg>
-                    </div>
-                    <h3 class="about-card-title">مهمتنا</h3>
-                    <p class="about-card-desc">
-                        توفير منتج طبيعي 100% يعطي نتائج حقيقية، مع خدمة عملاء ممتازة وضمان كامل.
-                        نؤمن إن كل شخص يستحق يكون راضي عن مظهره.
-                    </p>
+                <div class="value-card">
+                    <h3>رضا العميل</h3>
+                    <p>سعادتك هدفنا. لو مو راضي خلال 30 يوم، نرجع فلوسك بدون أسئلة.</p>
+                </div>
+                <div class="value-card">
+                    <h3>الصدق والشفافية</h3>
+                    <p>نقول الحقيقة دائماً، وما نبالغ في الوعود.</p>
+                </div>
+                <div class="value-card">
+                    <h3>نتائج حقيقية</h3>
+                    <p>منتج مبني على استخدام عملي وتجارب حقيقية من عملائنا.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Values -->
-    <section class="section-luxury-light">
-        <div class="container mx-auto px-4">
-            <div class="section-header-luxury reveal">
-                <span class="section-badge dark">قيمنا</span>
-                <h2 class="section-title-luxury dark">اللي نؤمن فيه</h2>
-            </div>
-            
-            <div class="features-luxury-grid mt-12">
-                <div class="feature-luxury-card reveal">
-                    <div class="feature-luxury-icon">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-luxury-title">الجودة أولاً</h3>
-                    <p class="feature-luxury-desc">ما نقبل إلا أفضل المواد الطبيعية. منتجنا أصلي 100%.</p>
-                </div>
-                
-                <div class="feature-luxury-card reveal">
-                    <div class="feature-luxury-icon gold">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-luxury-title">رضا العميل</h3>
-                    <p class="feature-luxury-desc">سعادتك هدفنا. لو مو راضي، نرجع فلوسك بدون أسئلة.</p>
-                </div>
-                
-                <div class="feature-luxury-card reveal">
-                    <div class="feature-luxury-icon">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-luxury-title">الصدق والشفافية</h3>
-                    <p class="feature-luxury-desc">نقول لك الحقيقة دائماً. ما نبالغ في الوعود.</p>
-                </div>
-                
-                <div class="feature-luxury-card reveal">
-                    <div class="feature-luxury-icon gold">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-luxury-title">نتائج حقيقية</h3>
-                    <p class="feature-luxury-desc">منتجنا مبني على علم وتجارب حقيقية. النتائج تتكلم!</p>
-                </div>
-            </div>
+    <section class="stats">
+        <div class="wrap stats-grid">
+            <div class="stat"><strong>+3,500</strong><span>عميل سعيد</span></div>
+            <div class="stat"><strong>4.9/5</strong><span>تقييم العملاء</span></div>
+            <div class="stat"><strong>98%</strong><span>نسبة الرضا</span></div>
+            <div class="stat"><strong>30 يوم</strong><span>ضمان ذهبي</span></div>
         </div>
     </section>
 
-    <!-- Stats -->
-    <section class="section-luxury-dark">
-        <div class="container mx-auto px-4">
-            <div class="trust-indicators reveal">
-                <div class="trust-item">
-                    <span class="trust-number">+3,500</span>
-                    <span class="trust-label">عميل سعيد</span>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-number">4.9/5</span>
-                    <span class="trust-label">تقييم العملاء</span>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-number">98%</span>
-                    <span class="trust-label">نسبة الرضا</span>
-                </div>
-                <div class="trust-item">
-                    <span class="trust-number">30 يوم</span>
-                    <span class="trust-label">ضمان ذهبي</span>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12 reveal">
-                <a href="collection.html" class="btn-luxury-gold inline-flex">
-                    <span>تصفح المنتجات</span>
-                </a>
-            </div>
-        </div>
-    </section>
+    <div class="cta-box">
+        <a href="index.html#order" class="btn-main">اطلب الحين</a>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer-luxury">
-        <div class="container mx-auto px-4 py-16">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3 class="footer-logo">CHIZEL</h3>
-                    <p class="footer-desc">علكة الفك الأصلية لنحت الملامح وتحديد خط الفك.</p>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>روابط سريعة</h4>
-                    <ul>
-                        <li><a href="index.html">الرئيسية</a></li>
-                        <li><a href="collection.html">المنتجات</a></li>
-                        <li><a href="about.html">من نحن</a></li>
-                        <li><a href="contact.html">تواصل معنا</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>المساعدة</h4>
-                    <ul>
-                        <li><a href="contact.html">الدعم الفني</a></li>
-                        <li><a href="#">سياسة الشحن</a></li>
-                        <li><a href="#">الاسترجاع والضمان</a></li>
-                    </ul>
-                </div>
+    <footer class="footer">
+        <div class="wrap">
+            <a href="index.html" class="logo">CHIZEL</a>
+            <p>علكة الفك الأصلية لنحت الملامح</p>
+            <div class="footer-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="index.html#products">المنتجات</a>
+                <a href="about.html">من نحن</a>
+                <a href="contact.html">تواصل معنا</a>
             </div>
-            
-            <div class="footer-bottom">
-                <p>© 2024 CHIZEL. جميع الحقوق محفوظة.</p>
-            </div>
+            <p class="copy">© 2024 CHIZEL. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileNav = document.getElementById('mobileNav');
-        
-        mobileMenuBtn.addEventListener('click', function() {
-            this.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-        });
-        
-        function revealOnScroll() {
-            const reveals = document.querySelectorAll('.reveal, .reveal-scale');
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 150) {
-                    element.classList.add('active');
-                }
-            });
-        }
-        window.addEventListener('load', revealOnScroll);
-        window.addEventListener('scroll', revealOnScroll);
+        (function () {
+            var btn = document.getElementById('mobileMenuBtn');
+            var nav = document.getElementById('mobileNav');
+            if (btn && nav) {
+                btn.addEventListener('click', function () {
+                    nav.classList.toggle('open');
+                });
+            }
+        })();
     </script>
-
 </body>
 </html>
