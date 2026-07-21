@@ -248,29 +248,45 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 10px;
-            margin-bottom: 18px;
-            border: 0;
+            margin: 0 0 18px;
             padding: 0;
+            border: none;
+            min-width: 0;
         }
         @media (min-width: 640px) {
-            .packs { grid-template-columns: repeat(3, 1fr); }
+            .packs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }
-        .packs legend {
+        .packs-title {
             font-weight: 800;
             font-size: 14px;
-            margin-bottom: 10px;
+            margin-bottom: 4px;
             color: var(--green);
             grid-column: 1 / -1;
         }
-        .pack { cursor: pointer; display: block; }
-        .pack input { position: absolute; opacity: 0; pointer-events: none; }
+        .pack {
+            cursor: pointer;
+            display: block;
+            min-width: 0;
+            position: relative;
+        }
+        .pack input {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+            margin: 0;
+            pointer-events: none;
+        }
         .pack-box {
-            height: 100%;
+            display: block;
+            width: 100%;
+            min-height: 110px;
             border: 1.5px solid var(--line);
             border-radius: 16px;
             padding: 14px 12px;
             text-align: center;
             background: #fafaf8;
+            overflow: hidden;
             transition: border-color 0.15s ease, background 0.15s ease;
         }
         .pack input:checked + .pack-box {
@@ -298,7 +314,7 @@
             margin-bottom: 16px;
         }
         @media (min-width: 640px) {
-            .fields { grid-template-columns: 1fr 1fr 1fr; }
+            .fields { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }
         .field span {
             display: block;
@@ -589,8 +605,8 @@
                 <h2>أكمل طلبك</h2>
                 <p class="sub">الدفع عند الاستلام · شحن مجاني لكل السعودية</p>
 
-                <fieldset class="packs">
-                    <legend>اختر الباقة</legend>
+                <div class="packs">
+                    <p class="packs-title">اختر الباقة</p>
                     <label class="pack">
                         <input type="radio" name="product" value="basic" data-price="199">
                         <span class="pack-box">
@@ -616,7 +632,7 @@
                             <span class="pack-price">379 ر.س</span>
                         </span>
                     </label>
-                </fieldset>
+                </div>
 
                 <div class="fields">
                     <label class="field">
