@@ -131,7 +131,7 @@
 
         /* ===== Hero ===== */
         .hero {
-            padding: 40px 0 20px;
+            padding: 28px 0 20px;
         }
         .hero-grid {
             display: grid;
@@ -141,15 +141,23 @@
         }
         @media (min-width: 900px) {
             .hero {
-                padding: 60px 0 40px;
+                padding: 48px 0 36px;
             }
             .hero-grid {
-                grid-template-columns: 1.05fr 0.95fr;
+                grid-template-columns: 1fr 1fr;
                 gap: 48px;
             }
+            /* في RTL: العمود الأول يمين، الثاني يسار → النص يمين والصورة يسار */
+            .hero-copy { order: 1; }
+            .hero-visual { order: 2; }
+        }
+        .hero-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
         }
         .hero-media {
-            background: var(--cream-dark);
+            background: linear-gradient(160deg, #efeae2 0%, #e5ddd2 100%);
             border-radius: 24px;
             overflow: hidden;
             aspect-ratio: 1 / 1;
@@ -157,6 +165,8 @@
             align-items: center;
             justify-content: center;
             position: relative;
+            border: 1px solid var(--line);
+            box-shadow: 0 20px 50px rgba(26, 58, 47, 0.08);
         }
         .hero-media .ph {
             text-align: center;
@@ -171,6 +181,58 @@
             font-weight: 500;
             opacity: 0.8;
         }
+        .hero-badge-float {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            background: var(--green);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 800;
+            padding: 8px 14px;
+            border-radius: 999px;
+        }
+        .product-facts {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 16px 18px;
+            display: grid;
+            gap: 10px;
+        }
+        .product-facts h3 {
+            font-size: 14px;
+            color: var(--green);
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+        .fact {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+        .fact strong {
+            color: var(--green);
+            flex-shrink: 0;
+        }
+        .fact-icon {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #eef5f1;
+            color: var(--green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 800;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
         .hero-copy .eyebrow {
             display: inline-block;
             font-size: 13px;
@@ -180,23 +242,47 @@
             letter-spacing: 0.5px;
         }
         .hero-copy h1 {
-            font-size: clamp(28px, 5vw, 44px);
+            font-size: clamp(30px, 5.5vw, 48px);
             font-weight: 800;
-            line-height: 1.3;
+            line-height: 1.25;
             color: var(--green);
             margin-bottom: 14px;
         }
+        .hero-copy .emotion {
+            font-size: clamp(16px, 2.5vw, 19px);
+            color: var(--green);
+            font-weight: 700;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            max-width: 520px;
+        }
         .hero-copy .lead {
             color: var(--muted);
-            font-size: 16px;
-            margin-bottom: 20px;
-            max-width: 480px;
+            font-size: 15px;
+            margin-bottom: 18px;
+            max-width: 500px;
+            line-height: 1.8;
         }
+        .proof-line {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 18px;
+            margin-bottom: 18px;
+            font-size: 13px;
+            color: var(--muted);
+            font-weight: 600;
+        }
+        .proof-line span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .proof-line b { color: var(--green); }
         .tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-bottom: 24px;
+            margin-bottom: 22px;
         }
         .tag {
             background: #ebe6de;
@@ -205,6 +291,13 @@
             font-weight: 700;
             padding: 8px 14px;
             border-radius: 999px;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 14px;
         }
         .btn-main {
             display: inline-flex;
@@ -222,6 +315,20 @@
             transition: transform 0.15s ease, background 0.15s ease;
         }
         .btn-main:hover { background: var(--green-mid); transform: translateY(-1px); }
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            color: var(--green);
+            font-weight: 700;
+            font-size: 14px;
+            padding: 12px 8px;
+        }
+        .guarantee-note {
+            font-size: 13px;
+            color: var(--muted);
+            font-weight: 600;
+        }
+        .guarantee-note b { color: var(--green); }
 
         /* ===== Order Form (فوق بعد الهيرو مباشرة) ===== */
         .order-section {
@@ -572,33 +679,70 @@
         </nav>
     </header>
 
-    <!-- Hero: صورة + نص -->
+    <!-- Hero: نص يمين + صورة يسار + معلومات تقنع -->
     <section class="hero">
         <div class="wrap hero-grid">
-            <div class="hero-media">
-                <div class="ph">
-                    صورة المنتج الرئيسية
-                    <small>ضع صورة الباقات هنا</small>
-                </div>
-            </div>
+
+            <!-- النص العاطفي (يمين في RTL) -->
             <div class="hero-copy">
-                <span class="eyebrow">براند سعودي · مستكة خيوس الأصلية</span>
-                <h1>انحت فكك.<br>بطريقة طبيعية.</h1>
-                <p class="lead">
-                    CHIZEL مش علكة عادية — مستكة يونانية أصلية تقوّي عضلات الفك
-                    وتحدد ملامحك مع تمرين يومي بسيط. نتائج تبان، أو فلوسك ترجع.
+                <span class="eyebrow">كل صورة تطلع… تحكي عنك</span>
+                <h1>خلّ فكك يفرض حضورك</h1>
+                <p class="emotion">
+                    مو بس مظهر — إحساس إنك واثق من أول نظرة.
+                    لما خط الفك يتوضح، ثقتك تتغير… وصورك بعد ما ترجع زي أول.
                 </p>
+                <p class="lead">
+                    CHIZEL مستكة خيوس اليونانية الأصلية: تمرّن عضلات الفك يومياً بطريقة طبيعية،
+                    بدون أجهزة بلاستيكية. 15–20 دقيقة في اليوم تكفي تبدأ تشوف الفرق.
+                </p>
+                <div class="proof-line">
+                    <span><b>+3,500</b> عميل جربوا</span>
+                    <span><b>4.9</b> تقييم</span>
+                    <span><b>30 يوم</b> ضمان استرجاع</span>
+                </div>
                 <div class="tags">
                     <span class="tag">مستكة خيوس 100%</span>
                     <span class="tag">بدون سكر</span>
-                    <span class="tag">شحن مجاني</span>
+                    <span class="tag">نتائج تُحس</span>
                     <span class="tag">دفع عند الاستلام</span>
                 </div>
-                <a href="#order" class="btn-main">
-                    ابدأ رحلتك مع CHIZEL
-                    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-                </a>
+                <div class="hero-actions">
+                    <a href="#order" class="btn-main">أبغى أبدأ الحين</a>
+                    <a href="#products" class="btn-ghost">شوف الباقات ←</a>
+                </div>
+                <p class="guarantee-note">جرب بثقة — <b>مو راضي خلال 30 يوم؟ فلوسك ترجع</b></p>
             </div>
+
+            <!-- الصورة + معلومات المنتج (يسار في RTL) -->
+            <div class="hero-visual">
+                <div class="hero-media">
+                    <div class="ph">
+                        صورة منتج CHIZEL
+                        <small>مستكة خيوس · شكل القطرات</small>
+                    </div>
+                    <span class="hero-badge-float">الأصلي من خيوس</span>
+                </div>
+                <div class="product-facts">
+                    <h3>ليش تشوفه بوضوح؟</h3>
+                    <div class="fact">
+                        <span class="fact-icon">1</span>
+                        <span><strong>المستكة:</strong> راتنج طبيعي من جزيرة خيوس — أقوى من العلكة العادية بعشر مرات تقريباً.</span>
+                    </div>
+                    <div class="fact">
+                        <span class="fact-icon">2</span>
+                        <span><strong>الاستخدام:</strong> امضغ 15–20 دقيقة يومياً… تمرين بسيط لعضلات الفك.</span>
+                    </div>
+                    <div class="fact">
+                        <span class="fact-icon">3</span>
+                        <span><strong>النتيجة:</strong> ملامح أوضح وثقة أعلى — مع الالتزام خلال أسابيع.</span>
+                    </div>
+                    <div class="fact">
+                        <span class="fact-icon">✓</span>
+                        <span><strong>الضمان:</strong> جرب وأنت مرتاح — استرجاع خلال 30 يوم.</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
