@@ -524,82 +524,130 @@
             margin-top: 14px;
         }
 
-        /* ===== Products grid (مثل Nama) ===== */
+        /* ===== Products grid (شكل Nama) ===== */
         .products {
-            padding: 30px 0 60px;
+            padding: 56px 0 72px;
+            background: #fff;
         }
         .section-title {
             text-align: center;
-            margin-bottom: 32px;
+            margin-bottom: 40px;
+            max-width: 640px;
+            margin-inline: auto;
         }
         .section-title .small {
             display: block;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
-            color: var(--muted);
-            margin-bottom: 8px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #b8a99a;
+            margin-bottom: 12px;
         }
         .section-title h2 {
-            font-size: clamp(24px, 4vw, 34px);
-            color: var(--green);
+            font-size: clamp(26px, 4.5vw, 38px);
+            color: #2c2c2c;
             font-weight: 800;
+            line-height: 1.35;
+            margin-bottom: 12px;
+        }
+        .section-title .desc {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.7;
         }
 
         .products-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
+            gap: 24px;
         }
         @media (min-width: 768px) {
-            .products-grid { grid-template-columns: repeat(3, 1fr); gap: 22px; }
+            .products-grid { grid-template-columns: repeat(3, 1fr); gap: 28px; }
         }
 
         .card {
-            background: var(--white);
-            border-radius: 22px;
+            background: #faf9f7;
+            border-radius: 20px;
             overflow: hidden;
-            border: 1px solid var(--line);
+            border: 1px solid #eee9e2;
             display: flex;
             flex-direction: column;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
         .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 40px rgba(26, 58, 47, 0.08);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 48px rgba(26, 58, 47, 0.1);
         }
-        .card-img {
-            background: var(--cream-dark);
+        .card-media {
+            position: relative;
+            background: linear-gradient(160deg, #eef3f0 0%, #e2ebe6 100%);
             aspect-ratio: 1 / 1;
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+        .card-tag {
+            position: absolute;
+            top: 14px;
+            inset-inline-start: 14px;
+            background: var(--green);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 999px;
+            z-index: 1;
+        }
+        .card-img {
             color: var(--muted);
             font-weight: 700;
             font-size: 14px;
+            text-align: center;
+            padding: 20px;
+        }
+        .card-img small {
+            display: block;
+            margin-top: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            opacity: 0.75;
         }
         .card-body {
-            padding: 18px 18px 20px;
+            padding: 22px 20px 22px;
             display: flex;
             flex-direction: column;
             flex: 1;
+            background: #fff;
         }
         .card-body h3 {
-            font-size: 18px;
-            color: var(--green);
-            margin-bottom: 8px;
+            font-size: 20px;
+            color: #2c2c2c;
+            margin-bottom: 10px;
             font-weight: 800;
+            line-height: 1.35;
         }
         .card-body p {
             color: var(--muted);
             font-size: 14px;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             flex: 1;
+            line-height: 1.65;
+        }
+        .stars-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 18px;
         }
         .stars {
-            color: var(--gold);
-            letter-spacing: 2px;
+            color: #d4a84b;
+            letter-spacing: 1px;
             font-size: 14px;
-            margin-bottom: 14px;
+        }
+        .stars-count {
+            font-size: 13px;
+            color: var(--muted);
         }
         .card-foot {
             display: flex;
@@ -607,18 +655,35 @@
             justify-content: space-between;
             gap: 12px;
         }
+        .card-price {
+            font-weight: 800;
+            color: #2c2c2c;
+            font-size: 20px;
+        }
+        .card-price .old {
+            font-size: 13px;
+            color: #aaa;
+            text-decoration: line-through;
+            font-weight: 500;
+            margin-left: 8px;
+        }
         .card-btn {
-            width: 42px;
-            height: 42px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            background: var(--green);
-            color: #fff;
+            background: #f0eeea;
+            color: #2c2c2c;
             display: flex;
             align-items: center;
             justify-content: center;
             border: 0;
             cursor: pointer;
             flex-shrink: 0;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        .card-btn:hover {
+            background: var(--green);
+            color: #fff;
         }
         .card-btn svg { width: 18px; height: 18px; }
 
@@ -683,7 +748,7 @@
             <a href="index.html" class="logo">CHIZEL</a>
             <nav class="nav">
                 <a href="index.html" class="active">الرئيسية</a>
-                <a href="#order">المنتجات</a>
+                <a href="#products">المنتجات</a>
                 <a href="about.html">من نحن</a>
                 <a href="contact.html">تواصل معنا</a>
                 <a href="#order" class="nav-cta">اطلب الحين</a>
@@ -694,7 +759,7 @@
         </div>
         <nav class="mobile-nav" id="mobileNav">
             <a href="index.html">الرئيسية</a>
-            <a href="#order">المنتجات</a>
+            <a href="#products">المنتجات</a>
             <a href="about.html">من نحن</a>
             <a href="contact.html">تواصل معنا</a>
             <a href="#order">اطلب الحين</a>
@@ -730,7 +795,7 @@
                 </div>
                 <div class="hero-actions">
                     <a href="#order" class="btn-main">أبغى أبدأ الحين</a>
-                    <a href="#order" class="btn-ghost">شوف الباقات ←</a>
+                    <a href="#products" class="btn-ghost">شوف الباقات ←</a>
                 </div>
                 <p class="guarantee-note">جرب بثقة — <b>مو راضي خلال 30 يوم؟ فلوسك ترجع</b></p>
             </div>
@@ -828,6 +893,82 @@
         </div>
     </section>
 
+    <!-- شبكة المنتجات — شكل Nama -->
+    <section class="products" id="products">
+        <div class="wrap">
+            <div class="section-title">
+                <span class="small">OUR FORMULATIONS</span>
+                <h2>ثلاث باقات. هدف واحد: فك أوضح.</h2>
+                <p class="desc">اختَر الباقة المناسبة لك — مستكة خيوس أصلية، تمرين يومي بسيط، ونتائج تُحس مع الالتزام.</p>
+            </div>
+
+            <div class="products-grid">
+                <article class="card">
+                    <div class="card-media">
+                        <span class="card-tag">CHIZEL Start</span>
+                        <div class="card-img">صورة المنتج<small>علبة تجربة</small></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>ستارت — بداية واضحة</h3>
+                        <p>علبة تجربة للمستكة الأصلية. مثالية للي يبي يبدأ تمرين الفك أول مرة بدون التزام كبير.</p>
+                        <div class="stars-row">
+                            <span class="stars">★★★★★</span>
+                            <span class="stars-count">(128)</span>
+                        </div>
+                        <div class="card-foot">
+                            <div class="card-price">199 ر.س</div>
+                            <a href="#order" class="card-btn" data-pack="start" aria-label="اطلب ستارت">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media">
+                        <span class="card-tag">CHIZEL Pro</span>
+                        <div class="card-img">صورة المنتج<small>علبتين + دليل</small></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>برو — الأكثر طلباً</h3>
+                        <p>علبتين + دليل تمارين الفك. الباقة اللي يختارها أغلب عملائنا لنتيجة أوضح خلال أسابيع.</p>
+                        <div class="stars-row">
+                            <span class="stars">★★★★★</span>
+                            <span class="stars-count">(312)</span>
+                        </div>
+                        <div class="card-foot">
+                            <div class="card-price"><span class="old">398</span>249 ر.س</div>
+                            <a href="#order" class="card-btn" data-pack="pro" aria-label="اطلب برو">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-media">
+                        <span class="card-tag">CHIZEL Elite</span>
+                        <div class="card-img">صورة المنتج<small>3 علب + متابعة</small></div>
+                    </div>
+                    <div class="card-body">
+                        <h3>إيليت — نتيجة أقوى</h3>
+                        <p>3 علب + دليل + متابعة. للملتزمين بتمرين يومي ونتيجة أوضح على المدى.</p>
+                        <div class="stars-row">
+                            <span class="stars">★★★★★</span>
+                            <span class="stars-count">(96)</span>
+                        </div>
+                        <div class="card-foot">
+                            <div class="card-price"><span class="old">597</span>379 ر.س</div>
+                            <a href="#order" class="card-btn" data-pack="elite" aria-label="اطلب إيليت">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- مميزات -->
     <section class="features">
         <div class="wrap">
@@ -874,7 +1015,7 @@
             <p>براند سعودي لمستكة خيوس — انحت فكك بطريقة طبيعية</p>
             <div class="footer-links">
                 <a href="index.html">الرئيسية</a>
-                <a href="#order">المنتجات</a>
+                <a href="#products">المنتجات</a>
                 <a href="about.html">من نحن</a>
                 <a href="contact.html">تواصل معنا</a>
             </div>
