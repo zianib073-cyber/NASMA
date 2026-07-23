@@ -191,17 +191,21 @@
             justify-content: space-between;
             gap: 12px;
         }
-        .card-price {
-            font-weight: 800;
-            color: var(--green);
-            font-size: 18px;
-        }
-        .card-price .old {
-            font-size: 13px;
-            color: #999;
-            text-decoration: line-through;
-            font-weight: 500;
-            margin-left: 6px;
+        .card-price-ph {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            min-width: 100px;
+            min-height: 42px;
+            background: var(--cream-dark);
+            border: 1.5px dashed var(--line);
+            border-radius: 12px;
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+            padding: 8px;
         }
         .card-btn {
             background: var(--green);
@@ -270,7 +274,7 @@
                     <p>علبة تجربة للبداية. مثالية للي يبي يجرب أول مرة.</p>
                     <div class="stars">★★★★★</div>
                     <div class="card-foot">
-                        <div class="card-price">199 ر.س</div>
+                        <div class="card-price-ph">صورة السعر</div>
                         <a href="index.html#order" class="card-btn">اطلب الحين</a>
                     </div>
                 </div>
@@ -283,7 +287,7 @@
                     <p>علبتين + دليل تمارين. الباقة الأكثر طلباً.</p>
                     <div class="stars">★★★★★</div>
                     <div class="card-foot">
-                        <div class="card-price"><span class="old">398</span>249 ر.س</div>
+                        <div class="card-price-ph">صورة السعر</div>
                         <a href="index.html#order" class="card-btn">اطلب الحين</a>
                     </div>
                 </div>
@@ -296,7 +300,7 @@
                     <p>3 علب + دليل + متابعة. للنتائج الأوضح.</p>
                     <div class="stars">★★★★★</div>
                     <div class="card-foot">
-                        <div class="card-price"><span class="old">597</span>379 ر.س</div>
+                        <div class="card-price-ph">صورة السعر</div>
                         <a href="index.html#order" class="card-btn">اطلب الحين</a>
                     </div>
                 </div>

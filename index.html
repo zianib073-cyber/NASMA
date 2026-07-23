@@ -416,7 +416,39 @@
         }
         .pack-name { display: block; font-weight: 800; color: var(--green); font-size: 15px; }
         .pack-desc { display: block; font-size: 12px; color: var(--muted); margin: 4px 0; }
-        .pack-price { display: block; font-weight: 800; color: var(--green); font-size: 18px; }
+        .pack-img-ph,
+        .total-img-ph,
+        .card-price-ph {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 56px;
+            margin-top: 8px;
+            background: var(--cream-dark);
+            border: 1.5px dashed var(--line);
+            border-radius: 12px;
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+            padding: 8px;
+        }
+        .total-img-ph {
+            display: inline-flex;
+            width: 120px;
+            min-height: 48px;
+            margin-top: 0;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .card-price-ph {
+            width: auto;
+            min-width: 100px;
+            min-height: 42px;
+            margin-top: 0;
+            flex: 1;
+        }
 
         .fields {
             display: grid;
@@ -572,18 +604,6 @@
             align-items: center;
             justify-content: space-between;
             gap: 12px;
-        }
-        .card-price {
-            font-weight: 800;
-            color: var(--green);
-            font-size: 18px;
-        }
-        .card-price .old {
-            font-size: 13px;
-            color: #999;
-            text-decoration: line-through;
-            font-weight: 500;
-            margin-left: 6px;
         }
         .card-btn {
             width: 42px;
@@ -760,7 +780,7 @@
                         <span class="pack-box">
                             <span class="pack-name">ستارت</span>
                             <span class="pack-desc">تجربة · علبة</span>
-                            <span class="pack-price">199 ر.س</span>
+                            <span class="pack-img-ph">صورة ستارت</span>
                         </span>
                     </label>
                     <label class="pack">
@@ -769,7 +789,7 @@
                             <span class="pack-tag">الأكثر طلباً</span>
                             <span class="pack-name">برو</span>
                             <span class="pack-desc">علبتين + دليل</span>
-                            <span class="pack-price">249 ر.س</span>
+                            <span class="pack-img-ph">صورة برو</span>
                         </span>
                     </label>
                     <label class="pack">
@@ -777,7 +797,7 @@
                         <span class="pack-box">
                             <span class="pack-name">إيليت</span>
                             <span class="pack-desc">3 علب + متابعة</span>
-                            <span class="pack-price">379 ر.س</span>
+                            <span class="pack-img-ph">صورة إيليت</span>
                         </span>
                     </label>
                 </div>
@@ -798,7 +818,7 @@
                 </div>
 
                 <div class="order-foot">
-                    <div class="total">الإجمالي <strong id="total-price">249 ر.س</strong></div>
+                    <div class="total">الإجمالي <span class="total-img-ph" id="total-price">صورة الإجمالي</span></div>
                     <button type="submit" class="btn-submit" id="submitBtn">تأكيد الطلب</button>
                 </div>
                 <p class="secure">معلوماتك آمنة · الدفع عند الاستلام فقط</p>
@@ -822,7 +842,7 @@
                         <p>علبة تجربة للبداية. مثالية للي يبي يجرب المستكة الأصلية أول مرة.</p>
                         <div class="stars">★★★★★</div>
                         <div class="card-foot">
-                            <div class="card-price">199 ر.س</div>
+                            <div class="card-price-ph">صورة السعر</div>
                             <a href="#order" class="card-btn" data-pack="start" aria-label="اطلب ستارت">
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                             </a>
@@ -837,7 +857,7 @@
                         <p>علبتين + دليل تمارين الفك. الباقة اللي يختارها أغلب عملائنا.</p>
                         <div class="stars">★★★★★</div>
                         <div class="card-foot">
-                            <div class="card-price"><span class="old">398</span>249 ر.س</div>
+                            <div class="card-price-ph">صورة السعر</div>
                             <a href="#order" class="card-btn" data-pack="pro" aria-label="اطلب برو">
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                             </a>
@@ -852,7 +872,7 @@
                         <p>3 علب + دليل + متابعة. للملتزمين بنتيجة أوضح خلال أسابيع.</p>
                         <div class="stars">★★★★★</div>
                         <div class="card-foot">
-                            <div class="card-price"><span class="old">597</span>379 ر.س</div>
+                            <div class="card-price-ph">صورة السعر</div>
                             <a href="#order" class="card-btn" data-pack="elite" aria-label="اطلب إيليت">
                                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                             </a>
@@ -927,18 +947,13 @@
                 });
             }
 
-            var totalEl = document.getElementById('total-price');
-            function updateTotal() {
-                var selected = document.querySelector('input[name="product"]:checked');
-                if (selected && totalEl) totalEl.textContent = selected.getAttribute('data-price') + ' ر.س';
+            function selectPack(value) {
+                var radio = document.querySelector('input[name="product"][value="' + value + '"]');
+                if (radio) radio.checked = true;
             }
-            document.querySelectorAll('input[name="product"]').forEach(function (r) {
-                r.addEventListener('change', updateTotal);
-            });
             document.querySelectorAll('[data-pack]').forEach(function (el) {
                 el.addEventListener('click', function () {
-                    var radio = document.querySelector('input[name="product"][value="' + el.getAttribute('data-pack') + '"]');
-                    if (radio) { radio.checked = true; updateTotal(); }
+                    selectPack(el.getAttribute('data-pack'));
                 });
             });
 
