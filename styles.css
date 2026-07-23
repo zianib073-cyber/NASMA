@@ -14,15 +14,15 @@
     --gold-light: #d4b44a;
     --gold-dark: #a68521;
     --white: #ffffff;
-    --white-off: #faf9f6;
-    --cream: #f5f1e8;
-    --cream-dark: #ebe5d8;
+    --white-off: #f3f6f4;
+    --cream: #f3f6f4;
+    --cream-dark: #e6ece9;
     --gray: #666666;
     --gray-light: #999999;
     --shadow-gold: 0 10px 40px rgba(201, 162, 39, 0.2);
     --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.08);
     --gradient-gold: linear-gradient(135deg, #c9a227 0%, #d4b44a 50%, #c9a227 100%);
-    --gradient-light: linear-gradient(180deg, #faf9f6 0%, #f5f1e8 100%);
+    --gradient-light: linear-gradient(180deg, #f3f6f4 0%, #eef3f0 100%);
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
