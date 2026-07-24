@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أحزمة نقل الأثاث | NASMA — 199 ر.س</title>
+    <meta name="description" content="أحزمة رفع ونقل الأثاث الثقيل بأمان. 199 ر.س — شحن مجاني ودفع عند الاستلام في السعودية.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="store.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">NASMA</a>
+            <nav class="nav">
+                <a href="index.html">المنتجات</a>
+                <a href="contact.html">تواصل</a>
+            </nav>
+            <button class="menu-btn" id="mobileMenuBtn" type="button" aria-label="القائمة">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html">المنتجات</a>
+            <a href="contact.html">تواصل</a>
+        </nav>
+    </header>
+
+    <section class="product-hero">
+        <div class="wrap product-hero-grid">
+            <div class="product-visual">صورة المنتج — أحزمة نقل<br>حزامان + لوح رفع</div>
+            <div class="product-copy">
+                <h1>أحزمة نقل الأثاث الثقيل</h1>
+                <p class="lead">انقل الثلاجة، الغسالة، أو الكنب بدون ما تجرّ ظهرك — الوزن على الكتفين مع شريك.</p>
+                <div class="price-box">
+                    <div class="now">199 ر.س</div>
+                    <div class="note">شامل الشحن · تدفع لما يوصلك المندوب</div>
+                </div>
+                <ul class="benefits">
+                    <li>مصممة لشخصين — رفع متزن وآمن</li>
+                    <li>حزام قوي + لوح يمر تحت القطعة</li>
+                    <li>مثالية للنقل، الترتيب، أو تجديد البيت</li>
+                    <li>شحن مجاني لجميع مناطق السعودية</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="order">
+        <div class="wrap">
+            <form class="order-box" id="orderForm"
+                  data-product="طلب — أحزمة نقل"
+                  data-sheet="https://sheetdb.io/api/v1/glsn5w5ktwugw">
+                <h2>اطلب الآن</h2>
+                <p class="sub">اسم + جوال — نتصل بك لتأكيد العنوان</p>
+                <label class="field">
+                    <span>الاسم</span>
+                    <input type="text" id="order-name" required placeholder="اسمك" autocomplete="name">
+                </label>
+                <label class="field">
+                    <span>رقم الجوال</span>
+                    <input type="tel" id="order-phone" required placeholder="05xxxxxxxx" class="phone-input" inputmode="tel">
+                </label>
+                <button type="submit" class="btn-submit" id="orderSubmit">اطلب الآن — 199 ر.س</button>
+                <p class="form-msg" id="orderMsg"></p>
+                <p class="trust-line">🔒 دفع عند الاستلام · لا نطلب بطاقة بنكية</p>
+            </form>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="wrap">
+            <h2>أسئلة شائعة</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>هل أحتاج شخص ثاني؟</h3>
+                    <p>نعم، الأحزمة مصممة للرفع بشخصين — أكثر أماناً وأسهل على الظهر.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>هل الحزام يتحمل ثلاجة؟</h3>
+                    <p>مصنوع لقطع منزلية ثقيلة — استخدم حكمة ووزن متوازن.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="wrap">
+            <a href="index.html" class="logo">NASMA</a>
+            <p class="copy">© NASMA</p>
+        </div>
+    </footer>
+    <script src="order-form.js"></script>
+</body>
+</html>
