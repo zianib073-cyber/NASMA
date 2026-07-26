@@ -8,22 +8,22 @@ const STORE = {
 const BUNDLES = [
     { id: 'single', price: 199, titleAr: 'قطعة واحدة', badge: '' },
     { id: 'dual', price: 279, titleAr: 'باقة ثنائية', badge: 'الأكثر طلباً' },
-    { id: 'mega', price: 349, titleAr: 'الباقة المتكاملة', badge: 'وفر أكثر' }
+    { id: 'mega', price: 349, titleAr: 'الباقة المتكاملة', badge: 'وفّر أكثر' }
 ];
 
 const PRODUCTS = {
-    led: {
-        slug: 'product-led-light.html',
+    light: {
+        slug: 'product-light.html',
         nameAr: 'مصباح العمل المغناطيسي القوي',
         sheetProduct: 'مصباح LED'
     },
-    kidsLock: {
-        slug: 'product-kids-lock.html',
+    lock: {
+        slug: 'product-lock.html',
         nameAr: 'قفل أمان الأبواب والنوافذ للأطفال',
         sheetProduct: 'قفل أطفال'
     },
     straps: {
-        slug: 'product-move-straps.html',
+        slug: 'product-straps.html',
         nameAr: 'أحزمة رفع ونقل الأثاث الثقيل',
         sheetProduct: 'أحزمة نقل'
     }

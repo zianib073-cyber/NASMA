@@ -3,477 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تواصل | NASMA</title>
-    <meta name="description" content="تواصل مع فريق NASMA.">
+    <title>تواصل معنا | NASMA</title>
+    <meta name="description" content="تواصل مع فريق NASMA للاستفسارات والدعم.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; min-height: 100%; }
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background: #f3f6f4;
-            color: #1a3a2f;
-            line-height: 1.7;
-            width: 100%;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        a { text-decoration: none; color: inherit; }
-        button, input, select, textarea { font-family: inherit; }
-
-        :root {
-            --green: #1a3a2f;
-            --green-mid: #245544;
-            --cream: #f3f6f4;
-            --cream-dark: #e6ece9;
-            --white: #ffffff;
-            --muted: #6b7c74;
-            --line: #dce5e1;
-        }
-
-        .wrap {
-            width: 100%;
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .header {
-            background: var(--green);
-            color: #fff;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .header-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 14px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-        }
-        .logo {
-            font-size: 22px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            color: #fff;
-            flex-shrink: 0;
-        }
-        .nav {
-            display: none;
-            gap: 22px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .nav a {
-            color: rgba(255,255,255,0.85);
-            font-size: 14px;
-            font-weight: 500;
-            white-space: nowrap;
-        }
-        .nav a:hover, .nav a.active { color: #fff; }
-        .nav a.nav-cta {
-            background: #fff;
-            color: var(--green) !important;
-            font-weight: 800;
-            font-size: 13px;
-            padding: 8px 16px;
-            border-radius: 999px;
-        }
-        .menu-btn {
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 8px;
-            background: transparent;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-            cursor: pointer;
-        }
-        .menu-btn span {
-            width: 18px;
-            height: 2px;
-            background: #fff;
-            display: block;
-        }
-        .mobile-nav {
-            display: none;
-            flex-direction: column;
-            padding: 0 20px 16px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        .mobile-nav.open { display: flex; }
-        .mobile-nav a {
-            color: #fff;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-        @media (min-width: 768px) {
-            .nav { display: flex; }
-            .menu-btn { display: none; }
-            .mobile-nav { display: none !important; }
-        }
-
-        .page-hero {
-            padding: 48px 0 28px;
-            text-align: center;
-        }
-        .page-hero h1 {
-            font-size: clamp(28px, 5vw, 40px);
-            color: var(--green);
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-        .page-hero p { color: var(--muted); }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
-            padding-bottom: 50px;
-        }
-        @media (min-width: 900px) {
-            .contact-grid {
-                grid-template-columns: 1fr 1.1fr;
-                gap: 32px;
-                align-items: start;
-            }
-        }
-
-        .info-card, .form-card {
-            background: var(--white);
-            border: 1px solid var(--line);
-            border-radius: 22px;
-            padding: 24px;
-        }
-        .info-card h2, .form-card h2 {
-            font-size: 22px;
-            color: var(--green);
-            margin-bottom: 10px;
-        }
-        .info-card > p {
-            color: var(--muted);
-            margin-bottom: 22px;
-            font-size: 15px;
-        }
-
-        .info-item {
-            display: flex;
-            gap: 14px;
-            align-items: flex-start;
-            margin-bottom: 18px;
-        }
-        .info-icon {
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            background: var(--cream);
-            color: var(--green);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        .info-icon svg { width: 20px; height: 20px; }
-        .info-item h3 {
-            font-size: 15px;
-            color: var(--green);
-            margin-bottom: 2px;
-        }
-        .info-item p {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .field {
-            display: block;
-            margin-bottom: 14px;
-        }
-        .field span {
-            display: block;
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--green);
-            margin-bottom: 6px;
-        }
-        .field input,
-        .field select,
-        .field textarea {
-            width: 100%;
-            padding: 13px 14px;
-            border: 1.5px solid var(--line);
-            border-radius: 12px;
-            font-size: 15px;
-            background: #fff;
-            color: var(--green);
-        }
-        .field input:focus,
-        .field select:focus,
-        .field textarea:focus {
-            outline: none;
-            border-color: var(--green);
-        }
-        .phone-input { direction: ltr; text-align: right; }
-
-        .btn-submit {
-            width: 100%;
-            background: var(--green);
-            color: #fff;
-            border: 0;
-            border-radius: 999px;
-            padding: 14px 28px;
-            font-weight: 800;
-            font-size: 15px;
-            cursor: pointer;
-            margin-top: 6px;
-        }
-        .btn-submit:disabled { opacity: 0.7; }
-        .form-msg {
-            text-align: center;
-            margin-top: 12px;
-            font-size: 14px;
-            font-weight: 700;
-            display: none;
-        }
-        .form-msg.ok { display: block; color: #1a7a4c; }
-        .form-msg.err { display: block; color: #b42318; }
-
-        .faq {
-            padding: 20px 0 60px;
-        }
-        .faq h2 {
-            text-align: center;
-            color: var(--green);
-            font-size: 26px;
-            margin-bottom: 24px;
-        }
-        .faq-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 14px;
-        }
-        @media (min-width: 768px) {
-            .faq-grid { grid-template-columns: 1fr 1fr; }
-        }
-        .faq-item {
-            background: var(--white);
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            padding: 18px;
-        }
-        .faq-item h3 {
-            font-size: 16px;
-            color: var(--green);
-            margin-bottom: 6px;
-        }
-        .faq-item p {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .footer {
-            background: var(--green);
-            color: rgba(255,255,255,0.8);
-            padding: 36px 0 24px;
-            text-align: center;
-        }
-        .footer .logo { color: #fff; margin-bottom: 10px; display: inline-block; }
-        .footer-links { margin: 16px 0; }
-        .footer-links a {
-            color: rgba(255,255,255,0.75);
-            margin: 0 10px;
-            font-size: 14px;
-        }
-        .copy { font-size: 12px; opacity: 0.6; margin-top: 12px; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header class="header">
+    <header class="site-header">
         <div class="header-inner">
-            <a href="index.html" class="logo">NASMA</a>
-            <nav class="nav">
+            <a href="index.html" class="logo">NAS<span>MA</span></a>
+            <nav class="nav" aria-label="القائمة الرئيسية">
                 <a href="index.html">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="product-light.html">المصباح</a>
+                <a href="product-lock.html">قفل الأمان</a>
+                <a href="product-straps.html">أحزمة النقل</a>
                 <a href="contact.html" class="active">تواصل</a>
             </nav>
-            <button class="menu-btn" id="mobileMenuBtn" type="button" aria-label="القائمة">
+            <a href="product-light.html" class="btn-nav">تسوّق الآن</a>
+            <button class="menu-btn" id="mobileMenuBtn" type="button" aria-label="فتح القائمة">
                 <span></span><span></span><span></span>
             </button>
         </div>
-        <nav class="mobile-nav" id="mobileNav">
+        <nav class="mobile-nav" id="mobileNav" aria-label="قائمة الجوال">
             <a href="index.html">الرئيسية</a>
+            <a href="about.html">من نحن</a>
+            <a href="product-light.html">المصباح المغناطيسي</a>
+            <a href="product-lock.html">قفل أمان الأطفال</a>
+            <a href="product-straps.html">أحزمة النقل</a>
             <a href="contact.html">تواصل</a>
         </nav>
     </header>
 
-    <section class="page-hero">
+    <main>
+        <section class="page-hero">
+            <div class="wrap">
+                <span class="eyebrow">الدعم</span>
+                <h1>تواصل معنا</h1>
+                <p>للاستفسارات العامة — أما طلبات الشراء فتتم مباشرة من صفحات المنتجات مع الدفع عند الاستلام.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap" style="max-width:560px">
+                <form class="order-panel" id="orderForm" data-product="تواصل" data-sheet="https://sheetdb.io/api/v1/glsn5w5ktwugw">
+                    <h2 style="margin-bottom:16px">أرسل رسالة</h2>
+                    <div class="field">
+                        <label for="order-name">الاسم</label>
+                        <input type="text" id="order-name" required placeholder="اسمك الكامل" autocomplete="name">
+                    </div>
+                    <div class="field">
+                        <label for="order-phone">الجوال</label>
+                        <input type="tel" id="order-phone" required placeholder="05xxxxxxxx" autocomplete="tel">
+                    </div>
+                    <div class="field">
+                        <label for="order-city">رسالتك (اختياري)</label>
+                        <input type="text" id="order-city" placeholder="كيف نقدر نساعدك؟">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="orderSubmit" style="width:100%">إرسال</button>
+                    <p class="form-msg" id="orderMsg" role="status"></p>
+                    <p class="cod-note">للطلب المباشر: <a href="product-lock.html" style="color:var(--accent);font-weight:800">صفحات المنتجات</a></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
         <div class="wrap">
-            <h1>تواصل معنا</h1>
-            <p>فريقنا جاهز يساعدك في أي استفسار</p>
-        </div>
-    </section>
-
-    <section>
-        <div class="wrap contact-grid">
-            <div class="info-card">
-                <h2>طرق التواصل</h2>
-                <p>تواصل معنا بأي طريقة تناسبك، ونرد عليك في أقرب وقت.</p>
-
-                <div class="info-item">
-                    <div class="info-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                    </div>
-                    <div>
-                        <h3>البريد الإلكتروني</h3>
-                        <p>support@chizel.sa</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">NAS<span>MA</span></a>
+                    <p>علامة لمنتجات عملية تُسهّل يومك في السعودية والخليج.</p>
+                    <div class="trust-badges">
+                        <span class="trust-badge">دفع عند الاستلام</span>
+                        <span class="trust-badge">شحن مجاني</span>
                     </div>
                 </div>
-
-                <div class="info-item">
-                    <div class="info-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                    </div>
-                    <div>
-                        <h3>رقم الجوال</h3>
-                        <p dir="ltr">+966 5X XXX XXXX</p>
-                    </div>
+                <div class="footer-col">
+                    <h4>تصفّح</h4>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="about.html">من نحن</a>
+                    <a href="contact.html">تواصل</a>
                 </div>
-
-                <div class="info-item">
-                    <div class="info-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    </div>
-                    <div>
-                        <h3>ساعات العمل</h3>
-                        <p>السبت – الخميس · 9 صباحاً – 11 مساءً</p>
-                    </div>
+                <div class="footer-col">
+                    <h4>المنتجات</h4>
+                    <a href="product-light.html">مصباح LED</a>
+                    <a href="product-lock.html">قفل الأمان</a>
+                    <a href="product-straps.html">أحزمة النقل</a>
                 </div>
-
-                <div class="info-item">
-                    <div class="info-icon">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                    </div>
-                    <div>
-                        <h3>التوصيل</h3>
-                        <p>شحن مجاني لجميع مناطق السعودية</p>
-                    </div>
+                <div class="footer-col">
+                    <h4>تواصل</h4>
+                    <ul>
+                        <li>السعودية والخليج</li>
+                        <li>طلبات COD من صفحات المنتجات</li>
+                    </ul>
                 </div>
             </div>
-
-            <form class="form-card" id="contactForm">
-                <h2>اطلب الحين</h2>
-                <p style="color: var(--muted); font-size: 14px; margin-bottom: 18px;">سجّل اسمك ورقم جوالك، وفريقنا يتواصل معك لتأكيد الطلب.</p>
-
-                <label class="field">
-                    <span>الاسم</span>
-                    <input type="text" id="contact-name" name="name" required placeholder="اسمك" autocomplete="name">
-                </label>
-
-                <label class="field">
-                    <span>رقم الجوال</span>
-                    <input type="tel" id="contact-phone" name="phone" required placeholder="05xxxxxxxx" class="phone-input" inputmode="tel" autocomplete="tel">
-                </label>
-
-                <button type="submit" class="btn-submit" id="contactSubmit">إرسال الطلب</button>
-                <p class="form-msg" id="contactMsg"></p>
-            </form>
-        </div>
-    </section>
-
-    <section class="faq">
-        <div class="wrap">
-            <h2>أسئلة شائعة</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>كم يوم يوصل الطلب؟</h3>
-                    <p>الشحن يستغرق من 2 إلى 4 أيام عمل لجميع مناطق السعودية.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>كيف أتابع طلبي؟</h3>
-                    <p>بعد الشحن نرسل لك رقم التتبع على الجوال.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>هل الشحن مجاني؟</h3>
-                    <p>نعم، الشحن مجاني 100% بدون أي رسوم إضافية.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>كيف أسترجع المنتج؟</h3>
-                    <p>تواصل معنا خلال 30 يوم ونرجع لك المبلغ كاملاً.</p>
-                </div>
+            <div class="footer-bottom">
+                <span>© NASMA</span>
+                <span>COD · شحن آمن</span>
             </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="wrap">
-            <a href="index.html" class="logo">NASMA</a>
-            <p>شحن مجاني · دفع عند الاستلام</p>
-            <div class="footer-links">
-                <a href="index.html">الرئيسية</a>
-                <a href="contact.html">تواصل</a>
-            </div>
-            <p class="copy">© NASMA. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
-    <script>
-        (function () {
-            var btn = document.getElementById('mobileMenuBtn');
-            var nav = document.getElementById('mobileNav');
-            if (btn && nav) {
-                btn.addEventListener('click', function () {
-                    nav.classList.toggle('open');
-                });
-            }
-
-            var form = document.getElementById('contactForm');
-            var msg = document.getElementById('contactMsg');
-            var submitBtn = document.getElementById('contactSubmit');
-
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'جاري الإرسال…';
-                msg.className = 'form-msg';
-
-                // SheetDB — أعمدة: name, phone, city
-                fetch('https://sheetdb.io/api/v1/glsn5w5ktwugw', {
-                    method: 'POST',
-                    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        data: [{
-                            name: document.getElementById('contact-name').value.trim(),
-                            phone: document.getElementById('contact-phone').value.trim(),
-                            city: 'طلب'
-                        }]
-                    })
-                })
-                .then(function (res) {
-                    if (res.ok || res.status === 201) {
-                        msg.textContent = 'تم إرسال طلبك. بنتواصل معك قريباً.';
-                        msg.className = 'form-msg ok';
-                        form.reset();
-                    } else {
-                        throw new Error('fail');
-                    }
-                })
-                .catch(function () {
-                    msg.textContent = 'حدث خطأ، حاول مرة ثانية.';
-                    msg.className = 'form-msg err';
-                })
-                .finally(function () {
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'إرسال الطلب';
-                });
-            });
-        })();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
