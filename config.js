@@ -1,28 +1,30 @@
-// NASMA Store — 3 منتجات · 199 ر.س · COD
 const STORE = {
     name: 'NASMA',
-    tagline: 'منتجات عملية لبيتك وسيارتك',
-    country: 'السعودية',
+    tagline: 'منتجات موثوقة · شحن مجاني · دفع عند الاستلام',
     currency: 'ر.س',
-    price: 199
+    sheetUrl: 'https://sheetdb.io/api/v1/glsn5w5ktwugw'
 };
 
-const SHEETDB_URL = 'https://sheetdb.io/api/v1/glsn5w5ktwugw';
+const BUNDLES = [
+    { id: 'single', price: 199, titleAr: 'قطعة واحدة', badge: '' },
+    { id: 'dual', price: 279, titleAr: 'باقة ثنائية', badge: 'الأكثر طلباً' },
+    { id: 'mega', price: 349, titleAr: 'الباقة المتكاملة', badge: 'وفر أكثر' }
+];
 
 const PRODUCTS = {
+    led: {
+        slug: 'product-led-light.html',
+        nameAr: 'مصباح العمل المغناطيسي القوي',
+        sheetProduct: 'مصباح LED'
+    },
     kidsLock: {
         slug: 'product-kids-lock.html',
-        sheetLabel: 'طلب — قفل أطفال',
-        title: 'قفل أمان للشبابيك والأبواب'
+        nameAr: 'قفل أمان الأبواب والنوافذ للأطفال',
+        sheetProduct: 'قفل أطفال'
     },
-    moveStraps: {
+    straps: {
         slug: 'product-move-straps.html',
-        sheetLabel: 'طلب — أحزمة نقل',
-        title: 'أحزمة نقل الأثاث الثقيل'
-    },
-    ledLight: {
-        slug: 'product-led-light.html',
-        sheetLabel: 'طلب — مصباح LED',
-        title: 'مصباح LED للميكانيك والسيارة'
+        nameAr: 'أحزمة رفع ونقل الأثاث الثقيل',
+        sheetProduct: 'أحزمة نقل'
     }
 };

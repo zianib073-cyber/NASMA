@@ -277,3 +277,149 @@ button, input { font-family: inherit; }
 .footer .logo { display: inline-block; margin-bottom: 8px; }
 .footer p { font-size: 13px; }
 .copy { font-size: 12px; opacity: 0.6; margin-top: 10px; }
+
+body.has-sticky { padding-bottom: 76px; }
+
+.urgency-bar {
+    background: linear-gradient(90deg, #1a3a2f, #245544);
+    color: #fff;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: 700;
+}
+.urgency-bar #countdown { color: #ffd966; font-variant-numeric: tabular-nums; }
+
+.trust-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 20px;
+    padding: 16px 0;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--green);
+}
+.trust-strip span { display: flex; align-items: center; gap: 6px; }
+
+.bundle-grid {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.bundle-option { cursor: pointer; display: block; }
+.bundle-option input { position: absolute; opacity: 0; pointer-events: none; }
+.bundle-card {
+    border: 2px solid var(--line);
+    border-radius: 16px;
+    padding: 16px;
+    background: var(--white);
+    position: relative;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+.bundle-option.selected .bundle-card,
+.bundle-option input:checked + .bundle-card {
+    border-color: var(--green);
+    box-shadow: 0 8px 24px rgba(26, 58, 47, 0.1);
+}
+.bundle-badge {
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    background: var(--accent);
+    color: #1a1a1a;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+.bundle-card h3 { font-size: 16px; color: var(--green); margin-bottom: 4px; }
+.bundle-card .bundle-price { font-size: 24px; font-weight: 800; color: var(--green); }
+.bundle-card .bundle-note { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+.reviews { display: grid; gap: 12px; max-width: 640px; margin: 0 auto; }
+.review {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px;
+}
+.review .stars { color: #e6a800; font-size: 14px; margin-bottom: 6px; }
+.review p { font-size: 14px; color: var(--muted); }
+.review .author { font-size: 13px; font-weight: 700; color: var(--green); margin-top: 8px; }
+
+.checkout-wrap { max-width: 520px; margin: 0 auto; }
+.order-summary {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+.order-summary strong { color: var(--green); }
+
+.sticky-order {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: var(--white);
+    border-top: 1px solid var(--line);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    box-shadow: 0 -8px 24px rgba(0,0,0,0.08);
+}
+.sticky-order .price { font-size: 20px; font-weight: 800; color: var(--green); }
+.btn-sticky {
+    background: var(--green);
+    color: #fff;
+    font-weight: 800;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.thank-page {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+.thank-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 32px 24px;
+    max-width: 440px;
+    text-align: center;
+}
+.thank-icon {
+    width: 72px; height: 72px;
+    background: #1a7a4c;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    margin: 0 auto 20px;
+}
+.thank-card h1 { font-size: 24px; color: var(--green); margin-bottom: 8px; }
+.thank-detail { font-size: 14px; color: var(--muted); margin: 12px 0 20px; }
+.btn-home {
+    display: inline-block;
+    background: var(--green);
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-weight: 800;
+}
+
+.price-from { font-size: 14px; color: var(--muted); }
+.price-from b { color: var(--green); font-size: 18px; }
