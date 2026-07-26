@@ -3,419 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>من نحن | CHIZEL</title>
-    <meta name="description" content="تعرف على قصة CHIZEL ورؤيتنا.">
+    <title>من نحن | قصة NASMA</title>
+    <meta name="description" content="تعرّف على قصة NASMA: مهمتنا، رؤيتنا، ولماذا نختار منتجات تُحسّن يوم العائلات والمحترفين في الخليج.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; min-height: 100%; }
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background: #f3f6f4;
-            color: #1a3a2f;
-            line-height: 1.7;
-            width: 100%;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        a { text-decoration: none; color: inherit; }
-        button { font-family: inherit; }
-
-        :root {
-            --green: #1a3a2f;
-            --cream: #f3f6f4;
-            --cream-dark: #e6ece9;
-            --white: #ffffff;
-            --muted: #6b7c74;
-            --line: #dce5e1;
-        }
-
-        .wrap {
-            width: 100%;
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .header {
-            background: var(--green);
-            color: #fff;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .header-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 14px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-        }
-        .logo {
-            font-size: 22px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            color: #fff;
-            flex-shrink: 0;
-        }
-        .nav {
-            display: none;
-            gap: 22px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .nav a {
-            color: rgba(255,255,255,0.85);
-            font-size: 14px;
-            font-weight: 500;
-            white-space: nowrap;
-        }
-        .nav a:hover, .nav a.active { color: #fff; }
-        .nav a.nav-cta {
-            background: #fff;
-            color: var(--green) !important;
-            font-weight: 800;
-            font-size: 13px;
-            padding: 8px 16px;
-            border-radius: 999px;
-        }
-        .menu-btn {
-            width: 40px;
-            height: 40px;
-            border: 1px solid rgba(255,255,255,0.3);
-            border-radius: 8px;
-            background: transparent;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-            cursor: pointer;
-        }
-        .menu-btn span {
-            width: 18px;
-            height: 2px;
-            background: #fff;
-            display: block;
-        }
-        .mobile-nav {
-            display: none;
-            flex-direction: column;
-            padding: 0 20px 16px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        .mobile-nav.open { display: flex; }
-        .mobile-nav a {
-            color: #fff;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-        @media (min-width: 768px) {
-            .nav { display: flex; }
-            .menu-btn { display: none; }
-            .mobile-nav { display: none !important; }
-        }
-
-        .page-hero {
-            padding: 48px 0 32px;
-            text-align: center;
-        }
-        .page-hero h1 {
-            font-size: clamp(28px, 5vw, 40px);
-            color: var(--green);
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-        .page-hero p { color: var(--muted); }
-
-        .story {
-            padding: 0 0 50px;
-        }
-        .story-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
-            align-items: center;
-        }
-        @media (min-width: 900px) {
-            .story-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 40px;
-            }
-        }
-        .story-media {
-            background: var(--cream-dark);
-            border: 1px dashed var(--line);
-            border-radius: 22px;
-            aspect-ratio: 1 / 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            color: var(--muted);
-            font-weight: 700;
-        }
-        .story-media svg {
-            width: 64px;
-            height: 64px;
-            opacity: 0.5;
-        }
-        .eyebrow {
-            display: inline-block;
-            background: #e6ece9;
-            color: var(--green);
-            font-size: 12px;
-            font-weight: 800;
-            padding: 6px 12px;
-            border-radius: 999px;
-            margin-bottom: 12px;
-        }
-        .story-copy h2 {
-            font-size: clamp(22px, 4vw, 32px);
-            color: var(--green);
-            font-weight: 800;
-            line-height: 1.4;
-            margin-bottom: 14px;
-            word-wrap: break-word;
-        }
-        .story-copy p {
-            color: var(--muted);
-            font-size: 16px;
-            margin-bottom: 14px;
-        }
-
-        .values {
-            background: var(--white);
-            padding: 50px 0;
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 28px;
-        }
-        .section-title .small {
-            display: block;
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--muted);
-            margin-bottom: 8px;
-        }
-        .section-title h2 {
-            font-size: clamp(22px, 4vw, 30px);
-            color: var(--green);
-            font-weight: 800;
-        }
-        .values-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-        }
-        @media (min-width: 700px) {
-            .values-grid { grid-template-columns: 1fr 1fr; }
-        }
-        .value-card {
-            background: var(--cream);
-            border-radius: 18px;
-            padding: 22px;
-            border: 1px solid var(--line);
-        }
-        .value-card h3 {
-            font-size: 18px;
-            color: var(--green);
-            margin-bottom: 8px;
-        }
-        .value-card p {
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .stats {
-            padding: 50px 0;
-        }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            text-align: center;
-        }
-        @media (min-width: 768px) {
-            .stats-grid { grid-template-columns: repeat(4, 1fr); }
-        }
-        .stat {
-            background: var(--white);
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            padding: 20px 12px;
-        }
-        .stat strong {
-            display: block;
-            font-size: 24px;
-            color: var(--green);
-            margin-bottom: 4px;
-        }
-        .stat span {
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-        .cta-box {
-            text-align: center;
-            padding: 0 0 60px;
-        }
-        .btn-main {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--green);
-            color: #fff;
-            font-weight: 800;
-            font-size: 15px;
-            padding: 14px 28px;
-            border-radius: 999px;
-        }
-
-        .footer {
-            background: var(--green);
-            color: rgba(255,255,255,0.8);
-            padding: 36px 0 24px;
-            text-align: center;
-        }
-        .footer .logo { color: #fff; margin-bottom: 10px; display: inline-block; }
-        .footer-links { margin: 16px 0; }
-        .footer-links a {
-            color: rgba(255,255,255,0.75);
-            margin: 0 10px;
-            font-size: 14px;
-        }
-        .copy { font-size: 12px; opacity: 0.6; margin-top: 12px; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header class="header">
+    <header class="site-header">
         <div class="header-inner">
-            <a href="index.html" class="logo">CHIZEL</a>
-            <nav class="nav">
+            <a href="index.html" class="logo">NAS<span>MA</span></a>
+            <nav class="nav" aria-label="القائمة الرئيسية">
                 <a href="index.html">الرئيسية</a>
-                <a href="index.html#products">المنتجات</a>
                 <a href="about.html" class="active">من نحن</a>
-                <a href="contact.html">تواصل معنا</a>
-                <a href="index.html#order" class="nav-cta">اطلب الحين</a>
+                <a href="product-light.html">المصباح</a>
+                <a href="product-lock.html">قفل الأمان</a>
+                <a href="product-straps.html">أحزمة النقل</a>
+                <a href="contact.html">تواصل</a>
             </nav>
-            <button class="menu-btn" id="mobileMenuBtn" type="button" aria-label="القائمة">
+            <a href="product-lock.html" class="btn-nav">تسوّق الآن</a>
+            <button class="menu-btn" id="mobileMenuBtn" type="button" aria-label="فتح القائمة">
                 <span></span><span></span><span></span>
             </button>
         </div>
-        <nav class="mobile-nav" id="mobileNav">
+        <nav class="mobile-nav" id="mobileNav" aria-label="قائمة الجوال">
             <a href="index.html">الرئيسية</a>
-            <a href="index.html#products">المنتجات</a>
             <a href="about.html">من نحن</a>
-            <a href="contact.html">تواصل معنا</a>
-            <a href="index.html#order">اطلب الحين</a>
+            <a href="product-light.html">المصباح المغناطيسي</a>
+            <a href="product-lock.html">قفل أمان الأطفال</a>
+            <a href="product-straps.html">أحزمة النقل</a>
+            <a href="contact.html">تواصل</a>
         </nav>
     </header>
 
-    <section class="page-hero">
+    <main>
+        <section class="page-hero">
+            <div class="wrap">
+                <span class="eyebrow">قصتنا</span>
+                <h1>NASMA — نسمة جودة في تفاصيل يومك</h1>
+                <p>وُلدت الفكرة من سؤال بسيط: لماذا يصعب العثور على منتجات عملية موثوقة، بشراء واضح ودون مخاطرة؟</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap">
+                <article class="story-block">
+                    <div class="story-visual">صورة فريق / ورشة العلامة<br><small>placeholder</small></div>
+                    <div class="story-copy">
+                        <h2>لماذا نفعل ما نفعله؟</h2>
+                        <p>
+                            في NASMA نؤمن أن «المنتج الجيد» ليس مجرد شكل على الشاشة — بل حل يُحسّ في البيت، في السيارة، وفي لحظات النقل والجهد.
+                            نبدأ من مشكلة حقيقية: أمان الأطفال، إضاءة العمل، أو نقل الأثاث دون إرهاق الظهر.
+                        </p>
+                        <p>
+                            ثم نختار بعناية، نبسّط تجربة الطلب، ونبني ثقة عبر الدفع عند الاستلام والشحن الواضح —
+                            لأن عميل الخليج يستحق شفافية كاملة قبل أن يدفع ريالاً واحداً.
+                        </p>
+                    </div>
+                </article>
+
+                <div class="mission-grid">
+                    <article class="mission-card">
+                        <h3>مهمتنا</h3>
+                        <p>
+                            تقديم حلول منزلية وعملية مختارة بعناية — بأسعار باقات عادلة، وتجربة COD سلسة،
+                            وخدمة تحترم وقت العميل وثقته.
+                        </p>
+                    </article>
+                    <article class="mission-card">
+                        <h3>رؤيتنا</h3>
+                        <p>
+                            أن تصبح NASMA المرجع الأول في الخليج لمنتجات «تُستخدم فعلاً» —
+                            بعلامة واضحة، جودة ثابتة، وتجربة رقمية أنيقة بلا تعقيد.
+                        </p>
+                    </article>
+                </div>
+
+                <article class="story-block" style="margin-top: 40px;">
+                    <div class="story-copy">
+                        <h2>قيمنا</h2>
+                        <p><strong style="color: var(--text);">الصدق قبل البيع:</strong> وصف واضح، باقات بأسعار ثابتة (199 · 279 · 349 ر.س)، بلا وعود مبالغ فيها.</p>
+                        <p><strong style="color: var(--text);">الأمان أولاً:</strong> منتجات تخدم العائلة — خصوصاً حماية الأطفال وتسهيل المهام الثقيلة بأمان أكبر.</p>
+                        <p><strong style="color: var(--text);">البساطة:</strong> صفحة لكل منتج، طلب في دقائق، ودفع عند الاستلام.</p>
+                    </div>
+                    <div class="story-visual">قيم العلامة<br><small>placeholder</small></div>
+                </article>
+
+                <div style="text-align: center; margin-top: 48px;">
+                    <a href="product-light.html" class="btn btn-primary">استكشف المنتجات</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
         <div class="wrap">
-            <h1>من نحن</h1>
-            <p>قصتنا ورؤيتنا</p>
-        </div>
-    </section>
-
-    <section class="story">
-        <div class="wrap story-grid">
-            <div class="story-copy">
-                <span class="eyebrow">براند CHIZEL</span>
-                <h2>بنينا براند… مو مجرد منتج</h2>
-                <p>
-                    CHIZEL انطلق من فكرة بسيطة: الشباب يبون فك أوضح ومظهر أقوى،
-                    بدون أدوات بلاستيكية أو حلول معقّدة.
-                </p>
-                <p>
-                    اخترنا مستكة خيوس اليونانية الأصلية — راتنج طبيعي يُستخدم من قرون —
-                    وقدّمناها كبراند سعودي واضح: جودة، صدق، ونتيجة تبان مع الالتزام.
-                </p>
-                <p>
-                    هدفنا نصير الخيار الأول لكل شاب يبي ينحت فكه بطريقة طبيعية وآمنة.
-                </p>
-            </div>
-            <div class="story-media">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
-                </svg>
-                <span>صورة الفريق</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="values">
-        <div class="wrap">
-            <div class="section-title">
-                <span class="small">قيمنا</span>
-                <h2>اللي نؤمن فيه</h2>
-            </div>
-            <div class="values-grid">
-                <div class="value-card">
-                    <h3>الجودة أولاً</h3>
-                    <p>ما نقبل إلا أفضل المواد الطبيعية. منتجنا أصلي وواضح المكونات.</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">NAS<span>MA</span></a>
+                    <p>علامة لمنتجات عملية تُسهّل يومك — بجودة مختارة وتجربة شراء آمنة في السعودية والخليج.</p>
+                    <div class="trust-badges">
+                        <span class="trust-badge">دفع عند الاستلام</span>
+                        <span class="trust-badge">شحن مجاني</span>
+                        <span class="trust-badge">باقات من 199 ر.س</span>
+                    </div>
                 </div>
-                <div class="value-card">
-                    <h3>رضا العميل</h3>
-                    <p>سعادتك هدفنا. لو مو راضي خلال 30 يوم، نرجع فلوسك بدون أسئلة.</p>
+                <div class="footer-col">
+                    <h4>تصفّح</h4>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="about.html">من نحن</a>
+                    <a href="contact.html">تواصل معنا</a>
                 </div>
-                <div class="value-card">
-                    <h3>الصدق والشفافية</h3>
-                    <p>نقول الحقيقة دائماً، وما نبالغ في الوعود.</p>
+                <div class="footer-col">
+                    <h4>المنتجات</h4>
+                    <a href="product-light.html">مصباح LED المغناطيسي</a>
+                    <a href="product-lock.html">قفل أمان الأطفال</a>
+                    <a href="product-straps.html">أحزمة النقل الثقيل</a>
                 </div>
-                <div class="value-card">
-                    <h3>نتائج حقيقية</h3>
-                    <p>منتج مبني على استخدام عملي وتجارب حقيقية من عملائنا.</p>
+                <div class="footer-col">
+                    <h4>تواصل</h4>
+                    <ul>
+                        <li>السعودية — خدمة الخليج</li>
+                        <li>طلبات COD عبر صفحات المنتجات</li>
+                        <li><a href="contact.html">نموذج التواصل</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="stats">
-        <div class="wrap stats-grid">
-            <div class="stat"><strong>+3,500</strong><span>عميل سعيد</span></div>
-            <div class="stat"><strong>4.9/5</strong><span>تقييم العملاء</span></div>
-            <div class="stat"><strong>98%</strong><span>نسبة الرضا</span></div>
-            <div class="stat"><strong>30 يوم</strong><span>ضمان ذهبي</span></div>
-        </div>
-    </section>
-
-    <div class="cta-box">
-        <a href="index.html#order" class="btn-main">اطلب الحين</a>
-    </div>
-
-    <footer class="footer">
-        <div class="wrap">
-            <a href="index.html" class="logo">CHIZEL</a>
-            <p>علكة الفك الأصلية لنحت الملامح</p>
-            <div class="footer-links">
-                <a href="index.html">الرئيسية</a>
-                <a href="index.html#products">المنتجات</a>
-                <a href="about.html">من نحن</a>
-                <a href="contact.html">تواصل معنا</a>
+            <div class="footer-bottom">
+                <span>© NASMA — جميع الحقوق محفوظة</span>
+                <span>ادفع عند الاستلام · شحن آمن</span>
             </div>
-            <p class="copy">© 2024 CHIZEL. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
-    <script>
-        (function () {
-            var btn = document.getElementById('mobileMenuBtn');
-            var nav = document.getElementById('mobileNav');
-            if (btn && nav) {
-                btn.addEventListener('click', function () {
-                    nav.classList.toggle('open');
-                });
-            }
-        })();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

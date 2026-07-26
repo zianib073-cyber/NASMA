@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قفل أمان الأطفال | NASMA</title>
+    <meta name="description" content="قفل أمان الأبواب والنوافذ للأطفال. باقات 199 · 279 · 349 ر.س. دفع عند الاستلام.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">NAS<span>MA</span></a>
+            <nav class="nav" aria-label="القائمة الرئيسية">
+                <a href="index.html">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="product-light.html">المصباح</a>
+                <a href="product-lock.html" class="active">قفل الأمان</a>
+                <a href="product-straps.html">أحزمة النقل</a>
+                <a href="contact.html">تواصل</a>
+            </nav>
+            <a href="#order" class="btn-nav">اطلب الآن</a>
+            <button class="menu-btn" id="mobileMenuBtn" type="button" aria-label="فتح القائمة">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <nav class="mobile-nav" id="mobileNav" aria-label="قائمة الجوال">
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">من نحن</a>
+            <a href="product-light.html">المصباح المغناطيسي</a>
+            <a href="product-lock.html">قفل أمان الأطفال</a>
+            <a href="product-straps.html">أحزمة النقل</a>
+            <a href="#order">اطلب الآن</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="wrap product-layout">
+            <div class="product-gallery">
+                <div class="gallery-main">صورة احترافية<br>قفل أمان النوافذ والأبواب<br><small>placeholder</small></div>
+            </div>
+
+            <div class="product-detail">
+                <span class="eyebrow">أمان العائلة · تركيب بسيط</span>
+                <h1>قفل أمان الأبواب والنوافذ للأطفال</h1>
+                <p class="lead">
+                    يحدّ من فتح النوافذ والشرفات دون تعقيد — طمأنينة للأهل وحرية حركة آمنة للأطفال داخل المنزل.
+                    مناسب للشقق والفلل في أجواء الخليج.
+                </p>
+                <ul class="benefit-list">
+                    <li>يقلل خطر الفتح غير المقصود للنوافذ</li>
+                    <li>تركيب سهل بدون أدوات معقدة</li>
+                    <li>تصميم أنيق لا يشوّه ديكور المنزل</li>
+                    <li>مثالي للعائلات مع أطفال صغار</li>
+                </ul>
+
+                <div class="order-panel" id="order">
+                    <h2>اختر الباقة وأكمل الطلب (COD)</h2>
+                    <form id="orderForm" data-product="قفل أطفال" data-sheet="https://sheetdb.io/api/v1/glsn5w5ktwugw">
+                        <div class="bundle-list" role="radiogroup" aria-label="باقات الأسعار">
+                            <label class="bundle-option selected">
+                                <input type="radio" name="bundle" value="single" data-price="199" data-label="قطعة واحدة" checked>
+                                <span class="b-title">قطعة واحدة</span>
+                                <span class="b-price">199 ر.س</span>
+                            </label>
+                            <label class="bundle-option">
+                                <input type="radio" name="bundle" value="dual" data-price="279" data-label="باقة ثنائية">
+                                <span class="b-title"><span class="b-badge">الأكثر طلباً</span>باقة ثنائية</span>
+                                <span class="b-price">279 ر.س</span>
+                            </label>
+                            <label class="bundle-option">
+                                <input type="radio" name="bundle" value="mega" data-price="349" data-label="الباقة المتكاملة">
+                                <span class="b-title"><span class="b-badge">وفّر أكثر</span>الباقة المتكاملة</span>
+                                <span class="b-price">349 ر.س</span>
+                            </label>
+                        </div>
+
+                        <div class="field">
+                            <label for="order-name">الاسم الكامل</label>
+                            <input type="text" id="order-name" name="name" required placeholder="مثال: نورة الشمري" autocomplete="name">
+                        </div>
+                        <div class="field">
+                            <label for="order-phone">رقم الجوال</label>
+                            <input type="tel" id="order-phone" name="phone" required placeholder="05xxxxxxxx" autocomplete="tel">
+                        </div>
+                        <div class="field">
+                            <label for="order-city">المدينة / الحي (اختياري)</label>
+                            <input type="text" id="order-city" name="city" placeholder="جدة — حي الحمراء">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" id="orderSubmit" style="width:100%">تأكيد الطلب — 199 ر.س</button>
+                        <p class="cod-note">✓ ادفع عند الاستلام · شحن مجاني · بدون بطاقة بنكية</p>
+                        <p class="form-msg" id="orderMsg" role="status"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="sticky-order">
+        <span class="price" id="stickyPrice">199 ر.س</span>
+        <button type="button" class="btn btn-primary" id="stickyOrderBtn">إتمام الطلب</button>
+    </div>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">NAS<span>MA</span></a>
+                    <p>علامة لمنتجات عملية تُسهّل يومك — بجودة مختارة وتجربة شراء آمنة.</p>
+                    <div class="trust-badges">
+                        <span class="trust-badge">دفع عند الاستلام</span>
+                        <span class="trust-badge">شحن مجاني</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>تصفّح</h4>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="about.html">من نحن</a>
+                    <a href="contact.html">تواصل</a>
+                </div>
+                <div class="footer-col">
+                    <h4>المنتجات</h4>
+                    <a href="product-light.html">مصباح LED</a>
+                    <a href="product-lock.html">قفل الأمان</a>
+                    <a href="product-straps.html">أحزمة النقل</a>
+                </div>
+                <div class="footer-col">
+                    <h4>تواصل</h4>
+                    <ul>
+                        <li>السعودية والخليج</li>
+                        <li><a href="contact.html">نموذج التواصل</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© NASMA</span>
+                <span>COD · شحن آمن</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

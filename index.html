@@ -3,283 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NASMA | جودة تُحسّن يومك — دفع عند الاستلام</title>
-    <meta name="description" content="NASMA — منتجات منزلية وعملية للعائلات والمحترفين في السعودية والخليج. باقات من 199 ر.س، شحن مجاني، ودفع عند الاستلام.">
+    <title>NASMA | منتجات ترفع مستوى يومك</title>
+    <meta name="description" content="NASMA — علامة سعودية وخليجية لمنتجات عملية وجودة عالية. شحن مجاني ودفع عند الاستلام.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p class="promo-strip">🚚 شحن مجاني اليوم · دفع عند الاستلام · باقات من 199 ر.س</p>
-    <div class="site-header">
+    <header class="site-header">
         <div class="header-inner">
-            <a href="index.html" class="logo">NASMA</a>
-            <nav class="nav">
-                <a href="#story">قصتنا</a>
-                <a href="#products">المنتجات</a>
-                <a href="#reviews">آراء العملاء</a>
-                <a href="#checkout">اطلب الآن</a>
+            <a href="index.html" class="logo">NAS<span>MA</span></a>
+            <nav class="nav" aria-label="القائمة الرئيسية">
+                <a href="index.html" class="active">الرئيسية</a>
+                <a href="about.html">من نحن</a>
+                <a href="product-light.html">المصباح</a>
+                <a href="product-lock.html">قفل الأمان</a>
+                <a href="product-straps.html">أحزمة النقل</a>
+                <a href="contact.html">تواصل</a>
             </nav>
-            <a href="#checkout" class="btn-nav">اطلب COD</a>
-            <button class="menu-btn" id="mobileMenuBtn" type="button" aria-label="القائمة">
+            <a href="product-light.html" class="btn-nav">تسوّق الآن</a>
+            <button class="menu-btn" id="mobileMenuBtn" type="button" aria-label="فتح القائمة">
                 <span></span><span></span><span></span>
             </button>
         </div>
-        <nav class="mobile-drawer" id="mobileNav">
-            <a href="#story">قصتنا</a>
-            <a href="#products">المنتجات</a>
-            <a href="#reviews">آراء العملاء</a>
-            <a href="#checkout">اطلب الآن</a>
+        <nav class="mobile-nav" id="mobileNav" aria-label="قائمة الجوال">
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">من نحن</a>
+            <a href="product-light.html">المصباح المغناطيسي</a>
+            <a href="product-lock.html">قفل أمان الأطفال</a>
+            <a href="product-straps.html">أحزمة النقل</a>
+            <a href="contact.html">تواصل</a>
         </nav>
-    </div>
+    </header>
 
-    <section class="hero" id="story">
-        <div class="wrap hero-grid">
-            <div>
-                <span class="eyebrow">NASMA — نسمة راحة في بيتك</span>
-                <h1>منتجات نختارها بعناية… لأن تفاصيل يومك تستحق الأفضل</h1>
-                <p class="hero-lead">
-                    في <strong>NASMA</strong> نؤمن أن الجودة ليست رفاهية — بل أمان لعائلتك، ووقت أقل للإجهاد، وراحة أكبر في كل مهمة.
-                    نقدّم حلولاً عملية للمنزل والعمل، مع تجربة شراء بسيطة: <strong>شحن مجاني</strong> و<strong>دفع عند الاستلام</strong> في السعودية والخليج.
-                </p>
-                <div class="hero-cta">
-                    <a href="#checkout" class="btn-primary">اطلب الآن — ادفع عند الاستلام</a>
-                    <a href="#products" class="btn-ghost">استكشف المنتجات</a>
-                </div>
-            </div>
-            <div class="media-frame" aria-label="فيديو أو صورة العلامة">
-                <div class="play" aria-hidden="true">▶</div>
-                <p>مكان الفيديو أو الصورة الاحترافية للعلامة<br><small>صورة عالية الدقة — 1920×1080</small></p>
-            </div>
-        </div>
-    </section>
-
-    <section class="philosophy">
-        <div class="wrap">
-            <h2>فلسفتنا</h2>
-            <p>
-                لا نبيع «ترندات» عابرة. نختبر المنتجات على معايير الاستخدام الحقيقي: متانة، سهولة، وأثر ملموس في حياتك اليومية.
-                كل طلب يُعامل كأنه لضيف في بيتنا — تواصل واضح، تغليف آمن، وخدمة ما بعد البيع تهمّنا.
-            </p>
-        </div>
-    </section>
-
-    <section class="why" id="why">
-        <div class="wrap">
-            <div class="section-title">
-                <h2>لماذا NASMA؟</h2>
-                <p>نحل مشاكل يومية — من أمان الأطفال إلى كفاءة العمل</p>
-            </div>
-            <div class="pillars">
-                <article class="pillar">
-                    <div class="pillar-num">01</div>
-                    <h3>أمان العائلة أولاً</h3>
-                    <p>حلول مثل قفل الأبواب والنوافذ تمنحك طمأنينة — خاصة مع الأطفال والزوار، دون تعقيد في التركيب.</p>
-                </article>
-                <article class="pillar">
-                    <div class="pillar-num">02</div>
-                    <h3>كفاءة في العمل والمنزل</h3>
-                    <p>إضاءة قوية للورشة والسيارة، وأحزمة نقل ذكية — أقل جهد، أقل مخاطر، وإنجاز أسرع للمهام الثقيلة.</p>
-                </article>
-                <article class="pillar">
-                    <div class="pillar-num">03</div>
-                    <h3>شراء بدون مخاطرة</h3>
-                    <p>ادفع نقداً عند استلام طلبك. شحن مجاني، وأسعار باقات واضحة: 199 · 279 · 349 ر.س حسب احتياجك.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section class="products" id="products">
-        <div class="wrap">
-            <div class="section-title">
-                <h2>منتجاتنا المميزة</h2>
-                <p>ثلاثة حلول أساسية — باقات مرنة لك أو لعائلتك</p>
-            </div>
-
-            <article class="product-showcase">
-                <div class="product-media">صورة احترافية — مصباح العمل المغناطيسي LED</div>
-                <div class="product-info">
-                    <h3>مصباح العمل المغناطيسي القوي</h3>
-                    <p class="desc">
-                        إضاءة COB ساطعة، قاعدة مغناطيسية وخطاف — للميكانيك، السيارة، والطوارئ.
-                        يعمل بالشحن USB، ويتحمل ظروف الاستخدام اليومي.
+    <main>
+        <section class="hero">
+            <div class="wrap hero-grid">
+                <div>
+                    <span class="eyebrow">NASMA — نسمة راحة في بيتك</span>
+                    <h1>جودة تُحسّ وتثق فيها… من أول استخدام</h1>
+                    <p class="hero-lead">
+                        نختار منتجات عملية للعائلات والمحترفين في السعودية والخليج —
+                        أمان أوضح، جهد أقل، وتجربة شراء بلا مخاطرة: ادفع عند الاستلام.
                     </p>
-                    <div class="bundle-mini">
-                        <span class="bundle-chip">199 ر.س — قطعة</span>
-                        <span class="bundle-chip">279 ر.س — ثنائية ⭐</span>
-                        <span class="bundle-chip">349 ر.س — متكاملة</span>
+                    <div class="hero-cta">
+                        <a href="product-lock.html" class="btn btn-primary">ابدأ التسوق</a>
+                        <a href="about.html" class="btn btn-ghost">اكتشف قصتنا</a>
                     </div>
-                    <a href="#checkout" class="link-product" data-preset-product="led">اطلب الآن ←</a>
-                    <span style="margin-right:12px;color:var(--muted);font-size:0.85rem">أو</span>
-                    <a href="product-led-light.html" class="link-product">صفحة المنتج التفصيلية</a>
                 </div>
-            </article>
-
-            <article class="product-showcase reverse">
-                <div class="product-media">صورة احترافية — قفل أمان الأطفال</div>
-                <div class="product-info">
-                    <h3>قفل أمان الأبواب والنوافذ للأطفال</h3>
-                    <p class="desc">
-                        يحدّ من فتح النوافذ والشرفات دون أدوات معقدة. مثالي للشقق والفلل —
-                        راحة للأهل وحرية آمنة للأطفال داخل المنزل.
-                    </p>
-                    <div class="bundle-mini">
-                        <span class="bundle-chip">199 ر.س — قطعة</span>
-                        <span class="bundle-chip">279 ر.س — ثنائية ⭐</span>
-                        <span class="bundle-chip">349 ر.س — متكاملة</span>
+                <div class="hero-media" aria-label="صورة العلامة التجارية">
+                    <div class="media-label">
+                        صورة / فيديو العلامة<br>
+                        <small>مساحة بصرية عالية الدقة</small>
                     </div>
-                    <a href="#checkout" class="link-product" data-preset-product="kidsLock">اطلب الآن ←</a>
-                    <span style="margin-right:12px;color:var(--muted);font-size:0.85rem">أو</span>
-                    <a href="product-kids-lock.html" class="link-product">صفحة المنتج التفصيلية</a>
                 </div>
-            </article>
+            </div>
+        </section>
 
-            <article class="product-showcase">
-                <div class="product-media">صورة احترافية — أحزمة نقل الأثاث</div>
-                <div class="product-info">
-                    <h3>أحزمة رفع ونقل الأثاث الثقيل</h3>
-                    <p class="desc">
-                        توزيع الوزن على الكتفين — نقل ثلاجات، أرائك، وصناديق بأقل إجهاد على الظهر.
-                        مادة متينة ومقابض مريحة للاستخدام المتكرر.
-                    </p>
-                    <div class="bundle-mini">
-                        <span class="bundle-chip">199 ر.س — قطعة</span>
-                        <span class="bundle-chip">279 ر.س — ثنائية ⭐</span>
-                        <span class="bundle-chip">349 ر.س — متكاملة</span>
-                    </div>
-                    <a href="#checkout" class="link-product" data-preset-product="straps">اطلب الآن ←</a>
-                    <span style="margin-right:12px;color:var(--muted);font-size:0.85rem">أو</span>
-                    <a href="product-move-straps.html" class="link-product">صفحة المنتج التفصيلية</a>
+        <section class="section section-muted" id="trust">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>لماذا يثق بنا عملاؤنا؟</h2>
+                    <p>ثلاثة أسباب تجعل NASMA خياراً آمناً قبل أن تصل الشحنة إلى بابك</p>
                 </div>
-            </article>
-        </div>
-    </section>
+                <div class="trust-grid">
+                    <article class="trust-card">
+                        <div class="trust-num">01</div>
+                        <h3>اختيار صارم للجودة</h3>
+                        <p>لا نعرض كل ما هو رائج — نختبر المتانة وسهولة الاستخدام في الحياة اليومية قبل أن يصبح المنتج جزءاً من المتجر.</p>
+                    </article>
+                    <article class="trust-card">
+                        <div class="trust-num">02</div>
+                        <h3>دفع عند الاستلام</h3>
+                        <p>اطلب بثقة دون بطاقة بنكية. تفحص طلبك عند التوصيل ثم ادفع — تجربة مصممة لسوق الخليج.</p>
+                    </article>
+                    <article class="trust-card">
+                        <div class="trust-num">03</div>
+                        <h3>خدمة واضحة وسريعة</h3>
+                        <p>أسعار باقات شفافة، شحن مجاني، ومتابعة بعد الطلب حتى يصل المنتج ويستقر استخدامه في بيتك.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-    <section class="reviews" id="reviews">
+        <section class="section" id="products">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>منتجاتنا الأساسية</h2>
+                    <p>كل منتج في صفحة مستقلة مع عروض الباقات وطلب COD</p>
+                </div>
+                <div class="products-grid">
+                    <article class="product-teaser">
+                        <div class="teaser-img">مصباح العمل المغناطيسي LED</div>
+                        <div class="teaser-body">
+                            <h3>مصباح العمل المغناطيسي</h3>
+                            <p>إضاءة قوية للسيارة والورشة — مغناطيس وخطاف وشحن USB.</p>
+                            <p class="price-from">يبدأ من <b>199 ر.س</b></p>
+                            <a href="product-light.html" class="btn btn-primary">عرض الباقات</a>
+                        </div>
+                    </article>
+                    <article class="product-teaser">
+                        <div class="teaser-img">قفل أمان النوافذ والأبواب</div>
+                        <div class="teaser-body">
+                            <h3>قفل أمان الأطفال</h3>
+                            <p>حدّ من فتح النوافذ والشرفات — راحة للأهل وحرية آمنة للصغار.</p>
+                            <p class="price-from">يبدأ من <b>199 ر.س</b></p>
+                            <a href="product-lock.html" class="btn btn-primary">عرض الباقات</a>
+                        </div>
+                    </article>
+                    <article class="product-teaser">
+                        <div class="teaser-img">أحزمة نقل الأثاث الثقيل</div>
+                        <div class="teaser-body">
+                            <h3>أحزمة النقل الثقيل</h3>
+                            <p>وزّع الوزن على الكتفين — نقل أسهل وأأمن للأثاث والصناديق.</p>
+                            <p class="price-from">يبدأ من <b>199 ر.س</b></p>
+                            <a href="product-straps.html" class="btn btn-primary">عرض الباقات</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-muted" id="reviews">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>آراء عملاء NASMA</h2>
+                    <p>تجارب من مدن السعودية والخليج</p>
+                </div>
+                <div class="reviews-grid">
+                    <article class="review-card">
+                        <div class="stars" aria-label="تقييم 5 نجوم">★★★★★</div>
+                        <p>«التجربة من الطلب للتوصيل كانت واضحة. المنتج مطابق للوصف، والدفع عند الاستلام خلّاني مرتاح.»</p>
+                        <div class="reviewer">
+                            <div class="avatar">س</div>
+                            <div>
+                                <strong>سارة — الرياض</strong>
+                                <span>✓ عميلة موثّقة</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="review-card">
+                        <div class="stars" aria-label="تقييم 5 نجوم">★★★★★</div>
+                        <p>«طلبت لبيتنا وللورشة. الجودة محسوسة والشحن سريع لجدة. أنصح NASMA لأي أحد يبيّ منتج عملي.»</p>
+                        <div class="reviewer">
+                            <div class="avatar">ع</div>
+                            <div>
+                                <strong>عبدالله — جدة</strong>
+                                <span>✓ عميل موثّق</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="review-card">
+                        <div class="stars" aria-label="تقييم 5 نجوم">★★★★★</div>
+                        <p>«أول مرة أطلب منهم والدعم بعد الشراء كان ممتاز. الباقات واضحة والأسعار بدون مفاجآت.»</p>
+                        <div class="reviewer">
+                            <div class="avatar">م</div>
+                            <div>
+                                <strong>مريم — الدمام</strong>
+                                <span>✓ عميلة موثّقة</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
         <div class="wrap">
-            <div class="section-title">
-                <h2>ماذا يقول عملاؤنا؟</h2>
-                <p>تجارب حقيقية من السعودية والخليج</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">NAS<span>MA</span></a>
+                    <p>علامة لمنتجات عملية تُسهّل يومك — بجودة مختارة وتجربة شراء آمنة في السعودية والخليج.</p>
+                    <div class="trust-badges">
+                        <span class="trust-badge">دفع عند الاستلام</span>
+                        <span class="trust-badge">شحن مجاني</span>
+                        <span class="trust-badge">باقات من 199 ر.س</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>تصفّح</h4>
+                    <a href="index.html">الرئيسية</a>
+                    <a href="about.html">من نحن</a>
+                    <a href="contact.html">تواصل معنا</a>
+                </div>
+                <div class="footer-col">
+                    <h4>المنتجات</h4>
+                    <a href="product-light.html">مصباح LED المغناطيسي</a>
+                    <a href="product-lock.html">قفل أمان الأطفال</a>
+                    <a href="product-straps.html">أحزمة النقل الثقيل</a>
+                </div>
+                <div class="footer-col">
+                    <h4>تواصل</h4>
+                    <ul>
+                        <li>السعودية — خدمة الخليج</li>
+                        <li>طلبات COD عبر صفحات المنتجات</li>
+                        <li><a href="contact.html">نموذج التواصل</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="reviews-grid">
-                <article class="review-card">
-                    <div class="stars" aria-label="5 نجوم">★★★★★</div>
-                    <p>«وصل المصباح بسرعة لجدة. المغناطيس قوي والإضاءة واضحة تحت السيارة — وفرت عليّ الرحلة للورشة أكثر من مرة.»</p>
-                    <div class="reviewer">
-                        <div class="avatar">م</div>
-                        <div class="reviewer-meta">
-                            <strong>محمد — جدة</strong>
-                            <span class="badge-verified">✓ شراء موثّق</span>
-                        </div>
-                    </div>
-                    <div class="product-media" style="min-height:100px;margin-top:14px;font-size:0.8rem">صورة من العميل (placeholder)</div>
-                </article>
-                <article class="review-card">
-                    <div class="stars" aria-label="5 نجوم">★★★★★</div>
-                    <p>«تركيب قفل النافذة سهل، والأطفال ما عادوا يفتحونها بدون ما ندري. COD خلّاني أطلب بدون تردد.»</p>
-                    <div class="reviewer">
-                        <div class="avatar">ن</div>
-                        <div class="reviewer-meta">
-                            <strong>نورة — الرياض</strong>
-                            <span class="badge-verified">✓ شراء موثّق</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="review-card">
-                    <div class="stars" aria-label="5 نجوم">★★★★★</div>
-                    <p>«استخدمنا الأحزمة لنقل غرفة كاملة في الدمام. الوزن توزّع صح وما حسينا بألم في الظهر — أنصح فيها لأي انتقال.»</p>
-                    <div class="reviewer">
-                        <div class="avatar">ف</div>
-                        <div class="reviewer-meta">
-                            <strong>فهد — الدمام</strong>
-                            <span class="badge-verified">✓ شراء موثّق</span>
-                        </div>
-                    </div>
-                </article>
+            <div class="footer-bottom">
+                <span>© NASMA — جميع الحقوق محفوظة</span>
+                <span>ادفع عند الاستلام · شحن آمن</span>
             </div>
-        </div>
-    </section>
-
-    <section class="checkout-section" id="checkout">
-        <div class="wrap checkout-grid">
-            <div class="checkout-copy">
-                <h2>أكمل طلبك — دفع عند الاستلام</h2>
-                <p style="color:var(--muted)">اختر المنتج والباقة، أدخل بياناتك، وسيتواصل فريقنا لتأكيد العنوان والتوصيل.</p>
-                <ul class="trust-list">
-                    <li>شحن مجاني لمعظم مناطق السعودية</li>
-                    <li>لا حاجة لبطاقة بنكية — COD</li>
-                    <li>تغليف آمن وسريع</li>
-                    <li>دعم عبر واتساب بعد الطلب</li>
-                </ul>
-            </div>
-            <form class="checkout-form" id="landingOrderForm" data-sheet="https://sheetdb.io/api/v1/glsn5w5ktwugw">
-                <div class="field">
-                    <label for="order-product">المنتج</label>
-                    <select id="order-product" name="product" required>
-                        <option value="led" data-sheet="مصباح LED">مصباح العمل المغناطيسي</option>
-                        <option value="kidsLock" data-sheet="قفل أطفال">قفل أمان الأطفال</option>
-                        <option value="straps" data-sheet="أحزمة نقل">أحزمة نقل الأثاث</option>
-                    </select>
-                </div>
-                <div class="field">
-                    <label>الباقة</label>
-                    <div class="bundle-row">
-                        <label class="bundle-option">
-                            <input type="radio" name="bundle" value="single" data-price="199" data-label="قطعة واحدة" checked>
-                            <span class="b-title">قطعة واحدة</span>
-                            <span class="b-price">199 ر.س</span>
-                        </label>
-                        <label class="bundle-option">
-                            <input type="radio" name="bundle" value="dual" data-price="279" data-label="باقة ثنائية">
-                            <span class="b-title">باقة ثنائية — الأكثر طلباً</span>
-                            <span class="b-price">279 ر.س</span>
-                        </label>
-                        <label class="bundle-option">
-                            <input type="radio" name="bundle" value="mega" data-price="349" data-label="الباقة المتكاملة">
-                            <span class="b-title">الباقة المتكاملة</span>
-                            <span class="b-price">349 ر.س</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="field">
-                    <label for="order-name">الاسم الكامل</label>
-                    <input type="text" id="order-name" name="name" required placeholder="مثال: أحمد العتيبي" autocomplete="name">
-                </div>
-                <div class="field">
-                    <label for="order-phone">رقم الجوال</label>
-                    <input type="tel" id="order-phone" name="phone" required placeholder="05xxxxxxxx" autocomplete="tel">
-                </div>
-                <div class="field">
-                    <label for="order-city-input">المدينة / الحي (اختياري)</label>
-                    <input type="text" id="order-city-input" name="city" placeholder="الرياض — حي النرجس">
-                </div>
-                <button type="submit" class="btn-primary" id="orderSubmit" style="width:100%">تأكيد الطلب — 199 ر.س</button>
-                <p class="form-msg" id="orderMsg" role="status"></p>
-            </form>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="wrap">
-            <span class="logo">NASMA</span>
-            <p>© NASMA — السعودية والخليج · دفع عند الاستلام</p>
-            <p style="margin-top:8px;opacity:0.75"><a href="contact.html" style="color:#fff">تواصل معنا</a></p>
         </div>
     </footer>
 
-    <div class="sticky-bar">
-        <span class="total" id="stickyPrice">199 ر.س</span>
-        <button type="button" class="btn-primary" id="stickyOrderBtn">إتمام الطلب</button>
-    </div>
-
-    <script src="config.js"></script>
-    <script>
-        window.NASMA_STORE = STORE;
-        window.NASMA_PRODUCTS = PRODUCTS;
-        window.NASMA_BUNDLES = BUNDLES;
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
