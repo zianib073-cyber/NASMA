@@ -61,13 +61,30 @@ button, input, select, textarea { font-family: inherit; }
 }
 
 .logo {
-    font-size: 1.25rem;
-    font-weight: 800;
-    letter-spacing: 0.02em;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.15;
     color: var(--navy);
 }
 
-.logo span { color: var(--accent); }
+.logo-ar {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+.logo-en {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 2px;
+}
+
+.site-footer .logo { color: #fff; }
+.site-footer .logo-en { color: var(--accent); }
 
 .nav {
     display: none;
@@ -777,7 +794,6 @@ a.product-teaser:hover {
 }
 
 .site-footer .logo { color: #fff; }
-.site-footer .logo span { color: var(--accent); }
 
 .footer-grid {
     display: grid;
