@@ -78,7 +78,7 @@
     var sheetUrl = form.getAttribute('data-sheet') ||
         (typeof STORE !== 'undefined' && STORE.sheetUrl) ||
         'https://sheetdb.io/api/v1/glsn5w5ktwugw';
-    var productName = form.getAttribute('data-product') || 'طلب NASMA';
+    var productName = form.getAttribute('data-product') || 'طلب نسمة هوم';
     var msg = document.getElementById('orderMsg');
     var submitBtn = document.getElementById('orderSubmit');
     var stickyPrice = document.getElementById('stickyPrice');
