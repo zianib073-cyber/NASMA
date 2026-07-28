@@ -1,5 +1,6 @@
 const STORE = {
-    name: 'NASMA',
+    name: 'نسمة هوم',
+    nameEn: 'NASMA Home',
     tagline: 'منتجات موثوقة · شحن مجاني · دفع عند الاستلام',
     currency: 'ر.س',
     sheetUrl: 'https://sheetdb.io/api/v1/glsn5w5ktwugw'
