@@ -25,6 +25,7 @@
         return {
             apiBase: store.apiBase || DEFAULTS.apiBase,
             ordersPath: store.ordersPath || DEFAULTS.ordersPath,
+            proxyUrl: String(local.proxyUrl || store.proxyUrl || '').replace(/\/$/, ''),
             countryCode: store.countryCode || DEFAULTS.countryCode,
             currencyCode: store.currencyCode || DEFAULTS.currencyCode,
             paymentMethod: store.paymentMethod || DEFAULTS.paymentMethod,
@@ -154,12 +155,16 @@
 
     function submitCodOrder(input) {
         var cfg = mergeConfig();
-        if (!cfg.apiToken) {
+        var useProxy = Boolean(cfg.proxyUrl);
+
+        if (!useProxy && !cfg.apiToken) {
             debugLog(cfg, 'Missing apiToken — add cod-config.js (see cod-config.example.js)');
             return Promise.reject(new Error('missing_token'));
         }
 
-        var url = cfg.apiBase.replace(/\/$/, '') + cfg.ordersPath;
+        var url = useProxy
+            ? cfg.proxyUrl + cfg.ordersPath
+            : cfg.apiBase.replace(/\/$/, '') + cfg.ordersPath;
         var body = buildCodOrderPayload(
             Object.assign({}, input, {
                 countryCode: cfg.countryCode,
@@ -170,17 +175,23 @@
             cfg
         );
 
-        debugLog(cfg, 'POST', url);
-        debugLog(cfg, 'Authorization', 'Bearer ' + cfg.apiToken.slice(0, 12) + '…');
+        var headers = {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        };
+        if (!useProxy) {
+            headers.Authorization = 'Bearer ' + cfg.apiToken;
+        }
+
+        debugLog(cfg, useProxy ? 'POST via proxy' : 'POST direct', url);
+        if (!useProxy) {
+            debugLog(cfg, 'Authorization', 'Bearer ' + cfg.apiToken.slice(0, 12) + '…');
+        }
         debugLog(cfg, 'Request payload', JSON.parse(JSON.stringify(body)));
 
         return fetch(url, {
             method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-                Authorization: 'Bearer ' + cfg.apiToken
-            },
+            headers: headers,
             body: JSON.stringify(body)
         })
             .then(function (res) {
@@ -239,18 +250,28 @@
 
     function logStartupDiagnostics() {
         var cfg = mergeConfig();
+        var endpoint = cfg.proxyUrl
+            ? cfg.proxyUrl + cfg.ordersPath
+            : cfg.apiBase.replace(/\/$/, '') + cfg.ordersPath;
         debugLog(cfg, 'Ready', {
-            endpoint: cfg.apiBase.replace(/\/$/, '') + cfg.ordersPath,
+            mode: cfg.proxyUrl ? 'proxy' : 'direct',
+            endpoint: endpoint,
             hasToken: Boolean(cfg.apiToken),
-            tokenPreview: cfg.apiToken ? cfg.apiToken.slice(0, 12) + '…' : 'MISSING',
+            tokenPreview: cfg.apiToken ? cfg.apiToken.slice(0, 12) + '…' : cfg.proxyUrl ? 'on-proxy' : 'MISSING',
             country: cfg.countryCode,
             phoneFormat: cfg.phoneFormat,
             lineItemsKey: cfg.lineItemsKey
         });
-        if (!cfg.apiToken) {
+        if (!cfg.proxyUrl && !cfg.apiToken) {
             console.warn(
                 LOG_PREFIX,
                 'cod-config.js missing or empty — orders will not reach COD Network (token not loaded).'
+            );
+        }
+        if (!cfg.proxyUrl) {
+            console.warn(
+                LOG_PREFIX,
+                'No proxyUrl — browser may block api.cod.network (CORS). Deploy workers/cod-proxy and set STORE.codNetwork.proxyUrl.'
             );
         }
     }

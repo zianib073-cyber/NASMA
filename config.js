@@ -6,6 +6,8 @@ const STORE = {
     sheetUrl: 'https://sheetdb.io/api/v1/glsn5w5ktwugw',
     codNetwork: {
         apiBase: 'https://api.cod.network/api/v2',
+        /** Cloudflare Worker URL (no trailing slash). Required on GitHub Pages — fixes CORS. */
+        proxyUrl: '',
         /** Leads → call-center queue (default). Use '/seller/orders' for direct order mode. */
         ordersPath: '/seller/leads',
         countryCode: 'SA',
