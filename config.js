@@ -6,11 +6,15 @@ const STORE = {
     sheetUrl: 'https://sheetdb.io/api/v1/glsn5w5ktwugw',
     codNetwork: {
         apiBase: 'https://api.cod.network/api/v2',
-        ordersPath: '/seller/orders',
+        /** Leads → call-center queue (default). Use '/seller/orders' for direct order mode. */
+        ordersPath: '/seller/leads',
         countryCode: 'SA',
         currencyCode: 'SAR',
         paymentMethod: 'cod',
-        source: 'nasma-home-website'
+        source: 'nasma-home-website',
+        phoneFormat: 'sa_local',
+        lineItemsKey: 'products',
+        debug: true
     }
 };
 

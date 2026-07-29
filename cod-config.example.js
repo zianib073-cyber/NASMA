@@ -5,5 +5,7 @@
  * so the token is not public — see COD-NETWORK.md in repo root if added.
  */
 var COD_CONFIG = {
-    apiToken: 'PASTE_YOUR_JWT_HERE'
+    apiToken: 'PASTE_YOUR_JWT_HERE',
+    /** Set false in production after debugging */
+    debug: true
 };

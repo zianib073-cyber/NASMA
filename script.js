@@ -144,6 +144,13 @@
         var productKey = form.getAttribute('data-product-key');
         var useCodNetwork = hasBundles && typeof CodNetwork !== 'undefined';
 
+        console.log('[NASMA COD] Submit path', {
+            useCodNetwork: useCodNetwork,
+            hasCodModule: typeof CodNetwork !== 'undefined',
+            productKey: productKey,
+            productName: productName
+        });
+
         if (!name || !phone) {
             if (msg) {
                 msg.textContent = 'يرجى إدخال الاسم ورقم الجوال.';
@@ -226,6 +233,7 @@
                 notes: notes
             })
                 .then(function (result) {
+                    console.log('[NASMA COD] Submit success', result);
                     var q =
                         '?product=' +
                         encodeURIComponent(productName) +
@@ -239,6 +247,13 @@
                     finishSuccess(q);
                 })
                 .catch(function (err) {
+                    console.error('[NASMA COD] Submit failed', err);
+                    if (err && err.details) {
+                        console.error('[NASMA COD] API validation/details', err.details);
+                    }
+                    if (err && err.status) {
+                        console.error('[NASMA COD] HTTP status', err.status);
+                    }
                     if (err && err.message === 'missing_token') {
                         failSubmit(
                             'إعدادات COD Network غير مكتملة. أضف ملف cod-config.js برمز API.'
@@ -246,6 +261,9 @@
                         return;
                     }
                     if (err && err.message && err.message.indexOf('Failed to fetch') !== -1) {
+                        console.error(
+                            '[NASMA COD] Likely CORS or network block — browser cannot call api.cod.network directly.'
+                        );
                         failSubmit(
                             'تعذّر الاتصال بـ COD Network (CORS/شبكة). قد تحتاج ربطاً عبر خادم وسيط.'
                         );
@@ -255,6 +273,8 @@
                 });
             return;
         }
+
+        console.log('[NASMA COD] Fallback: SheetDB (CodNetwork unavailable or non-product form)');
 
         var orderLine = productName;
         if (bundle) {
