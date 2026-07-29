@@ -3,29 +3,40 @@ const STORE = {
     nameEn: 'NASMA Home',
     tagline: 'منتجات موثوقة · شحن مجاني · دفع عند الاستلام',
     currency: 'ر.س',
-    sheetUrl: 'https://sheetdb.io/api/v1/glsn5w5ktwugw'
+    sheetUrl: 'https://sheetdb.io/api/v1/glsn5w5ktwugw',
+    codNetwork: {
+        apiBase: 'https://api.cod.network/api/v2',
+        ordersPath: '/seller/orders',
+        countryCode: 'SA',
+        currencyCode: 'SAR',
+        paymentMethod: 'cod',
+        source: 'nasma-home-website'
+    }
 };
 
 const BUNDLES = [
-    { id: 'single', price: 199, titleAr: 'قطعة واحدة', badge: '' },
-    { id: 'dual', price: 279, titleAr: 'باقة ثنائية', badge: 'الأكثر طلباً' },
-    { id: 'mega', price: 349, titleAr: 'الباقة المتكاملة', badge: 'وفّر أكثر' }
+    { id: 'single', price: 199, titleAr: 'قطعة واحدة', badge: '', quantity: 1 },
+    { id: 'dual', price: 279, titleAr: 'باقة ثنائية', badge: 'الأكثر طلباً', quantity: 2 },
+    { id: 'mega', price: 349, titleAr: 'الباقة المتكاملة', badge: 'وفّر أكثر', quantity: 3 }
 ];
 
 const PRODUCTS = {
     light: {
         slug: 'product-light.html',
         nameAr: 'مصباح العمل المغناطيسي القوي',
-        sheetProduct: 'مصباح LED'
+        sheetProduct: 'مصباح LED',
+        codSku: 'NASMA-LED-LIGHT'
     },
     lock: {
         slug: 'product-lock.html',
         nameAr: 'قفل أمان الأبواب والنوافذ للأطفال',
-        sheetProduct: 'قفل أطفال'
+        sheetProduct: 'قفل أطفال',
+        codSku: 'NASMA-KIDS-LOCK'
     },
     straps: {
         slug: 'product-straps.html',
         nameAr: 'أحزمة رفع ونقل الأثاث الثقيل',
-        sheetProduct: 'أحزمة نقل'
+        sheetProduct: 'أحزمة نقل',
+        codSku: 'NASMA-MOVE-STRAPS'
     }
 };
