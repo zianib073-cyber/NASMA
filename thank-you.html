@@ -21,7 +21,7 @@
         <div class="thank-card">
             <div class="thank-icon">✓</div>
             <h1>تم استلام طلبك بنجاح</h1>
-            <p>شكراً لثقتك بـ نسمة هوم — سيتواصل فريقنا قريباً لتأكيد العنوان والباقة.</p>
+            <p>شكراً لثقتك بـ نسمة هوم — سيتواصل فريقنا أو مركز تأكيد COD Network قريباً لتأكيد العنوان والباقة. الدفع عند الاستلام.</p>
             <p class="thank-detail" id="thankDetail"></p>
             <a href="index.html" class="btn btn-primary">العودة للمتجر</a>
         </div>
@@ -33,9 +33,12 @@
             var product = p.get('product') || '';
             var bundle = p.get('bundle') || '';
             var price = p.get('price') || '';
+            var ref = p.get('ref') || '';
             var el = document.getElementById('thankDetail');
-            if (el && (product || bundle || price)) {
-                el.textContent = [product, bundle, price ? price + ' ر.س' : ''].filter(Boolean).join(' · ');
+            if (el && (product || bundle || price || ref)) {
+                var parts = [product, bundle, price ? price + ' ر.س' : ''].filter(Boolean);
+                if (ref) parts.push('مرجع COD: ' + ref);
+                el.textContent = parts.join(' · ');
             }
         })();
     </script>

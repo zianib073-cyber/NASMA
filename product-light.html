@@ -55,20 +55,20 @@
 
                 <div class="order-panel" id="order">
                     <h2>اختر الباقة وأكمل الطلب (COD)</h2>
-                    <form id="orderForm" data-product="مصباح LED" data-sheet="https://sheetdb.io/api/v1/glsn5w5ktwugw">
+                    <form id="orderForm" data-product="مصباح LED" data-product-key="light">
                         <div class="bundle-list" role="radiogroup" aria-label="باقات الأسعار">
                             <label class="bundle-option selected">
-                                <input type="radio" name="bundle" value="single" data-price="199" data-label="قطعة واحدة" checked>
+                                <input type="radio" name="bundle" value="single" data-price="199" data-label="قطعة واحدة" data-quantity="1" checked>
                                 <span class="b-title">قطعة واحدة</span>
                                 <span class="b-price">199 ر.س</span>
                             </label>
                             <label class="bundle-option">
-                                <input type="radio" name="bundle" value="dual" data-price="279" data-label="باقة ثنائية">
+                                <input type="radio" name="bundle" value="dual" data-price="279" data-label="باقة ثنائية" data-quantity="2">
                                 <span class="b-title"><span class="b-badge">الأكثر طلباً</span>باقة ثنائية</span>
                                 <span class="b-price">279 ر.س</span>
                             </label>
                             <label class="bundle-option">
-                                <input type="radio" name="bundle" value="mega" data-price="349" data-label="الباقة المتكاملة">
+                                <input type="radio" name="bundle" value="mega" data-price="349" data-label="الباقة المتكاملة" data-quantity="3">
                                 <span class="b-title"><span class="b-badge">وفّر أكثر</span>الباقة المتكاملة</span>
                                 <span class="b-price">349 ر.س</span>
                             </label>
@@ -83,8 +83,12 @@
                             <input type="tel" id="order-phone" name="phone" required placeholder="05xxxxxxxx" autocomplete="tel">
                         </div>
                         <div class="field">
-                            <label for="order-city">المدينة / الحي (اختياري)</label>
-                            <input type="text" id="order-city" name="city" placeholder="الرياض — حي النرجس">
+                            <label for="order-city">المدينة</label>
+                            <input type="text" id="order-city" name="city" required placeholder="مثال: الرياض" autocomplete="address-level2">
+                        </div>
+                        <div class="field">
+                            <label for="order-address">العنوان الكامل للتوصيل</label>
+                            <input type="text" id="order-address" name="address" required placeholder="الحي، الشارع، رقم المنزل / الشقة" autocomplete="street-address">
                         </div>
 
                         <button type="submit" class="btn btn-primary" id="orderSubmit" style="width:100%">تأكيد الطلب — 199 ر.س</button>
@@ -140,7 +144,10 @@
         </div>
     </footer>
 
+    <script>window.COD_CONFIG = window.COD_CONFIG || { apiToken: '' };</script>
+    <script src="cod-config.js"></script>
     <script src="config.js"></script>
+    <script src="cod-network.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

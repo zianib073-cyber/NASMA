@@ -96,7 +96,8 @@
         return {
             price: parseInt(checked.getAttribute('data-price'), 10) || 199,
             label: checked.getAttribute('data-label') || 'قطعة واحدة',
-            id: checked.value
+            id: checked.value,
+            quantity: parseInt(checked.getAttribute('data-quantity'), 10) || 1
         };
     }
 
@@ -136,8 +137,19 @@
         var name = document.getElementById('order-name').value.trim();
         var phone = document.getElementById('order-phone').value.trim();
         var cityInput = document.getElementById('order-city');
+        var addressInput = document.getElementById('order-address');
         var cityValue = cityInput ? cityInput.value.trim() : '';
+        var addressValue = addressInput ? addressInput.value.trim() : '';
         var defaultSubmitText = submitBtn ? submitBtn.textContent : '';
+        var productKey = form.getAttribute('data-product-key');
+        var useCodNetwork = hasBundles && typeof CodNetwork !== 'undefined';
+
+        console.log('[NASMA COD] Submit path', {
+            useCodNetwork: useCodNetwork,
+            hasCodModule: typeof CodNetwork !== 'undefined',
+            productKey: productKey,
+            productName: productName
+        });
 
         if (!name || !phone) {
             if (msg) {
@@ -147,15 +159,129 @@
             return;
         }
 
+        if (useCodNetwork && (!cityValue || !addressValue)) {
+            if (msg) {
+                msg.textContent = 'يرجى إدخال المدينة والعنوان الكامل للتوصيل (COD).';
+                msg.className = 'form-msg err';
+            }
+            return;
+        }
+
         submitBtn.disabled = true;
         submitBtn.textContent = 'جاري الإرسال...';
         if (msg) msg.className = 'form-msg';
+
+        function finishSuccess(extraQuery) {
+            var q = extraQuery || '';
+            if (!q && bundle) {
+                q =
+                    '?product=' +
+                    encodeURIComponent(productName) +
+                    '&bundle=' +
+                    encodeURIComponent(bundle.label) +
+                    '&price=' +
+                    bundle.price;
+            }
+            if (msg) {
+                msg.textContent =
+                    'تم استلام طلبك بنجاح! سيتواصل معك فريق التأكيد قريباً — الدفع عند الاستلام.';
+                msg.className = 'form-msg ok';
+            }
+            window.setTimeout(function () {
+                window.location.href = 'thank-you.html' + q;
+            }, useCodNetwork ? 900 : 0);
+        }
+
+        function failSubmit(text) {
+            if (msg) {
+                msg.textContent = text || 'حدث خطأ، حاول مرة ثانية.';
+                msg.className = 'form-msg err';
+            }
+            submitBtn.disabled = false;
+            if (hasBundles) {
+                syncBundleUI();
+            } else {
+                submitBtn.textContent = defaultSubmitText || 'إرسال';
+            }
+        }
+
+        if (useCodNetwork) {
+            var catalog =
+                typeof PRODUCTS !== 'undefined' && productKey ? PRODUCTS[productKey] : null;
+            var sku =
+                (catalog && catalog.codSku) ||
+                form.getAttribute('data-cod-sku') ||
+                productName;
+            var qty = bundle.quantity || 1;
+            var notes =
+                productName +
+                ' | ' +
+                bundle.label +
+                ' | ' +
+                bundle.price +
+                ' ' +
+                (typeof STORE !== 'undefined' ? STORE.currency : 'ر.س');
+
+            CodNetwork.submitCodOrder({
+                customerName: name,
+                phone: phone,
+                city: cityValue,
+                address: addressValue,
+                sku: sku,
+                quantity: qty,
+                lineTotal: bundle.price,
+                notes: notes
+            })
+                .then(function (result) {
+                    console.log('[NASMA COD] Submit success', result);
+                    var q =
+                        '?product=' +
+                        encodeURIComponent(productName) +
+                        '&bundle=' +
+                        encodeURIComponent(bundle.label) +
+                        '&price=' +
+                        bundle.price;
+                    if (result.reference) {
+                        q += '&ref=' + encodeURIComponent(result.reference);
+                    }
+                    finishSuccess(q);
+                })
+                .catch(function (err) {
+                    console.error('[NASMA COD] Submit failed', err);
+                    if (err && err.details) {
+                        console.error('[NASMA COD] API validation/details', err.details);
+                    }
+                    if (err && err.status) {
+                        console.error('[NASMA COD] HTTP status', err.status);
+                    }
+                    if (err && err.message === 'missing_token') {
+                        failSubmit(
+                            'إعدادات COD Network غير مكتملة. أضف ملف cod-config.js برمز API.'
+                        );
+                        return;
+                    }
+                    if (err && err.message && err.message.indexOf('Failed to fetch') !== -1) {
+                        console.error(
+                            '[NASMA COD] Likely CORS or network block — browser cannot call api.cod.network directly.'
+                        );
+                        failSubmit(
+                            'تعذّر الاتصال بـ COD Network (CORS/شبكة). قد تحتاج ربطاً عبر خادم وسيط.'
+                        );
+                        return;
+                    }
+                    failSubmit(err && err.message ? err.message : undefined);
+                });
+            return;
+        }
+
+        console.log('[NASMA COD] Fallback: SheetDB (CodNetwork unavailable or non-product form)');
 
         var orderLine = productName;
         if (bundle) {
             orderLine += ' | ' + bundle.label + ' | ' + bundle.price + ' SAR';
         }
         if (cityValue) orderLine += ' | ' + cityValue;
+        if (addressValue) orderLine += ' | ' + addressValue;
 
         fetch(sheetUrl, {
             method: 'POST',
@@ -169,28 +295,13 @@
         })
             .then(function (res) {
                 if (res.ok || res.status === 201) {
-                    var q = '?product=' + encodeURIComponent(productName);
-                    if (bundle) {
-                        q +=
-                            '&bundle=' + encodeURIComponent(bundle.label) +
-                            '&price=' + bundle.price;
-                    }
-                    window.location.href = 'thank-you.html' + q;
+                    finishSuccess();
                 } else {
                     throw new Error('fail');
                 }
             })
             .catch(function () {
-                if (msg) {
-                    msg.textContent = 'حدث خطأ، حاول مرة ثانية.';
-                    msg.className = 'form-msg err';
-                }
-                submitBtn.disabled = false;
-                if (hasBundles) {
-                    syncBundleUI();
-                } else {
-                    submitBtn.textContent = defaultSubmitText || 'إرسال';
-                }
+                failSubmit();
             });
     });
 })();
