@@ -19,7 +19,9 @@
 
     function mergeConfig() {
         var store = typeof STORE !== 'undefined' && STORE.codNetwork ? STORE.codNetwork : {};
-        var local = typeof COD_CONFIG !== 'undefined' ? COD_CONFIG : {};
+        var local =
+            (typeof window !== 'undefined' && window.COD_CONFIG) ||
+            (typeof COD_CONFIG !== 'undefined' ? COD_CONFIG : {});
         return {
             apiBase: store.apiBase || DEFAULTS.apiBase,
             ordersPath: store.ordersPath || DEFAULTS.ordersPath,
@@ -33,7 +35,7 @@
                 local.debug === true ||
                 store.debug === true ||
                 (typeof local.debug === 'undefined' && store.debug !== false),
-            apiToken: local.apiToken || store.apiToken || ''
+            apiToken: local.token || local.apiToken || store.apiToken || ''
         };
     }
 
