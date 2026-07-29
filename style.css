@@ -69,21 +69,23 @@ button, input, select, textarea { font-family: inherit; }
 }
 
 .logo-ar {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-weight: 800;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
+    color: var(--navy);
 }
 
 .logo-en {
-    font-size: 0.68rem;
+    font-size: 0.62rem;
     font-weight: 700;
-    letter-spacing: 0.28em;
+    letter-spacing: 0.32em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-top: 2px;
+    margin-top: 3px;
 }
 
 .site-footer .logo { color: #fff; }
+.site-footer .logo-ar { color: #fff; }
 .site-footer .logo-en { color: var(--accent); }
 
 .nav {
@@ -792,8 +794,6 @@ a.product-teaser:hover {
     padding: 56px 0 28px;
     margin-top: auto;
 }
-
-.site-footer .logo { color: #fff; }
 
 .footer-grid {
     display: grid;
