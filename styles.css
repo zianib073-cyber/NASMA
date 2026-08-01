@@ -1609,8 +1609,13 @@ body {
 }
 
 .phone-input {
-    text-align: right;
     direction: ltr;
+    text-align: right;
+}
+
+.phone-input::placeholder {
+    direction: ltr;
+    text-align: right;
 }
 
 .order-total {

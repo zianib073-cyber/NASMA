@@ -769,6 +769,18 @@ a.product-teaser:hover {
 
 .field input::placeholder { color: #9aabc0; }
 
+.field input.phone-input,
+.phone-input {
+    direction: ltr;
+    text-align: right;
+}
+
+.field input.phone-input::placeholder,
+.phone-input::placeholder {
+    direction: ltr;
+    text-align: right;
+}
+
 .form-msg {
     margin-top: 12px;
     font-size: 0.9rem;
