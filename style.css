@@ -770,15 +770,17 @@ a.product-teaser:hover {
 .field input::placeholder { color: #9aabc0; }
 
 .field input.phone-input,
-.phone-input {
-    direction: ltr;
-    text-align: right;
+.phone-input,
+#order-phone {
+    direction: rtl !important;
+    text-align: right !important;
 }
 
 .field input.phone-input::placeholder,
-.phone-input::placeholder {
-    direction: ltr;
-    text-align: right;
+.phone-input::placeholder,
+#order-phone::placeholder {
+    direction: rtl !important;
+    text-align: right !important;
 }
 
 .form-msg {

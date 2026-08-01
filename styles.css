@@ -1608,14 +1608,16 @@ body {
     box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.15);
 }
 
-.phone-input {
-    direction: ltr;
-    text-align: right;
+.phone-input,
+#order-phone {
+    direction: rtl !important;
+    text-align: right !important;
 }
 
-.phone-input::placeholder {
-    direction: ltr;
-    text-align: right;
+.phone-input::placeholder,
+#order-phone::placeholder {
+    direction: rtl !important;
+    text-align: right !important;
 }
 
 .order-total {
