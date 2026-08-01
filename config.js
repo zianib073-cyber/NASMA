@@ -32,18 +32,18 @@ const PRODUCTS = {
         slug: 'product-light.html',
         nameAr: 'مصباح العمل المغناطيسي القوي',
         sheetProduct: 'مصباح LED',
-        codSku: 'MP-MSVRSTUWGSS2'
+        codSku: 'MP-MSVRSTUWG5S2'
     },
     lock: {
         slug: 'product-lock.html',
         nameAr: 'قفل أمان الأبواب والنوافذ للأطفال',
         sheetProduct: 'قفل أطفال',
-        codSku: 'MP-MSVRSTUWGSS2'
+        codSku: 'MP-MSVRSTUWG5S2'
     },
     straps: {
         slug: 'product-straps.html',
         nameAr: 'أحزمة رفع ونقل الأثاث الثقيل',
         sheetProduct: 'أحزمة نقل',
-        codSku: 'MP-MSVRSTUWGSS2'
+        codSku: 'MP-MSVRSTUWG5S2'
     }
 };
