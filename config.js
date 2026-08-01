@@ -7,7 +7,7 @@ const STORE = {
     codNetwork: {
         apiBase: 'https://api.cod.network/api/v2',
         /** Cloudflare Worker URL (no trailing slash). Required on GitHub Pages — fixes CORS. */
-        proxyUrl: '',
+        proxyUrl: 'https://nasma-cod-proxy.zianib073.workers.dev',
         /** Leads → call-center queue (default). Use '/seller/orders' for direct order mode. */
         ordersPath: '/seller/leads',
         countryCode: 'SA',
