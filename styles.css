@@ -1610,7 +1610,7 @@ body {
 
 .phone-input {
     text-align: right;
-    direction: rtl;
+    direction: ltr;
 }
 
 .order-total {
