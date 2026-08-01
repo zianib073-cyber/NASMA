@@ -15,7 +15,8 @@ const STORE = {
         paymentMethod: 'cod',
         source: 'nasma-home-website',
         phoneFormat: 'sa_local',
-        lineItemsKey: 'products',
+        /** COD leads API expects `items`, not `products` (error 41030 otherwise). */
+        lineItemsKey: 'items',
         debug: true
     }
 };
