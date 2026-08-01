@@ -79,7 +79,8 @@
                 : qty
                   ? Math.round((lineTotal / qty) * 100) / 100
                   : lineTotal;
-        var phone = formatPhone(input.phone, cfg.phoneFormat);
+        var phoneLocal = formatPhone(input.phone, 'sa_local');
+        var phoneE164 = formatPhone(input.phone, 'e164');
 
         var lineItem = {
             sku: input.sku,
@@ -89,7 +90,8 @@
 
         var payload = {
             customer_name: input.customerName,
-            phone_number: phone,
+            phone: phoneLocal,
+            phone_number: cfg.phoneFormat === 'e164' ? phoneE164 : phoneLocal,
             city: input.city,
             address: input.address,
             country_code: input.countryCode || cfg.countryCode,
