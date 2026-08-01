@@ -165,9 +165,9 @@
             return;
         }
 
-        if (useCodNetwork && (!cityValue || !addressValue)) {
+        if (useCodNetwork && !cityValue) {
             if (msg) {
-                msg.textContent = 'يرجى إدخال المدينة والعنوان الكامل للتوصيل (COD).';
+                msg.textContent = 'يرجى إدخال المدينة.';
                 msg.className = 'form-msg err';
             }
             return;
@@ -232,7 +232,7 @@
                 customerName: name,
                 phone: phone,
                 city: cityValue,
-                address: addressValue,
+                address: addressValue || cityValue,
                 sku: sku,
                 quantity: qty,
                 lineTotal: bundle.price,

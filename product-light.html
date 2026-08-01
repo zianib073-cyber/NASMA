@@ -74,21 +74,19 @@
                             </label>
                         </div>
 
+                        <div class="checkout-fields">
                         <div class="field">
                             <label for="order-name">الاسم الكامل</label>
                             <input type="text" id="order-name" name="name" required placeholder="مثال: أحمد العتيبي" autocomplete="name">
                         </div>
-                        <div class="field">
-                            <label for="order-phone">رقم الجوال</label>
-                            <input type="tel" id="order-phone" name="phone" required placeholder="05xxxxxxxx" autocomplete="tel">
+                        <div class="field field-phone">
+                            <label for="order-phone">رقم الجوال <span class="field-hint">(رقم أو نسبة مثل 50%)</span></label>
+                            <input type="text" id="order-phone" name="phone" class="phone-input" required placeholder="05xxxxxxxx أو 50%" inputmode="text" autocomplete="tel">
                         </div>
                         <div class="field">
                             <label for="order-city">المدينة</label>
                             <input type="text" id="order-city" name="city" required placeholder="مثال: الرياض" autocomplete="address-level2">
                         </div>
-                        <div class="field">
-                            <label for="order-address">العنوان الكامل للتوصيل</label>
-                            <input type="text" id="order-address" name="address" required placeholder="الحي، الشارع، رقم المنزل / الشقة" autocomplete="street-address">
                         </div>
 
                         <button type="submit" class="btn btn-primary" id="orderSubmit" style="width:100%">تأكيد الطلب — 199 ر.س</button>
@@ -147,7 +145,7 @@
     <script>window.COD_CONFIG = window.COD_CONFIG || { token: '' };</script>
     <script src="cod-config.js"></script>
     <script src="config.js"></script>
-    <script src="cod-network.js?v=cf33b10"></script>
-    <script src="script.js?v=cf33b10"></script>
+    <script src="cod-network.js?v=checkout2"></script>
+    <script src="script.js?v=checkout2"></script>
 </body>
 </html>
