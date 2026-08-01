@@ -14,7 +14,7 @@
         paymentMethod: 'cod',
         source: 'nasma-home-website',
         phoneFormat: 'sa_local',
-        lineItemsKey: 'products'
+        lineItemsKey: 'items'
     };
 
     function mergeConfig() {
@@ -129,6 +129,13 @@
     }
 
     function extractErrorMessage(json, status) {
+        if (json && json.errors && Array.isArray(json.errors) && json.errors.length) {
+            var apiParts = json.errors.map(function (entry) {
+                if (entry && entry.message) return entry.message;
+                return String(entry);
+            });
+            if (apiParts.length) return apiParts.join(' · ');
+        }
         if (json && json.message) return json.message;
         if (json && json.error) return String(json.error);
         if (json && json.errors && typeof json.errors === 'object') {

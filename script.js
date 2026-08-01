@@ -130,16 +130,22 @@
         });
     }
 
+    /** Read checkout fields by `name` (preferred) or legacy id order-* */
+    function readOrderField(fieldName) {
+        var byName = form.querySelector('[name="' + fieldName + '"]');
+        if (byName) return byName.value.trim();
+        var byId = form.querySelector('#order-' + fieldName);
+        return byId ? byId.value.trim() : '';
+    }
+
     form.addEventListener('submit', function (e) {
         e.preventDefault();
 
         var bundle = hasBundles ? getSelectedBundle() : null;
-        var name = document.getElementById('order-name').value.trim();
-        var phone = document.getElementById('order-phone').value.trim();
-        var cityInput = document.getElementById('order-city');
-        var addressInput = document.getElementById('order-address');
-        var cityValue = cityInput ? cityInput.value.trim() : '';
-        var addressValue = addressInput ? addressInput.value.trim() : '';
+        var name = readOrderField('name');
+        var phone = readOrderField('phone');
+        var cityValue = readOrderField('city');
+        var addressValue = readOrderField('address');
         var defaultSubmitText = submitBtn ? submitBtn.textContent : '';
         var productKey = form.getAttribute('data-product-key');
         var useCodNetwork = hasBundles && typeof CodNetwork !== 'undefined';
