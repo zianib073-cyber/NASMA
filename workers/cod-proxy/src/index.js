@@ -4,9 +4,9 @@
  */
 export default {
     async fetch(request, env) {
-        var allowedOrigin = env.ALLOWED_ORIGIN || 'https://zianib073-cyber.github.io';
+        var allowedOrigins = parseAllowedOrigins(env);
         var origin = request.headers.get('Origin') || '';
-        var corsOrigin = origin === allowedOrigin ? origin : allowedOrigin;
+        var corsOrigin = allowedOrigins.indexOf(origin) !== -1 ? origin : allowedOrigins[0];
 
         var corsHeaders = {
             'Access-Control-Allow-Origin': corsOrigin,
@@ -60,6 +60,13 @@ export default {
         }
     }
 };
+
+function parseAllowedOrigins(env) {
+    var raw = env.ALLOWED_ORIGINS || env.ALLOWED_ORIGIN || 'https://zianib073-cyber.github.io';
+    return raw.split(',').map(function (entry) {
+        return entry.trim();
+    }).filter(Boolean);
+}
 
 function jsonResponse(data, status, corsHeaders) {
     return new Response(JSON.stringify(data), {

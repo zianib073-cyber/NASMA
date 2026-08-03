@@ -3,4 +3,5 @@ main = "src/index.js"
 compatibility_date = "2024-01-01"
 
 [vars]
-ALLOWED_ORIGIN = "https://zianib073-cyber.github.io"
+# Comma-separated list of storefront origins allowed by CORS.
+ALLOWED_ORIGINS = "https://nasmahome.shop,https://www.nasmahome.shop,https://zianib073-cyber.github.io"
