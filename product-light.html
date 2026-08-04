@@ -36,7 +36,16 @@
     <main>
         <div class="wrap product-layout">
             <div class="product-gallery">
-                <div class="gallery-main">صورة احترافية<br>Ultra Work Light 360°<br><small>3000 لومين · COB · مغناطيس N45</small></div>
+                <figure class="gallery-main">
+                    <img id="galleryMainImg" src="images/ultra-work-light/02-versatility.png" alt="مصباح Ultra Work Light — إضاءة قوية للصيانة والطوارئ" width="600" height="600">
+                </figure>
+                <div class="gallery-thumbs" role="tablist" aria-label="صور المنتج">
+                    <button type="button" class="gallery-thumb is-active" data-src="images/ultra-work-light/02-versatility.png" aria-label="صورة 1"><img src="images/ultra-work-light/02-versatility.png" alt=""></button>
+                    <button type="button" class="gallery-thumb" data-src="images/ultra-work-light/01-car-maintenance.png" aria-label="صورة 2"><img src="images/ultra-work-light/01-car-maintenance.png" alt=""></button>
+                    <button type="button" class="gallery-thumb" data-src="images/ultra-work-light/04-adjustable-angle.png" aria-label="صورة 3"><img src="images/ultra-work-light/04-adjustable-angle.png" alt=""></button>
+                    <button type="button" class="gallery-thumb" data-src="images/ultra-work-light/05-battery.png" aria-label="صورة 4"><img src="images/ultra-work-light/05-battery.png" alt=""></button>
+                    <button type="button" class="gallery-thumb" data-src="images/ultra-work-light/06-cob-lumen.png" aria-label="صورة 5"><img src="images/ultra-work-light/06-cob-lumen.png" alt=""></button>
+                </div>
             </div>
 
             <div class="product-detail">
@@ -103,7 +112,7 @@
                 <div class="product-story">
                     <p>
                         <strong>المشكل معروف:</strong> الظلام يوقف الشغل — تحت السيارة ما كتبانش المسامير،
-                        في الورشة كتضيع الوقت وكتزيد خطر الإصابة، وفي الطوارئ (انقطاع التيار، puncture ليلاً)
+                        في الورشة كتضيع الوقت وكتزيد خطر الإصابة، وفي الطوارئ (انقطاع التيار، ثقب إطار ليلاً)
                         الإضاءة الضعيفة كتخلي أي مهمة مستحيلة.
                     </p>
                     <p>
@@ -115,12 +124,34 @@
             </div>
 
             <div class="product-section">
+                <h2 class="section-title">شاهد المنتج في الواقع</h2>
+                <div class="showcase-grid">
+                    <figure class="showcase-card">
+                        <img src="images/ultra-work-light/01-car-maintenance.png" alt="مصباح مغناطيسي لصيانة السيارة" loading="lazy">
+                        <figcaption>تثبيت مغناطيسي قوي — صيانة السيارة بيدين حرتين</figcaption>
+                    </figure>
+                    <figure class="showcase-card">
+                        <img src="images/ultra-work-light/04-adjustable-angle.png" alt="زاوية قابلة للتعديل 180 درجة" loading="lazy">
+                        <figcaption>قاعدة تدور 180° + خطاف 360° — استخدمه في أي مكان</figcaption>
+                    </figure>
+                    <figure class="showcase-card">
+                        <img src="images/ultra-work-light/05-battery.png" alt="بطارية 5200mAh و Power Bank" loading="lazy">
+                        <figcaption>5200mAh — يدوم حتى 6.5 ساعات ويشحن هاتفك</figcaption>
+                    </figure>
+                    <figure class="showcase-card">
+                        <img src="images/ultra-work-light/06-cob-lumen.png" alt="شرائح COB 3000 لومين" loading="lazy">
+                        <figcaption>81 نواة COB — إضاءة أقوى بنسبة 50%</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="product-section">
                 <h2 class="section-title">المميزات الأساسية</h2>
                 <ul class="feature-grid">
                     <li class="feature-card">
                         <span class="feature-icon" aria-hidden="true">💡</span>
                         <h3>3000 لومينز — COB</h3>
-                        <p>شرائح COB متطورة تعطي إضاءة موحّدة وقوية تغطي مساحة واسعة — مثالية للعمل الدقيق والصيانة الليلية.</p>
+                        <p>شرائح COB بـ 81 نواة موفّرة للطاقة — إضاءة موحّدة وقوية تصل إلى 3000 لومينز.</p>
                     </li>
                     <li class="feature-card">
                         <span class="feature-icon" aria-hidden="true">🧲</span>
@@ -130,7 +161,7 @@
                     <li class="feature-card">
                         <span class="feature-icon" aria-hidden="true">🔋</span>
                         <h3>5200mAh — Power Bank</h3>
-                        <p>بطارية 5200mAh تدوم من 3.5 إلى 6.5 ساعات حسب مستوى الإضاءة، وتشحن هاتفك في الطوارئ.</p>
+                        <p>بطارية Li-ion 5200mAh: 3.5 ساعات (3000LM) · 5 ساعات · 6.5 ساعات (1500LM). تشحن هاتفك كـ Power Bank.</p>
                     </li>
                     <li class="feature-card">
                         <span class="feature-icon" aria-hidden="true">🔄</span>
@@ -144,12 +175,13 @@
                 <h2 class="section-title">المواصفات التقنية</h2>
                 <table class="specs-table">
                     <tbody>
-                        <tr><th>قوة الإضاءة</th><td>3000 لومينز (COB LED)</td></tr>
-                        <tr><th>البطارية</th><td>5200mAh — مدة 3.5 إلى 6.5 ساعات</td></tr>
+                        <tr><th>قوة الإضاءة</th><td>3000 لومينز — 81 نواة COB LED</td></tr>
+                        <tr><th>مدة التشغيل</th><td>3.5 س (3000LM) · 5 س · 6.5 س (1500LM)</td></tr>
+                        <tr><th>البطارية</th><td>5200mAh Li-ion 18650</td></tr>
                         <tr><th>Power Bank</th><td>يشحن الهاتف عبر منفذ USB</td></tr>
                         <tr><th>التثبيت</th><td>مغناطيس N45 + خطاف 360°</td></tr>
                         <tr><th>المرونة</th><td>دوران 180° إلى 360°</td></tr>
-                        <tr><th>الشحن</th><td>USB Type-C — وقت الشحن حوالي 4 ساعات</td></tr>
+                        <tr><th>الشحن</th><td>USB Type-C — وقت الشحن 3.5 ساعات</td></tr>
                         <tr><th>المادة</th><td>ABS مقاوم للصدمات والحرارة</td></tr>
                         <tr><th>الاستخدام</th><td>ورشة · سيارة · منزل · طوارئ · تخييم</td></tr>
                     </tbody>
@@ -212,5 +244,19 @@
     <script src="config.js"></script>
     <script src="cod-network.js?v=checkout2"></script>
     <script src="script.js?v=checkout2"></script>
+    <script>
+    (function () {
+        var main = document.getElementById('galleryMainImg');
+        document.querySelectorAll('.gallery-thumb').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var src = btn.getAttribute('data-src');
+                if (!src || !main) return;
+                main.src = src;
+                document.querySelectorAll('.gallery-thumb').forEach(function (b) { b.classList.remove('is-active'); });
+                btn.classList.add('is-active');
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
