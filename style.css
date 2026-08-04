@@ -672,6 +672,126 @@ a.product-teaser:hover {
     font-weight: 800;
 }
 
+/* Product content sections */
+.product-content {
+    padding-bottom: 100px;
+}
+
+.product-section {
+    margin-bottom: 40px;
+}
+
+.product-section .section-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-soft);
+}
+
+.product-story p {
+    color: var(--muted);
+    margin-bottom: 14px;
+    font-size: 1rem;
+    line-height: 1.85;
+}
+
+.product-story p strong {
+    color: var(--navy);
+}
+
+.feature-grid {
+    list-style: none;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+    .feature-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.feature-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(11, 31, 58, 0.06);
+}
+
+.feature-icon {
+    font-size: 1.6rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.feature-card h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 6px;
+}
+
+.feature-card p {
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(11, 31, 58, 0.06);
+}
+
+.specs-table th,
+.specs-table td {
+    padding: 14px 18px;
+    text-align: right;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.95rem;
+}
+
+.specs-table tr:last-child th,
+.specs-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.specs-table th {
+    width: 38%;
+    font-weight: 800;
+    color: var(--navy);
+    background: var(--navy-soft);
+}
+
+.specs-table td {
+    color: var(--muted);
+}
+
+.product-cta-banner {
+    text-align: center;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+    color: #fff;
+    border-radius: 20px;
+    padding: 28px 24px;
+    box-shadow: var(--shadow);
+}
+
+.product-cta-banner p {
+    margin-bottom: 16px;
+    font-size: 1.05rem;
+}
+
+.product-cta-banner .btn-primary {
+    background: var(--accent);
+    color: var(--navy);
+}
+
 .order-panel {
     background: var(--surface);
     border: 1px solid var(--line);
