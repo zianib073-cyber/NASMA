@@ -642,9 +642,13 @@ a.product-teaser:hover {
 
 .gallery-thumbs {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
     margin-top: 12px;
+}
+
+@media (min-width: 640px) {
+    .gallery-thumbs { grid-template-columns: repeat(6, 1fr); }
 }
 
 .gallery-thumb {
@@ -668,6 +672,93 @@ a.product-teaser:hover {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.story-block {
+    display: grid;
+    gap: 24px;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+    .story-block {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+    }
+
+    .story-block-reverse .story-block-text { order: 2; }
+    .story-block-reverse .story-block-img { order: 1; }
+}
+
+.story-block-text p {
+    color: var(--muted);
+    margin-bottom: 12px;
+    line-height: 1.85;
+    font-size: 0.98rem;
+}
+
+.story-block-text p strong {
+    color: var(--navy);
+}
+
+.story-block-text h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+.feature-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--accent-hot);
+    background: var(--accent-soft);
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+}
+
+.story-block-img {
+    margin: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 8px 28px rgba(11, 31, 58, 0.1);
+    background: #0b0f14;
+}
+
+.story-block-img img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+}
+
+.product-banner {
+    margin: 0 0 48px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    background: #0b0f14;
+}
+
+.product-banner img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 21/9;
+    object-fit: cover;
+}
+
+.product-banner figcaption {
+    text-align: center;
+    padding: 14px 16px;
+    font-weight: 800;
+    color: var(--navy);
+    background: var(--surface);
+    font-size: 0.95rem;
 }
 
 .showcase-grid {
